@@ -1,0 +1,6 @@
+# Porsche → Grok Response Template
+
+[Porsche] YYYY-MM-DD HH:MM – [Topic]
+
+**Status Update:** ...
+**Request:** ...
