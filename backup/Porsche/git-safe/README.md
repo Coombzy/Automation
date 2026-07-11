@@ -1,0 +1,1 @@
+# Porsche git-safe manifests

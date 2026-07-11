@@ -1,0 +1,12 @@
+# Full Hermes archives contain secrets — never commit
+**/daily/**
+**/weekly/**
+**/monthly/**
+**/logs/**
+!**/.gitkeep
+
+# Never commit secrets if they land here by mistake
+**/.env
+**/auth.json
+**/*token*
+**/*secret*

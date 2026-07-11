@@ -23,6 +23,7 @@ Work Porsche should execute autonomously (or with Ben only when blocked).
 
 - [x] **Get Doc Hakosuka online on Discord** — Hermes gateway on Doc (M1 Max); home `#doc-garage` for Doc↔Ben 1:1 (same role as `#porsche-garage` for Porsche) — **working as of 2026-07-11**
 - [x] **Fleet shared channel `#tire-shop`** — Porsche ↔ Doc can communicate (bot-to-bot path still needs `DISCORD_ALLOW_BOTS=mentions` + gateway restart on both; human @mentions work)
+- [ ] **Fleet daily 10pm backups** — scaffold `Automation/backup/{Porsche,Doc,McKing}/`; Porsche runs own 10pm cron; ensure Doc + McKing each have **their own** 10pm backup cron when online (see `communication/Doc/Doc-Todo.md`, `communication/McKing/McKing-Todo.md`)
 - [ ] **Doc software baseline (when Doc awake)** — install / verify:
   - Amphetamine (prevent sleep)
   - Battery app: coconutBattery (+ AlDente if MacBook form factor)

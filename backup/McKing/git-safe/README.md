@@ -1,0 +1,1 @@
+# McKing git-safe manifests

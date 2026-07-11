@@ -1,0 +1,1 @@
+# Doc git-safe manifests

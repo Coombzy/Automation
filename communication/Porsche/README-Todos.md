@@ -11,6 +11,8 @@
 | [`Ben-Todo.md`](./Ben-Todo.md) | Things **Ben** needs to do / decide / approve |
 | [`Porsche-Todo.md`](./Porsche-Todo.md) | Things **Porsche** (agent) owns and should execute |
 | [`Purchases.md`](./Purchases.md) | Hardware / software / services to **buy** to improve ops |
+| [`../Doc/Doc-Todo.md`](../Doc/Doc-Todo.md) | **Doc Hakosuka** agent todos (incl. 10pm backup) |
+| [`../McKing/McKing-Todo.md`](../McKing/McKing-Todo.md) | **Lightning McKing** agent todos (incl. 10pm backup) |
 
 ## Conventions
 
