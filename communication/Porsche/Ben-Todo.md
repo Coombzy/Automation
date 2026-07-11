@@ -2,7 +2,7 @@
 
 **Owner:** Ben (Coombsy)  
 **Maintained by:** Porsche under `communication/Porsche/`  
-**Last updated:** 2026-07-10
+**Last updated:** 2026-07-11
 
 Things that need **Ben’s action, decision, approval, or physical presence**.
 
@@ -18,6 +18,10 @@ Things that need **Ben’s action, decision, approval, or physical presence**.
 
 - [ ] **Call Capital One and get account activated**
 - [ ] **Bring Doc Hakosuka (M1 Max) online / reachable** so Porsche can connect Hermes Discord gateway and put Porsche + Doc in a shared channel
+- [ ] **On Doc (when awake): install Amphetamine** — keep machine awake for Hermes gateway / long model runs
+- [ ] **On Doc (when awake): install battery app** — prefer **coconutBattery** (health) and/or **AlDente** (charge limit if laptop form factor)
+- [ ] **On Doc (when awake): install Cursor if missing** — Grok build already present; Cursor for heavy coding sessions
+- [ ] **On Doc (when awake): complete Doc software baseline** (see Porsche-Todo Doc stack) — Homebrew, Hermes gateway autostart, Ollama/MLX, Tailscale, monitoring
 - [ ] **Approve Mission Control Phase 0 secrets** — strong `POSTGRES_PASSWORD` / `NEXTCLOUD_ADMIN_PASSWORD` in `mission-control/docker/.env` (don’t commit)
 - [ ] **Prove remote access from phone** to Nextcloud / Discord / agent once stack is up
 - [ ] **Confirm Matrix for Phase 1 vs Discord-only interim** (open decision)

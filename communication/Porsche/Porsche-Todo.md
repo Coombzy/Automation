@@ -21,8 +21,18 @@ Work Porsche should execute autonomously (or with Ben only when blocked).
 
 ## P1 — Agent / fleet infrastructure
 
-- [ ] **Get Doc Hakosuka online on Discord** — Hermes gateway on Doc (M1 Max); home `#doc-garage` for Doc↔Ben 1:1 (same role as `#porsche-garage` for Porsche)
-- [ ] **Fleet shared channel `#tire-shop` (Turbocharger Springs)** — Ben + Porsche + Doc + McKing multi-agent room; require @mention; McKing still TBD online
+- [x] **Get Doc Hakosuka online on Discord** — Hermes gateway on Doc (M1 Max); home `#doc-garage` for Doc↔Ben 1:1 (same role as `#porsche-garage` for Porsche) — **working as of 2026-07-11**
+- [x] **Fleet shared channel `#tire-shop`** — Porsche ↔ Doc can communicate (bot-to-bot path still needs `DISCORD_ALLOW_BOTS=mentions` + gateway restart on both; human @mentions work)
+- [ ] **Doc software baseline (when Doc awake)** — install / verify:
+  - Amphetamine (prevent sleep)
+  - Battery app: coconutBattery (+ AlDente if MacBook form factor)
+  - Cursor if not installed (Grok build already present)
+  - Homebrew + git + `gh` + `jq`
+  - Hermes gateway as background service (`hermes gateway install/start`) + `DISCORD_ALLOW_BOTS=mentions`
+  - Ollama and/or MLX for local heavy models
+  - Tailscale (or current mesh) for fleet remote access
+  - Monitoring: Stats (free) or iStat Menus for RAM/thermal under load
+  - Optional: OrbStack/Docker only if Doc will host containers (usually McKing/Porsche first)
 - [ ] **Remote access / Hermes Android pairing support** — document + implement Ben-facing path (Code Mater bridge notes already started)
 - [ ] **Security audit + hardening on Porsche** — when Ben re-enables daily audit cron or requests manual run (cloud-dependent crons currently paused)
 - [ ] **Continue Qwen3.6-27B local model setup** (conversion + testing) on appropriate machine
