@@ -1,0 +1,958 @@
+{
+  "agent": "Porsche",
+  "updated_at": "2026-07-12T02:00:05.187284+00:00",
+  "skills_root_note": "~/.hermes/skills on agent host",
+  "count": 101,
+  "policy": "MANIFEST is public catalog. Full SKILL.md copies only under by-agent/<Agent>/published/ when share_class allows and agent opts in (or weekly mutual-improvement promotes them).",
+  "skills": [
+    {
+      "name": "apple-notes",
+      "path": "apple/apple-notes/SKILL.md",
+      "description": "Manage Apple Notes via memo CLI: create, search, edit.",
+      "bytes": 2169,
+      "sha256_16": "c652e01e47938b8a",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "apple-reminders",
+      "path": "apple/apple-reminders/SKILL.md",
+      "description": "Apple Reminders via remindctl: add, list, complete.",
+      "bytes": 3606,
+      "sha256_16": "ee5084f2d7ec1964",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "findmy",
+      "path": "apple/findmy/SKILL.md",
+      "description": "Track Apple devices/AirTags via FindMy.app on macOS.",
+      "bytes": 3709,
+      "sha256_16": "19ec56e3b7f9f0be",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "imessage",
+      "path": "apple/imessage/SKILL.md",
+      "description": "Send and receive iMessages/SMS via the imsg CLI on macOS.",
+      "bytes": 2442,
+      "sha256_16": "bc68b1648e301409",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "macos-computer-use",
+      "path": "apple/macos-computer-use/SKILL.md",
+      "description": "|",
+      "bytes": 7309,
+      "sha256_16": "08b4bb4647d983d1",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "claude-code",
+      "path": "autonomous-ai-agents/claude-code/SKILL.md",
+      "description": "Delegate coding to Claude Code CLI (features, PRs).",
+      "bytes": 34288,
+      "sha256_16": "4d195cf896e7d1a0",
+      "share_class": "catalog_only",
+      "flags": [
+        "api_key"
+      ]
+    },
+    {
+      "name": "codex",
+      "path": "autonomous-ai-agents/codex/SKILL.md",
+      "description": "Delegate coding to OpenAI Codex CLI (features, PRs).",
+      "bytes": 5386,
+      "sha256_16": "bdf27c02052f06d3",
+      "share_class": "catalog_only",
+      "flags": [
+        "api_key"
+      ]
+    },
+    {
+      "name": "fleet-mutual-improvement",
+      "path": "autonomous-ai-agents/fleet-mutual-improvement/SKILL.md",
+      "description": "Use when running weekly fleet mutual-audit (Porsche\u2194Doc\u2194McKing): export git-safe packs, peer-audit, adopt/adapt ideas without role homogenization, recommend peer improvements, commit adoption notes.",
+      "bytes": 11871,
+      "sha256_16": "f40d1a904dc21224",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "grok",
+      "path": "autonomous-ai-agents/grok/SKILL.md",
+      "description": "Delegate coding/build work via xAI Grok CLI / Grok Build patterns from Hermes.",
+      "bytes": 1983,
+      "sha256_16": "1713cd694ffa91fd",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "hermes-agent",
+      "path": "autonomous-ai-agents/hermes-agent/SKILL.md",
+      "description": "Configure, extend, or contribute to Hermes Agent.",
+      "bytes": 51586,
+      "sha256_16": "083e305e004fc82c",
+      "share_class": "catalog_only",
+      "flags": [
+        "api_key"
+      ]
+    },
+    {
+      "name": "opencode",
+      "path": "autonomous-ai-agents/opencode/SKILL.md",
+      "description": "Delegate coding to OpenCode CLI (features, PR review).",
+      "bytes": 7259,
+      "sha256_16": "afb3ea1f1b430070",
+      "share_class": "catalog_only",
+      "flags": [
+        "api_key"
+      ]
+    },
+    {
+      "name": "project-car",
+      "path": "autonomous-ai-agents/project-car/SKILL.md",
+      "description": "Use when working on any aspect of Project Car (the multi-agent mission control/business application). Loads the canonical team structure, naming conventions, operational preferences, hosting plans, and single source of truth for all coordination as Porsche.",
+      "bytes": 17513,
+      "sha256_16": "483d4fcd712ef67e",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "token_optimizer",
+      "path": "autonomous-ai-agents/token_optimizer/SKILL.md",
+      "description": "Use when you need proactive token reduction, pre-flight estimation, smart compression, or local-model-assisted optimization before expensive cloud calls (especially Grok). Provides configurable aggressiveness and post-task savings reporting.",
+      "bytes": 8006,
+      "sha256_16": "6ef6c3ca828fc033",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "token_preflight",
+      "path": "autonomous-ai-agents/token_preflight/SKILL.md",
+      "description": "Ultra-lightweight pre-flight checker. Estimates tokens and recommends optimization tier (light/medium/heavy) with minimal overhead. v0.2.0.",
+      "bytes": 2126,
+      "sha256_16": "1ec7a7a29ae9cc76",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "computer-use",
+      "path": "computer-use/SKILL.md",
+      "description": "|",
+      "bytes": 11179,
+      "sha256_16": "33fdce112f142cd3",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "architecture-diagram",
+      "path": "creative/architecture-diagram/SKILL.md",
+      "description": "Dark-themed SVG architecture/cloud/infra diagrams as HTML.",
+      "bytes": 6967,
+      "sha256_16": "2cecf78a9ebd0e56",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "ascii-art",
+      "path": "creative/ascii-art/SKILL.md",
+      "description": "ASCII art: pyfiglet, cowsay, boxes, image-to-ascii.",
+      "bytes": 10556,
+      "sha256_16": "b69fdd300045a3e6",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "ascii-video",
+      "path": "creative/ascii-video/SKILL.md",
+      "description": "ASCII video: convert video/audio to colored ASCII MP4/GIF.",
+      "bytes": 14864,
+      "sha256_16": "1d4f84e0eacc0d8a",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "baoyu-comic",
+      "path": "creative/baoyu-comic/SKILL.md",
+      "description": "Knowledge comics (\u77e5\u8bc6\u6f2b\u753b): educational, biography, tutorial.",
+      "bytes": 14621,
+      "sha256_16": "39daa86a4c9737a5",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "baoyu-infographic",
+      "path": "creative/baoyu-infographic/SKILL.md",
+      "description": "Infographics: 21 layouts x 21 styles (\u4fe1\u606f\u56fe, \u53ef\u89c6\u5316).",
+      "bytes": 10434,
+      "sha256_16": "89e25da6d8ea1cac",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "claude-design",
+      "path": "creative/claude-design/SKILL.md",
+      "description": "Design one-off HTML artifacts (landing, deck, prototype).",
+      "bytes": 25117,
+      "sha256_16": "1582b0d49e48bdf9",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "comfyui",
+      "path": "creative/comfyui/SKILL.md",
+      "description": "Generate images, video, and audio with ComfyUI \u2014 install, launch, manage nodes/models, run workflows with parameter injection. Uses the official comfy-cli for lifecycle and direct REST/WebSocket API for execution.",
+      "bytes": 24287,
+      "sha256_16": "fc9514a3b888b352",
+      "share_class": "catalog_only",
+      "flags": [
+        "api_key"
+      ]
+    },
+    {
+      "name": "ideation",
+      "path": "creative/creative-ideation/SKILL.md",
+      "description": "Generate project ideas via creative constraints.",
+      "bytes": 6318,
+      "sha256_16": "a0768ddf7685e2a3",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "Heritage",
+      "path": "creative/design-md/SKILL.md",
+      "description": "Architectural minimalism meets journalistic gravitas.",
+      "bytes": 7023,
+      "sha256_16": "38ed14bc712a413f",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "excalidraw",
+      "path": "creative/excalidraw/SKILL.md",
+      "description": "Hand-drawn Excalidraw JSON diagrams (arch, flow, seq).",
+      "bytes": 7300,
+      "sha256_16": "beef7b8ea01e73a3",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "humanizer",
+      "path": "creative/humanizer/SKILL.md",
+      "description": "Humanize text: strip AI-isms and add real voice.",
+      "bytes": 30025,
+      "sha256_16": "4f2eece5122e8296",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "manim-video",
+      "path": "creative/manim-video/SKILL.md",
+      "description": "Manim CE animations: 3Blue1Brown math/algo videos.",
+      "bytes": 12023,
+      "sha256_16": "3459a6af999f0c9b",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "p5js",
+      "path": "creative/p5js/SKILL.md",
+      "description": "p5.js sketches: gen art, shaders, interactive, 3D.",
+      "bytes": 27494,
+      "sha256_16": "6a9722e2633ecdb3",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "pixel-art",
+      "path": "creative/pixel-art/SKILL.md",
+      "description": "Pixel art w/ era palettes (NES, Game Boy, PICO-8).",
+      "bytes": 7581,
+      "sha256_16": "01f351726675bb5e",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "popular-web-designs",
+      "path": "creative/popular-web-designs/SKILL.md",
+      "description": "54 real design systems (Stripe, Linear, Vercel) as HTML/CSS.",
+      "bytes": 9722,
+      "sha256_16": "cd89bdb86008bb30",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "pretext",
+      "path": "creative/pretext/SKILL.md",
+      "description": "Use when building creative browser demos with @chenglou/pretext \u2014 DOM-free text layout for ASCII art, typographic flow around obstacles, text-as-geometry games, kinetic typography, and text-powered generative art. Produces single-file HTML demos by default.",
+      "bytes": 14168,
+      "sha256_16": "532570c95d1a0bf6",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "sketch",
+      "path": "creative/sketch/SKILL.md",
+      "description": "Throwaway HTML mockups: 2-3 design variants to compare.",
+      "bytes": 9304,
+      "sha256_16": "c643ff8657341b39",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "songwriting-and-ai-music",
+      "path": "creative/songwriting-and-ai-music/SKILL.md",
+      "description": "Songwriting craft and Suno AI music prompts.",
+      "bytes": 10206,
+      "sha256_16": "093dfa88e5b3596a",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "touchdesigner-mcp",
+      "path": "creative/touchdesigner-mcp/SKILL.md",
+      "description": "Control a running TouchDesigner instance via twozero MCP \u2014 create operators, set parameters, wire connections, execute Python, build real-time visuals. 36 native tools.",
+      "bytes": 15429,
+      "sha256_16": "70a4217786c49122",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "jupyter-live-kernel",
+      "path": "data-science/jupyter-live-kernel/SKILL.md",
+      "description": "Iterative Python via live Jupyter kernel (hamelnb).",
+      "bytes": 5285,
+      "sha256_16": "d93c4b4f50e66c0c",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "kanban-orchestrator",
+      "path": "devops/kanban-orchestrator/SKILL.md",
+      "description": "Decomposition playbook + anti-temptation rules for an orchestrator profile routing work through Kanban. The \"don't do the work yourself\" rule and the basic lifecycle are auto-injected into every kanban worker's system prompt; this skill is the deeper playbook when you're specifically playing the orc",
+      "bytes": 14105,
+      "sha256_16": "c60c7fcfb64157d7",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "kanban-worker",
+      "path": "devops/kanban-worker/SKILL.md",
+      "description": "Pitfalls, examples, and edge cases for Hermes Kanban workers. The lifecycle itself is auto-injected into every worker's system prompt as KANBAN_GUIDANCE (from agent/prompt_builder.py); this skill is what you load when you want deeper detail on specific scenarios.",
+      "bytes": 10030,
+      "sha256_16": "aef52e7513b68e0f",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "webhook-subscriptions",
+      "path": "devops/webhook-subscriptions/SKILL.md",
+      "description": "Webhook subscriptions: event-driven agent runs.",
+      "bytes": 6836,
+      "sha256_16": "dfb4ddad9b7911db",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "dogfood",
+      "path": "dogfood/SKILL.md",
+      "description": "Exploratory QA of web apps: find bugs, evidence, reports.",
+      "bytes": 6270,
+      "sha256_16": "36b1a710c61727c2",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "himalaya",
+      "path": "email/himalaya/SKILL.md",
+      "description": "Himalaya CLI: IMAP/SMTP email from terminal.",
+      "bytes": 7272,
+      "sha256_16": "0f6c9bb4c0a5c4f4",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "minecraft-modpack-server",
+      "path": "gaming/minecraft-modpack-server/SKILL.md",
+      "description": "Host modded Minecraft servers (CurseForge, Modrinth).",
+      "bytes": 6559,
+      "sha256_16": "858f64c0e67efb29",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "pokemon-player",
+      "path": "gaming/pokemon-player/SKILL.md",
+      "description": "Play Pokemon via headless emulator + RAM reads.",
+      "bytes": 8709,
+      "sha256_16": "fe8da8e6dc5599ef",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "codebase-inspection",
+      "path": "github/codebase-inspection/SKILL.md",
+      "description": "Inspect codebases w/ pygount: LOC, languages, ratios.",
+      "bytes": 3628,
+      "sha256_16": "87ddc0578d9bcbc8",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "github-auth",
+      "path": "github/github-auth/SKILL.md",
+      "description": "GitHub auth setup: HTTPS tokens, SSH keys, gh CLI login.",
+      "bytes": 7596,
+      "sha256_16": "6b49a0655a581092",
+      "share_class": "catalog_only",
+      "flags": [
+        "password:"
+      ]
+    },
+    {
+      "name": "github-code-review",
+      "path": "github/github-code-review/SKILL.md",
+      "description": "Review PRs: diffs, inline comments via gh or REST.",
+      "bytes": 13615,
+      "sha256_16": "2d1956e52d88bd88",
+      "share_class": "catalog_only",
+      "flags": [
+        "api_key"
+      ]
+    },
+    {
+      "name": "github-issues",
+      "path": "github/github-issues/SKILL.md",
+      "description": "Create, triage, label, assign GitHub issues via gh or REST.",
+      "bytes": 9315,
+      "sha256_16": "c1be1ca373adebd8",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "github-pr-workflow",
+      "path": "github/github-pr-workflow/SKILL.md",
+      "description": "GitHub PR lifecycle: branch, commit, open, CI, merge.",
+      "bytes": 10035,
+      "sha256_16": "2461c0a678c2cc66",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "github-repo-management",
+      "path": "github/github-repo-management/SKILL.md",
+      "description": "Clone/create/fork repos; manage remotes, releases.",
+      "bytes": 13733,
+      "sha256_16": "d70d999ddf231f9e",
+      "share_class": "catalog_only",
+      "flags": [
+        "api_key"
+      ]
+    },
+    {
+      "name": "hermes-multi-agent-backup",
+      "path": "hermes-multi-agent-backup/SKILL.md",
+      "description": "Organize, schedule, and retain Hermes profile backups across multiple agents on different hardware; git-safe mutual-audit packs for public repos; daily/weekly/monthly retention.",
+      "bytes": 5183,
+      "sha256_16": "8303a7eb2b14a8d9",
+      "share_class": "catalog_only",
+      "flags": [
+        "api_key"
+      ]
+    },
+    {
+      "name": "native-mcp",
+      "path": "mcp/native-mcp/SKILL.md",
+      "description": "MCP client: connect servers, register tools (stdio/HTTP).",
+      "bytes": 12365,
+      "sha256_16": "59d2c150022d7906",
+      "share_class": "catalog_only",
+      "flags": [
+        "api_key"
+      ]
+    },
+    {
+      "name": "gif-search",
+      "path": "media/gif-search/SKILL.md",
+      "description": "Search/download GIFs from Tenor via curl + jq.",
+      "bytes": 2720,
+      "sha256_16": "a8349043740a8805",
+      "share_class": "catalog_only",
+      "flags": [
+        "api_key"
+      ]
+    },
+    {
+      "name": "heartmula",
+      "path": "media/heartmula/SKILL.md",
+      "description": "HeartMuLa: Suno-like song generation from lyrics + tags.",
+      "bytes": 6412,
+      "sha256_16": "d6f8322ba9ab4756",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "songsee",
+      "path": "media/songsee/SKILL.md",
+      "description": "Audio spectrograms/features (mel, chroma, MFCC) via CLI.",
+      "bytes": 2336,
+      "sha256_16": "d9d8d1394c630bd8",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "spotify",
+      "path": "media/spotify/SKILL.md",
+      "description": "Spotify: play, search, queue, manage playlists and devices.",
+      "bytes": 6319,
+      "sha256_16": "84b4c86e75f08288",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "youtube-content",
+      "path": "media/youtube-content/SKILL.md",
+      "description": "YouTube transcripts to summaries, threads, blogs.",
+      "bytes": 3384,
+      "sha256_16": "03cba418b10c64a3",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "evaluating-llms-harness",
+      "path": "mlops/evaluation/lm-evaluation-harness/SKILL.md",
+      "description": "lm-eval-harness: benchmark LLMs (MMLU, GSM8K, etc.).",
+      "bytes": 12020,
+      "sha256_16": "5426016d51e3b49e",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "weights-and-biases",
+      "path": "mlops/evaluation/weights-and-biases/SKILL.md",
+      "description": "W&B: log ML experiments, sweeps, model registry, dashboards.",
+      "bytes": 12395,
+      "sha256_16": "7cabb8bcc0079737",
+      "share_class": "catalog_only",
+      "flags": [
+        "api_key"
+      ]
+    },
+    {
+      "name": "huggingface-hub",
+      "path": "mlops/huggingface-hub/SKILL.md",
+      "description": "HuggingFace hf CLI: search/download/upload models, datasets.",
+      "bytes": 3674,
+      "sha256_16": "10d5bdf26e08ce47",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "llama-cpp",
+      "path": "mlops/inference/llama-cpp/SKILL.md",
+      "description": "llama.cpp local GGUF inference + HF Hub model discovery.",
+      "bytes": 8880,
+      "sha256_16": "9c1ef45f6197fbc0",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "obliteratus",
+      "path": "mlops/inference/obliteratus/SKILL.md",
+      "description": "OBLITERATUS: abliterate LLM refusals (diff-in-means).",
+      "bytes": 15464,
+      "sha256_16": "9fb394a0af2a9733",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "serving-llms-vllm",
+      "path": "mlops/inference/vllm/SKILL.md",
+      "description": "vLLM: high-throughput LLM serving, OpenAI API, quantization.",
+      "bytes": 9071,
+      "sha256_16": "ab72192b7aee4e6d",
+      "share_class": "catalog_only",
+      "flags": [
+        "api_key"
+      ]
+    },
+    {
+      "name": "audiocraft-audio-generation",
+      "path": "mlops/models/audiocraft/SKILL.md",
+      "description": "AudioCraft: MusicGen text-to-music, AudioGen text-to-sound.",
+      "bytes": 16189,
+      "sha256_16": "eebe52632e3312a5",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "segment-anything-model",
+      "path": "mlops/models/segment-anything/SKILL.md",
+      "description": "SAM: zero-shot image segmentation via points, boxes, masks.",
+      "bytes": 13372,
+      "sha256_16": "86440d99e8ec3bd7",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "dspy",
+      "path": "mlops/research/dspy/SKILL.md",
+      "description": "DSPy: declarative LM programs, auto-optimize prompts, RAG.",
+      "bytes": 15220,
+      "sha256_16": "67410a6b216d79eb",
+      "share_class": "catalog_only",
+      "flags": [
+        "api_key"
+      ]
+    },
+    {
+      "name": "xai-model-selection",
+      "path": "mlops/xai-model-selection/SKILL.md",
+      "description": "Choose Grok / SuperGrok tiers and multi-agent model routing correctly (tier \u2260 model ID).",
+      "bytes": 2635,
+      "sha256_16": "fd8125f7aa11f249",
+      "share_class": "catalog_only",
+      "flags": [
+        "api_key"
+      ]
+    },
+    {
+      "name": "obsidian",
+      "path": "note-taking/obsidian/SKILL.md",
+      "description": "Read, search, create, and edit notes in the Obsidian vault.",
+      "bytes": 2935,
+      "sha256_16": "b3f669a8a14611c4",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "airtable",
+      "path": "productivity/airtable/SKILL.md",
+      "description": "Airtable REST API via curl. Records CRUD, filters, upserts.",
+      "bytes": 11334,
+      "sha256_16": "016198b563b8f8c4",
+      "share_class": "catalog_only",
+      "flags": [
+        "api_key"
+      ]
+    },
+    {
+      "name": "google-workspace",
+      "path": "productivity/google-workspace/SKILL.md",
+      "description": "Gmail, Calendar, Drive, Docs, Sheets via gws CLI or Python.",
+      "bytes": 13411,
+      "sha256_16": "014a4818ee1b363d",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "linear",
+      "path": "productivity/linear/SKILL.md",
+      "description": "Linear: manage issues, projects, teams via GraphQL + curl.",
+      "bytes": 14782,
+      "sha256_16": "e7b6fbb8b55f8490",
+      "share_class": "catalog_only",
+      "flags": [
+        "api_key"
+      ]
+    },
+    {
+      "name": "macos-security-hardening",
+      "path": "productivity/macos-security-hardening/SKILL.md",
+      "description": "Harden macOS for local AI / Hermes travel hosts without killing performance.",
+      "bytes": 2835,
+      "sha256_16": "876c82de1d542122",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "maps",
+      "path": "productivity/maps/SKILL.md",
+      "description": "Geocode, POIs, routes, timezones via OpenStreetMap/OSRM.",
+      "bytes": 6726,
+      "sha256_16": "8c961ecf662838e3",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "nano-pdf",
+      "path": "productivity/nano-pdf/SKILL.md",
+      "description": "Edit PDF text/typos/titles via nano-pdf CLI (NL prompts).",
+      "bytes": 1414,
+      "sha256_16": "4243b329789c6d7f",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "notion",
+      "path": "productivity/notion/SKILL.md",
+      "description": "Notion API + ntn CLI: pages, databases, markdown, Workers.",
+      "bytes": 14629,
+      "sha256_16": "798ad178ead72ad3",
+      "share_class": "catalog_only",
+      "flags": [
+        "api_key"
+      ]
+    },
+    {
+      "name": "ocr-and-documents",
+      "path": "productivity/ocr-and-documents/SKILL.md",
+      "description": "Extract text from PDFs/scans (pymupdf, marker-pdf).",
+      "bytes": 5280,
+      "sha256_16": "720a1f1a534167ef",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "petdex",
+      "path": "productivity/petdex/SKILL.md",
+      "description": "Install and select animated petdex mascots for Hermes.",
+      "bytes": 3534,
+      "sha256_16": "ca52cda72a9c49d6",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "powerpoint",
+      "path": "productivity/powerpoint/SKILL.md",
+      "description": "Create, read, edit .pptx decks, slides, notes, templates.",
+      "bytes": 9298,
+      "sha256_16": "bb2084f5da312eec",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "teams-meeting-pipeline",
+      "path": "productivity/teams-meeting-pipeline/SKILL.md",
+      "description": "Operate the Teams meeting summary pipeline via Hermes CLI \u2014 summarize meetings, inspect pipeline status, replay jobs, manage Microsoft Graph subscriptions.",
+      "bytes": 6883,
+      "sha256_16": "5d3091690cf52058",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "godmode",
+      "path": "red-teaming/godmode/SKILL.md",
+      "description": "Jailbreak LLMs: Parseltongue, GODMODE, ULTRAPLINIAN.",
+      "bytes": 20059,
+      "sha256_16": "5ab1757d1b638258",
+      "share_class": "catalog_only",
+      "flags": [
+        "api_key"
+      ]
+    },
+    {
+      "name": "arxiv",
+      "path": "research/arxiv/SKILL.md",
+      "description": "Search arXiv papers by keyword, author, category, or ID.",
+      "bytes": 10085,
+      "sha256_16": "2a6073a1ad08823d",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "blogwatcher",
+      "path": "research/blogwatcher/SKILL.md",
+      "description": "Monitor blogs and RSS/Atom feeds via blogwatcher-cli tool.",
+      "bytes": 5111,
+      "sha256_16": "b85be5a9b86b9028",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "llm-wiki",
+      "path": "research/llm-wiki/SKILL.md",
+      "description": "Karpathy's LLM Wiki: build/query interlinked markdown KB.",
+      "bytes": 20129,
+      "sha256_16": "a37ae04745b04b8e",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "polymarket",
+      "path": "research/polymarket/SKILL.md",
+      "description": "Query Polymarket: markets, prices, orderbooks, history.",
+      "bytes": 2985,
+      "sha256_16": "becfa71e730b482c",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "research-paper-writing",
+      "path": "research/research-paper-writing/SKILL.md",
+      "description": "Write ML papers for NeurIPS/ICML/ICLR: design\u2192submit.",
+      "bytes": 103674,
+      "sha256_16": "46868cf4a15f2da0",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "openhue",
+      "path": "smart-home/openhue/SKILL.md",
+      "description": "Control Philips Hue lights, scenes, rooms via OpenHue CLI.",
+      "bytes": 2713,
+      "sha256_16": "550f94848d10ab82",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "xurl",
+      "path": "social-media/xurl/SKILL.md",
+      "description": "X/Twitter via xurl CLI: post, search, DM, media, v2 API.",
+      "bytes": 15518,
+      "sha256_16": "8b1899dc7188328a",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "debugging-hermes-tui-commands",
+      "path": "software-development/debugging-hermes-tui-commands/SKILL.md",
+      "description": "Debug Hermes TUI slash commands: Python, gateway, Ink UI.",
+      "bytes": 7910,
+      "sha256_16": "55d5811c0b2d872d",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "my-skill-name               # lowercase, hyphens, \u226464 chars (MAX_NAME_LENGTH)",
+      "path": "software-development/hermes-agent-skill-authoring/SKILL.md",
+      "description": "Use when <trigger>. <one-line behavior>.",
+      "bytes": 10651,
+      "sha256_16": "7d3aa79739df5c17",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "mission-control-development-heartbeat",
+      "path": "software-development/mission-control-development-heartbeat/SKILL.md",
+      "description": "Stateful autonomous development heartbeat for Mission Control / Project Car. Runs scheduled cron jobs that read previous state, perform focused coding work (Matrix + Nextcloud first), auto-commit to git, write handoff notes, and deliver structured progress reports to Discord.",
+      "bytes": 4611,
+      "sha256_16": "29e7ae1d3bed60fc",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "node-inspect-debugger",
+      "path": "software-development/node-inspect-debugger/SKILL.md",
+      "description": "Debug Node.js via --inspect + Chrome DevTools Protocol CLI.",
+      "bytes": 10929,
+      "sha256_16": "f2f72c0c9e67143e",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "plan",
+      "path": "software-development/plan/SKILL.md",
+      "description": "Plan mode: write an actionable markdown plan to .hermes/plans/, no execution. Bite-sized tasks, exact paths, complete code.",
+      "bytes": 8974,
+      "sha256_16": "399038641c1905f4",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "python-debugpy",
+      "path": "software-development/python-debugpy/SKILL.md",
+      "description": "Debug Python: pdb REPL + debugpy remote (DAP).",
+      "bytes": 13172,
+      "sha256_16": "ce7e38367ea54fb8",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "requesting-code-review",
+      "path": "software-development/requesting-code-review/SKILL.md",
+      "description": "Pre-commit review: security scan, quality gates, auto-fix.",
+      "bytes": 8465,
+      "sha256_16": "1126afb626b38f5b",
+      "share_class": "catalog_only",
+      "flags": [
+        "api_key"
+      ]
+    },
+    {
+      "name": "simplify-code",
+      "path": "software-development/simplify-code/SKILL.md",
+      "description": "Parallel 3-agent cleanup of recent code changes.",
+      "bytes": 10926,
+      "sha256_16": "5549142eb234a6de",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "spike",
+      "path": "software-development/spike/SKILL.md",
+      "description": "Throwaway experiments to validate an idea before build.",
+      "bytes": 8730,
+      "sha256_16": "891bc0a6fbb7aa6c",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "sqlalchemy-domain-modeling",
+      "path": "software-development/sqlalchemy-domain-modeling/SKILL.md",
+      "description": "Design full SQLAlchemy ORM domain model sets for Project Car / multi-module apps.",
+      "bytes": 3237,
+      "sha256_16": "c3afba91456aefa1",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "subagent-driven-development",
+      "path": "software-development/subagent-driven-development/SKILL.md",
+      "description": "Execute plans via delegate_task subagents (2-stage review).",
+      "bytes": 10742,
+      "sha256_16": "3fe606f9b2f51279",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "systematic-debugging",
+      "path": "software-development/systematic-debugging/SKILL.md",
+      "description": "4-phase root cause debugging: understand bugs before fixing.",
+      "bytes": 14065,
+      "sha256_16": "ec6c97b1d5534a86",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "task-decomposition-framework",
+      "path": "software-development/task-decomposition-framework/SKILL.md",
+      "description": "A structured system for breaking large projects into small, executable tasks optimized for LLM collaboration. Includes continuous improvement mechanisms between planner (Grok) and executor (local model).",
+      "bytes": 3452,
+      "sha256_16": "f821760e9e5875b7",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "test-driven-development",
+      "path": "software-development/test-driven-development/SKILL.md",
+      "description": "TDD: enforce RED-GREEN-REFACTOR, tests before code.",
+      "bytes": 10306,
+      "sha256_16": "39361054f58ecc8d",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "writing-plans",
+      "path": "software-development/writing-plans/SKILL.md",
+      "description": "Write implementation plans: bite-sized tasks, paths, code.",
+      "bytes": 7229,
+      "sha256_16": "b930d5746acc1b0c",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    },
+    {
+      "name": "yuanbao",
+      "path": "yuanbao/SKILL.md",
+      "description": "Yuanbao (\u5143\u5b9d) groups: @mention users, query info/members.",
+      "bytes": 3795,
+      "sha256_16": "239e4875f511124f",
+      "share_class": "eligible_full_copy",
+      "flags": []
+    }
+  ]
+}
