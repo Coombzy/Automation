@@ -9,6 +9,7 @@
 
 ## P0 — Ops / reliability
 
+- [x] **Pair check-in cron 2×/day (Ben 2026-07-12)** — `doc-porsche-pair-checkin` (`89e256129ba3`) · `0 10,16 * * *` · model **ollama qwen3.6:35b** · skill `fleet-pair-checkin` · deliver `#tire-shop` · audit reports `~/Desktop/Fleet-Nextcloud/Heartbeats/Fleet/pair-checkin-*.md`
 - [x] **Nextcloud host + Desktop structure (2026-07-12)** — `/Users/dochak/Desktop/Fleet-Nextcloud` seeded. Docker NC later.
 - [x] **agent-dream skill (fleet)** — local-LLM checklist skill for Doc + Porsche; shared `skills/shared/agent-dream/`; light daily + **Sunday deep**; promote/prune caps; metrics.
 - [x] **Daily backup + dream (Ben)** — cron **`doc-daily-backup-and-dream`** (`0111562255ba`) · `0 22 * * *` · script emits `DREAM_MODE=light|deep` · skills include `agent-dream` · digests `~/Desktop/Fleet-Nextcloud/Memory/Dreams/Doc/` · `#doc-garage`. Prefer local **qwen3.6:35b**.
