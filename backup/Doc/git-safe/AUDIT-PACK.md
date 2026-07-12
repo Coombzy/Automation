@@ -1,8 +1,10 @@
 # Doc Hakosuka git-safe mutual-audit pack
 
 **Agent:** Doc Hakosuka (default profile)  
-**Exported:** 2026-07-11 (UTC in inventory JSON)  
+**Exported:** 2026-07-11 (re-export after Porsche skill install; UTC in inventory JSON)  
 **Machine role:** specialist / heavy compute · local LLM host · M1 Max 64GB  
+**Adopt status:** complete — see `adopted-from-audit-2026-07-11.md`  
+
 
 ## Security
 
@@ -39,9 +41,17 @@ Full local archives (when created) stay under `backup/Doc/daily|weekly|monthly/`
 
 ## Skills snapshot
 
-**Count:** 76
+**Count:** 83 (was 76; +5 from Porsche skill-share + fleet-mutual-audit)
 
-### Doc-unique vs Porsche (high value for peer)
+### Installed from Porsche skill-share (this adopt)
+
+- `autonomous-ai-agents/project-car` — canon team/ops
+- `autonomous-ai-agents/token_preflight` — cheap token gate
+- `autonomous-ai-agents/token_optimizer` — Grok cost control
+- `hermes-multi-agent-backup` — fleet backup doctrine
+- `software-development/mission-control-development-heartbeat` — overnight coding loop pattern
+
+### Doc-unique / offered to Porsche via `skills-share/Doc/`
 
 - `autonomous-ai-agents/grok/SKILL.md` — Grok Build CLI delegation
 - `mlops/xai-model-selection/SKILL.md` — Grok / SuperGrok tier & multi-agent model selection
@@ -89,15 +99,15 @@ See JSON for full redacted structure. Secret-looking keys are `<redacted>`.
 
 ## Scripts
 
-None under `~/.hermes/scripts/` at export time.
+- `~/.hermes/scripts/daily-doc-backup.sh` (local quick archive + retention; gitignored paths only)
+- git-safe copy: `backup/Doc/git-safe/scripts/daily-doc-backup.sh`
 
-**Gap vs Porsche:** Porsche has `daily-porsche-backup.sh`. Doc should add a matching `daily-doc-backup.sh` (local full + git-safe split).
+## Cron / schedules
 
-## Cron
-
-No Hermes cron jobs scheduled at export time.
-
-**Gap:** Porsche-style heartbeat / MC development loop and daily backup cron are not installed on Doc yet.
+- No Hermes cloud/agent cron jobs (cost policy)
+- Host launchd: `ai.hermes.gateway` (Discord always-on)
+- Host launchd: `ai.hermes.doc-daily-backup` at **22:00 local** (plist present; bootstrap may need Terminal one-shot if gateway approvals block `launchctl`)
+- MC heartbeat skill installed but **not** auto-scheduled until explicit phase task
 
 ## Memory (public previews only)
 

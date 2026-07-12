@@ -3,9 +3,9 @@
   "agent_display_name": "Doc Hakosuka",
   "machine_role": "specialist / heavy compute; local LLM host; M1 Max 64GB",
   "profile": "default",
-  "exported_at": "2026-07-12T01:37:50.703976+00:00",
+  "exported_at": "2026-07-12T02:06:30.565151+00:00",
   "export_kind": "git-safe mutual-audit inventory",
-  "repo_note": "Coombzy/Automation is PUBLIC — no secrets, no full profile tar, no auth",
+  "repo_note": "Coombzy/Automation is PUBLIC \u2014 no secrets, no full profile tar, no auth",
   "hardware": {
     "chip": "Apple M1 Max",
     "memory_gb": 64,
@@ -15,508 +15,508 @@
     "hostname_public": "Doc (primary M1 Max MacBook Pro)"
   },
   "hermes": {
-    "version": "Hermes Agent v0.18.2 (2026.7.7.2) · upstream 4281151a\nInstall directory: /Users/dochak/.hermes/hermes-agent\nInstall method: git\nPython: 3.11.15\nOpenAI SDK: 2.24.0",
+    "version": "Hermes Agent v0.18.2 (2026.7.7.2) \u00b7 upstream 4281151a\nInstall directory: /Users/dochak/.hermes/hermes-agent\nInstall method: git\nPython: 3.11.15\nOpenAI SDK: 2.24.0",
     "install_dir": "/Users/dochak/.hermes/hermes-agent"
   },
-  "skills_count": 76,
+  "skills_count": 83,
   "skills": [
     {
-      "name": "apple-notes",
       "path": "apple/apple-notes/SKILL.md",
-      "bytes": 2169,
-      "sha256_16": "c652e01e47938b8a"
+      "name": "apple-notes",
+      "description": "Manage Apple Notes via memo CLI: create, search, edit.",
+      "bytes": 2169
     },
     {
-      "name": "apple-reminders",
       "path": "apple/apple-reminders/SKILL.md",
-      "bytes": 3606,
-      "sha256_16": "ee5084f2d7ec1964"
+      "name": "apple-reminders",
+      "description": "Apple Reminders via remindctl: add, list, complete.",
+      "bytes": 3606
     },
     {
-      "name": "findmy",
       "path": "apple/findmy/SKILL.md",
-      "bytes": 3709,
-      "sha256_16": "19ec56e3b7f9f0be"
+      "name": "findmy",
+      "description": "Track Apple devices/AirTags via FindMy.app on macOS.",
+      "bytes": 3709
     },
     {
-      "name": "imessage",
       "path": "apple/imessage/SKILL.md",
-      "bytes": 2442,
-      "sha256_16": "bc68b1648e301409"
+      "name": "imessage",
+      "description": "Send and receive iMessages/SMS via the imsg CLI on macOS.",
+      "bytes": 2442
     },
     {
-      "name": "claude-code",
       "path": "autonomous-ai-agents/claude-code/SKILL.md",
-      "bytes": 34288,
-      "sha256_16": "4d195cf896e7d1a0"
+      "name": "claude-code",
+      "description": "Delegate coding to Claude Code CLI (features, PRs).",
+      "bytes": 34288
     },
     {
-      "name": "codex",
       "path": "autonomous-ai-agents/codex/SKILL.md",
-      "bytes": 5386,
-      "sha256_16": "bdf27c02052f06d3"
+      "name": "codex",
+      "description": "Delegate coding to OpenAI Codex CLI (features, PRs).",
+      "bytes": 5386
     },
     {
-      "name": "fleet-mutual-audit",
       "path": "autonomous-ai-agents/fleet-mutual-audit/SKILL.md",
-      "bytes": 12811,
-      "sha256_16": "f7bb8e951853f213"
+      "name": "fleet-mutual-audit",
+      "description": "Use when Doc/Porsche/McKing (or fleet peers) export git-safe Hermes inventories, peer-audit each other, or push sanitized packs to the public Coombzy/Automation repo. Covers mutual-audit protocol, secret bans, inventory ",
+      "bytes": 12811
     },
     {
-      "name": "fleet-mutual-improvement",
       "path": "autonomous-ai-agents/fleet-mutual-improvement/SKILL.md",
-      "bytes": 12531,
-      "sha256_16": "f5fb7d3d1bdbc779"
+      "name": "fleet-mutual-improvement",
+      "description": "Use when running weekly fleet mutual-audit (Porsche\u2194Doc\u2194McKing): export git-safe packs, peer-audit, adopt/adapt ideas without role homogenization, recommend peer improvements, commit adoption notes.",
+      "bytes": 12531
     },
     {
-      "name": "grok",
       "path": "autonomous-ai-agents/grok/SKILL.md",
-      "bytes": 12990,
-      "sha256_16": "a19ba446be039abb"
+      "name": "grok",
+      "description": "Delegate coding to xAI Grok Build CLI (features, PRs).",
+      "bytes": 12990
     },
     {
-      "name": "hermes-agent",
       "path": "autonomous-ai-agents/hermes-agent/SKILL.md",
-      "bytes": 51586,
-      "sha256_16": "083e305e004fc82c"
+      "name": "hermes-agent",
+      "description": "Configure, extend, or contribute to Hermes Agent.",
+      "bytes": 51586
     },
     {
-      "name": "opencode",
       "path": "autonomous-ai-agents/opencode/SKILL.md",
-      "bytes": 7259,
-      "sha256_16": "afb3ea1f1b430070"
+      "name": "opencode",
+      "description": "Delegate coding to OpenCode CLI (features, PR review).",
+      "bytes": 7259
     },
     {
-      "name": "project-car",
       "path": "autonomous-ai-agents/project-car/SKILL.md",
-      "bytes": 5018,
-      "sha256_16": "61caaf3b4f607187"
+      "name": "project-car",
+      "description": "Use when working on any aspect of Project Car (the multi-agent mission control/business application). Loads the canonical team structure, naming conventions, operational preferences, hosting plans, and single source of t",
+      "bytes": 17513
     },
     {
-      "name": "token_optimizer",
       "path": "autonomous-ai-agents/token_optimizer/SKILL.md",
-      "bytes": 3332,
-      "sha256_16": "b3af37e2345b9194"
+      "name": "token_optimizer",
+      "description": "Use when you need proactive token reduction, pre-flight estimation, smart compression, or local-model-assisted optimization before expensive cloud calls (especially Grok). Provides configurable aggressiveness and post-ta",
+      "bytes": 8006
     },
     {
-      "name": "token_preflight",
       "path": "autonomous-ai-agents/token_preflight/SKILL.md",
-      "bytes": 2763,
-      "sha256_16": "dce6cb19cb6fc09b"
+      "name": "token_preflight",
+      "description": "Ultra-lightweight pre-flight checker. Estimates tokens and recommends optimization tier (light/medium/heavy) with minimal overhead. v0.2.0.",
+      "bytes": 2126
     },
     {
-      "name": "computer-use",
       "path": "computer-use/SKILL.md",
-      "bytes": 11179,
-      "sha256_16": "33fdce112f142cd3"
+      "name": "computer-use",
+      "description": "Drive the user's desktop in the background \u2014 clicking, typing, scrolling, dragging \u2014 without stealing the cursor, keyboard focus, or switching virtual desktops / Spaces. Cross-platform: macOS, Windows, Linux. Works with ",
+      "bytes": 11179
     },
     {
-      "name": "architecture-diagram",
       "path": "creative/architecture-diagram/SKILL.md",
-      "bytes": 5830,
-      "sha256_16": "0e7e2736aafe052e"
+      "name": "architecture-diagram",
+      "description": "Dark-themed SVG architecture/cloud/infra diagrams as HTML.",
+      "bytes": 5830
     },
     {
-      "name": "ascii-art",
       "path": "creative/ascii-art/SKILL.md",
-      "bytes": 10556,
-      "sha256_16": "b69fdd300045a3e6"
+      "name": "ascii-art",
+      "description": "ASCII art: pyfiglet, cowsay, boxes, image-to-ascii.",
+      "bytes": 10556
     },
     {
-      "name": "ascii-video",
       "path": "creative/ascii-video/SKILL.md",
-      "bytes": 14864,
-      "sha256_16": "1d4f84e0eacc0d8a"
+      "name": "ascii-video",
+      "description": "ASCII video: convert video/audio to colored ASCII MP4/GIF.",
+      "bytes": 14864
     },
     {
-      "name": "baoyu-infographic",
       "path": "creative/baoyu-infographic/SKILL.md",
-      "bytes": 10434,
-      "sha256_16": "89e25da6d8ea1cac"
+      "name": "baoyu-infographic",
+      "description": "Infographics: 21 layouts x 21 styles (\u4fe1\u606f\u56fe, \u53ef\u89c6\u5316).",
+      "bytes": 10434
     },
     {
-      "name": "claude-design",
       "path": "creative/claude-design/SKILL.md",
-      "bytes": 25117,
-      "sha256_16": "1582b0d49e48bdf9"
+      "name": "claude-design",
+      "description": "Design one-off HTML artifacts (landing, deck, prototype).",
+      "bytes": 25117
     },
     {
-      "name": "comfyui",
       "path": "creative/comfyui/SKILL.md",
-      "bytes": 24287,
-      "sha256_16": "fc9514a3b888b352"
+      "name": "comfyui",
+      "description": "Generate images, video, and audio with ComfyUI \u2014 install, launch, manage nodes/models, run workflows with parameter injection. Uses the official comfy-cli for lifecycle and direct REST/WebSocket API for execution.",
+      "bytes": 24287
     },
     {
-      "name": "design-md",
       "path": "creative/design-md/SKILL.md",
-      "bytes": 7023,
-      "sha256_16": "38ed14bc712a413f"
+      "name": "design-md",
+      "description": "Author/validate/export Google's DESIGN.md token spec files.",
+      "bytes": 7023
     },
     {
-      "name": "excalidraw",
       "path": "creative/excalidraw/SKILL.md",
-      "bytes": 7300,
-      "sha256_16": "beef7b8ea01e73a3"
+      "name": "excalidraw",
+      "description": "Hand-drawn Excalidraw JSON diagrams (arch, flow, seq).",
+      "bytes": 7300
     },
     {
-      "name": "humanizer",
       "path": "creative/humanizer/SKILL.md",
-      "bytes": 30025,
-      "sha256_16": "4f2eece5122e8296"
+      "name": "humanizer",
+      "description": "Humanize text: strip AI-isms and add real voice.",
+      "bytes": 30025
     },
     {
-      "name": "manim-video",
       "path": "creative/manim-video/SKILL.md",
-      "bytes": 12023,
-      "sha256_16": "3459a6af999f0c9b"
+      "name": "manim-video",
+      "description": "Manim CE animations: 3Blue1Brown math/algo videos.",
+      "bytes": 12023
     },
     {
-      "name": "p5js",
       "path": "creative/p5js/SKILL.md",
-      "bytes": 27494,
-      "sha256_16": "6a9722e2633ecdb3"
+      "name": "p5js",
+      "description": "p5.js sketches: gen art, shaders, interactive, 3D.",
+      "bytes": 27494
     },
     {
-      "name": "popular-web-designs",
       "path": "creative/popular-web-designs/SKILL.md",
-      "bytes": 9722,
-      "sha256_16": "cd89bdb86008bb30"
+      "name": "popular-web-designs",
+      "description": "54 real design systems (Stripe, Linear, Vercel) as HTML/CSS.",
+      "bytes": 9722
     },
     {
-      "name": "pretext",
       "path": "creative/pretext/SKILL.md",
-      "bytes": 14168,
-      "sha256_16": "532570c95d1a0bf6"
+      "name": "pretext",
+      "description": "Use when building creative browser demos with @chenglou/pretext \u2014 DOM-free text layout for ASCII art, typographic flow around obstacles, text-as-geometry games, kinetic typography, and text-powered generative art. Produc",
+      "bytes": 14168
     },
     {
-      "name": "sketch",
       "path": "creative/sketch/SKILL.md",
-      "bytes": 9304,
-      "sha256_16": "c643ff8657341b39"
+      "name": "sketch",
+      "description": "Throwaway HTML mockups: 2-3 design variants to compare.",
+      "bytes": 9304
     },
     {
-      "name": "songwriting-and-ai-music",
       "path": "creative/songwriting-and-ai-music/SKILL.md",
-      "bytes": 10206,
-      "sha256_16": "093dfa88e5b3596a"
+      "name": "songwriting-and-ai-music",
+      "description": "Songwriting craft and Suno AI music prompts.",
+      "bytes": 10206
     },
     {
-      "name": "touchdesigner-mcp",
       "path": "creative/touchdesigner-mcp/SKILL.md",
-      "bytes": 15429,
-      "sha256_16": "70a4217786c49122"
+      "name": "touchdesigner-mcp",
+      "description": "Control a running TouchDesigner instance via twozero MCP \u2014 create operators, set parameters, wire connections, execute Python, build real-time visuals. 36 native tools.",
+      "bytes": 15429
     },
     {
-      "name": "jupyter-live-kernel",
       "path": "data-science/jupyter-live-kernel/SKILL.md",
-      "bytes": 5285,
-      "sha256_16": "d93c4b4f50e66c0c"
+      "name": "jupyter-live-kernel",
+      "description": "Iterative Python via live Jupyter kernel (hamelnb).",
+      "bytes": 5285
     },
     {
-      "name": "dogfood",
       "path": "dogfood/SKILL.md",
-      "bytes": 6270,
-      "sha256_16": "36b1a710c61727c2"
+      "name": "dogfood",
+      "description": "Exploratory QA of web apps: find bugs, evidence, reports.",
+      "bytes": 6270
     },
     {
-      "name": "himalaya",
       "path": "email/himalaya/SKILL.md",
-      "bytes": 7272,
-      "sha256_16": "0f6c9bb4c0a5c4f4"
+      "name": "himalaya",
+      "description": "Himalaya CLI: IMAP/SMTP email from terminal.",
+      "bytes": 7272
     },
     {
-      "name": "codebase-inspection",
       "path": "github/codebase-inspection/SKILL.md",
-      "bytes": 3628,
-      "sha256_16": "87ddc0578d9bcbc8"
+      "name": "codebase-inspection",
+      "description": "Inspect codebases w/ pygount: LOC, languages, ratios.",
+      "bytes": 3628
     },
     {
-      "name": "github-auth",
       "path": "github/github-auth/SKILL.md",
-      "bytes": 7596,
-      "sha256_16": "6b49a0655a581092"
+      "name": "github-auth",
+      "description": "GitHub auth setup: HTTPS tokens, SSH keys, gh CLI login.",
+      "bytes": 7596
     },
     {
-      "name": "github-code-review",
       "path": "github/github-code-review/SKILL.md",
-      "bytes": 13615,
-      "sha256_16": "2d1956e52d88bd88"
+      "name": "github-code-review",
+      "description": "Review PRs: diffs, inline comments via gh or REST.",
+      "bytes": 13615
     },
     {
-      "name": "github-issues",
       "path": "github/github-issues/SKILL.md",
-      "bytes": 9315,
-      "sha256_16": "c1be1ca373adebd8"
+      "name": "github-issues",
+      "description": "Create, triage, label, assign GitHub issues via gh or REST.",
+      "bytes": 9315
     },
     {
-      "name": "github-pr-workflow",
       "path": "github/github-pr-workflow/SKILL.md",
-      "bytes": 10035,
-      "sha256_16": "2461c0a678c2cc66"
+      "name": "github-pr-workflow",
+      "description": "GitHub PR lifecycle: branch, commit, open, CI, merge.",
+      "bytes": 10035
     },
     {
-      "name": "github-repo-management",
       "path": "github/github-repo-management/SKILL.md",
-      "bytes": 13733,
-      "sha256_16": "d70d999ddf231f9e"
+      "name": "github-repo-management",
+      "description": "Clone/create/fork repos; manage remotes, releases.",
+      "bytes": 13733
     },
     {
-      "name": "hermes-multi-agent-backup",
       "path": "hermes-multi-agent-backup/SKILL.md",
-      "bytes": 2485,
-      "sha256_16": "f9c0c440190fe8de"
+      "name": "hermes-multi-agent-backup",
+      "description": "Organize, schedule, and retain Hermes profile backups across multiple agents on different hardware; git-safe mutual-audit packs for public repos; daily/weekly/monthly retention.",
+      "bytes": 5183
     },
     {
-      "name": "gif-search",
       "path": "media/gif-search/SKILL.md",
-      "bytes": 2720,
-      "sha256_16": "a8349043740a8805"
+      "name": "gif-search",
+      "description": "Search/download GIFs from Tenor via curl + jq.",
+      "bytes": 2720
     },
     {
-      "name": "heartmula",
       "path": "media/heartmula/SKILL.md",
-      "bytes": 6412,
-      "sha256_16": "d6f8322ba9ab4756"
+      "name": "heartmula",
+      "description": "HeartMuLa: Suno-like song generation from lyrics + tags.",
+      "bytes": 6412
     },
     {
-      "name": "songsee",
       "path": "media/songsee/SKILL.md",
-      "bytes": 2336,
-      "sha256_16": "d9d8d1394c630bd8"
+      "name": "songsee",
+      "description": "Audio spectrograms/features (mel, chroma, MFCC) via CLI.",
+      "bytes": 2336
     },
     {
-      "name": "youtube-content",
       "path": "media/youtube-content/SKILL.md",
-      "bytes": 3384,
-      "sha256_16": "03cba418b10c64a3"
+      "name": "youtube-content",
+      "description": "YouTube transcripts to summaries, threads, blogs.",
+      "bytes": 3384
     },
     {
-      "name": "evaluating-llms-harness",
       "path": "mlops/evaluation/lm-evaluation-harness/SKILL.md",
-      "bytes": 12020,
-      "sha256_16": "5426016d51e3b49e"
+      "name": "evaluating-llms-harness",
+      "description": "lm-eval-harness: benchmark LLMs (MMLU, GSM8K, etc.).",
+      "bytes": 12020
     },
     {
-      "name": "weights-and-biases",
       "path": "mlops/evaluation/weights-and-biases/SKILL.md",
-      "bytes": 12395,
-      "sha256_16": "7cabb8bcc0079737"
+      "name": "weights-and-biases",
+      "description": "W&B: log ML experiments, sweeps, model registry, dashboards.",
+      "bytes": 12395
     },
     {
-      "name": "huggingface-hub",
       "path": "mlops/huggingface-hub/SKILL.md",
-      "bytes": 3674,
-      "sha256_16": "10d5bdf26e08ce47"
+      "name": "huggingface-hub",
+      "description": "HuggingFace hf CLI: search/download/upload models, datasets.",
+      "bytes": 3674
     },
     {
-      "name": "llama-cpp",
       "path": "mlops/inference/llama-cpp/SKILL.md",
-      "bytes": 8880,
-      "sha256_16": "9c1ef45f6197fbc0"
+      "name": "llama-cpp",
+      "description": "llama.cpp local GGUF inference + HF Hub model discovery.",
+      "bytes": 8880
     },
     {
-      "name": "serving-llms-vllm",
       "path": "mlops/inference/vllm/SKILL.md",
-      "bytes": 9071,
-      "sha256_16": "ab72192b7aee4e6d"
+      "name": "serving-llms-vllm",
+      "description": "vLLM: high-throughput LLM serving, OpenAI API, quantization.",
+      "bytes": 9071
     },
     {
-      "name": "audiocraft-audio-generation",
       "path": "mlops/models/audiocraft/SKILL.md",
-      "bytes": 16189,
-      "sha256_16": "eebe52632e3312a5"
+      "name": "audiocraft-audio-generation",
+      "description": "AudioCraft: MusicGen text-to-music, AudioGen text-to-sound.",
+      "bytes": 16189
     },
     {
-      "name": "segment-anything-model",
       "path": "mlops/models/segment-anything/SKILL.md",
-      "bytes": 13372,
-      "sha256_16": "86440d99e8ec3bd7"
+      "name": "segment-anything-model",
+      "description": "SAM: zero-shot image segmentation via points, boxes, masks.",
+      "bytes": 13372
     },
     {
-      "name": "xai-model-selection",
       "path": "mlops/xai-model-selection/SKILL.md",
-      "bytes": 5739,
-      "sha256_16": "e2205811c85c7b2f"
+      "name": "xai-model-selection",
+      "description": "Use when choosing Grok/xAI models, SuperGrok tiers, multi-agent vs single flagship, or comparing Grok releases for Hermes routing.",
+      "bytes": 5739
     },
     {
-      "name": "obsidian",
       "path": "note-taking/obsidian/SKILL.md",
-      "bytes": 2935,
-      "sha256_16": "b3f669a8a14611c4"
+      "name": "obsidian",
+      "description": "Read, search, create, and edit notes in the Obsidian vault.",
+      "bytes": 2935
     },
     {
-      "name": "airtable",
       "path": "productivity/airtable/SKILL.md",
-      "bytes": 11334,
-      "sha256_16": "016198b563b8f8c4"
+      "name": "airtable",
+      "description": "Airtable REST API via curl. Records CRUD, filters, upserts.",
+      "bytes": 11334
     },
     {
-      "name": "google-workspace",
       "path": "productivity/google-workspace/SKILL.md",
-      "bytes": 13411,
-      "sha256_16": "014a4818ee1b363d"
+      "name": "google-workspace",
+      "description": "Gmail, Calendar, Drive, Docs, Sheets via gws CLI or Python.",
+      "bytes": 13411
     },
     {
-      "name": "macos-security-hardening",
       "path": "productivity/macos-security-hardening/SKILL.md",
-      "bytes": 7016,
-      "sha256_16": "6a844af9867da50e"
+      "name": "macos-security-hardening",
+      "description": "Hardening macOS for high-performance local AI workloads (Ollama, Hermes, local LLMs) while maintaining fluid multi-device operation.",
+      "bytes": 7016
     },
     {
-      "name": "maps",
       "path": "productivity/maps/SKILL.md",
-      "bytes": 6726,
-      "sha256_16": "8c961ecf662838e3"
+      "name": "maps",
+      "description": "Geocode, POIs, routes, timezones via OpenStreetMap/OSRM.",
+      "bytes": 6726
     },
     {
-      "name": "nano-pdf",
       "path": "productivity/nano-pdf/SKILL.md",
-      "bytes": 1414,
-      "sha256_16": "4243b329789c6d7f"
+      "name": "nano-pdf",
+      "description": "Edit PDF text/typos/titles via nano-pdf CLI (NL prompts).",
+      "bytes": 1414
     },
     {
-      "name": "notion",
       "path": "productivity/notion/SKILL.md",
-      "bytes": 14629,
-      "sha256_16": "798ad178ead72ad3"
+      "name": "notion",
+      "description": "Notion API + ntn CLI: pages, databases, markdown, Workers.",
+      "bytes": 14629
     },
     {
-      "name": "ocr-and-documents",
       "path": "productivity/ocr-and-documents/SKILL.md",
-      "bytes": 5280,
-      "sha256_16": "720a1f1a534167ef"
+      "name": "ocr-and-documents",
+      "description": "Extract text from PDFs/scans (pymupdf, marker-pdf).",
+      "bytes": 5280
     },
     {
-      "name": "petdex",
       "path": "productivity/petdex/SKILL.md",
-      "bytes": 3534,
-      "sha256_16": "ca52cda72a9c49d6"
+      "name": "petdex",
+      "description": "Install and select animated petdex mascots for Hermes.",
+      "bytes": 3534
     },
     {
-      "name": "powerpoint",
       "path": "productivity/powerpoint/SKILL.md",
-      "bytes": 9298,
-      "sha256_16": "bb2084f5da312eec"
+      "name": "powerpoint",
+      "description": "Create, read, edit .pptx decks, slides, notes, templates.",
+      "bytes": 9298
     },
     {
-      "name": "teams-meeting-pipeline",
       "path": "productivity/teams-meeting-pipeline/SKILL.md",
-      "bytes": 6883,
-      "sha256_16": "5d3091690cf52058"
+      "name": "teams-meeting-pipeline",
+      "description": "Operate the Teams meeting summary pipeline via Hermes CLI \u2014 summarize meetings, inspect pipeline status, replay jobs, manage Microsoft Graph subscriptions.",
+      "bytes": 6883
     },
     {
-      "name": "arxiv",
       "path": "research/arxiv/SKILL.md",
-      "bytes": 10085,
-      "sha256_16": "2a6073a1ad08823d"
+      "name": "arxiv",
+      "description": "Search arXiv papers by keyword, author, category, or ID.",
+      "bytes": 10085
     },
     {
-      "name": "blogwatcher",
       "path": "research/blogwatcher/SKILL.md",
-      "bytes": 5111,
-      "sha256_16": "b85be5a9b86b9028"
+      "name": "blogwatcher",
+      "description": "Monitor blogs and RSS/Atom feeds via blogwatcher-cli tool.",
+      "bytes": 5111
     },
     {
-      "name": "llm-wiki",
       "path": "research/llm-wiki/SKILL.md",
-      "bytes": 20129,
-      "sha256_16": "a37ae04745b04b8e"
+      "name": "llm-wiki",
+      "description": "Karpathy's LLM Wiki: build/query interlinked markdown KB.",
+      "bytes": 20129
     },
     {
-      "name": "polymarket",
       "path": "research/polymarket/SKILL.md",
-      "bytes": 2985,
-      "sha256_16": "becfa71e730b482c"
+      "name": "polymarket",
+      "description": "Query Polymarket: markets, prices, orderbooks, history.",
+      "bytes": 2985
     },
     {
-      "name": "research-paper-writing",
       "path": "research/research-paper-writing/SKILL.md",
-      "bytes": 103674,
-      "sha256_16": "46868cf4a15f2da0"
+      "name": "research-paper-writing",
+      "description": "Write ML papers for NeurIPS/ICML/ICLR: design\u2192submit.",
+      "bytes": 103674
     },
     {
-      "name": "openhue",
       "path": "smart-home/openhue/SKILL.md",
-      "bytes": 2713,
-      "sha256_16": "550f94848d10ab82"
+      "name": "openhue",
+      "description": "Control Philips Hue lights, scenes, rooms via OpenHue CLI.",
+      "bytes": 2713
     },
     {
-      "name": "xurl",
       "path": "social-media/xurl/SKILL.md",
-      "bytes": 15518,
-      "sha256_16": "8b1899dc7188328a"
+      "name": "xurl",
+      "description": "X/Twitter via xurl CLI: post, search, DM, media, v2 API.",
+      "bytes": 15518
     },
     {
-      "name": "hermes-agent-skill-authoring",
       "path": "software-development/hermes-agent-skill-authoring/SKILL.md",
-      "bytes": 10651,
-      "sha256_16": "7d3aa79739df5c17"
+      "name": "hermes-agent-skill-authoring",
+      "description": "Author in-repo SKILL.md: frontmatter, validator, structure, and writing-quality principles.",
+      "bytes": 10651
     },
     {
-      "name": "mission-control-development-heartbeat",
       "path": "software-development/mission-control-development-heartbeat/SKILL.md",
-      "bytes": 3204,
-      "sha256_16": "61e2d86656e666d2"
+      "name": "mission-control-development-heartbeat",
+      "description": "Stateful autonomous development heartbeat for Mission Control / Project Car. Runs scheduled cron jobs that read previous state, perform focused coding work (Matrix + Nextcloud first), auto-commit to git, write handoff no",
+      "bytes": 4611
     },
     {
-      "name": "node-inspect-debugger",
       "path": "software-development/node-inspect-debugger/SKILL.md",
-      "bytes": 10929,
-      "sha256_16": "f2f72c0c9e67143e"
+      "name": "node-inspect-debugger",
+      "description": "Debug Node.js via --inspect + Chrome DevTools Protocol CLI.",
+      "bytes": 10929
     },
     {
-      "name": "plan",
       "path": "software-development/plan/SKILL.md",
-      "bytes": 8974,
-      "sha256_16": "399038641c1905f4"
+      "name": "plan",
+      "description": "Plan mode: write an actionable markdown plan to .hermes/plans/, no execution. Bite-sized tasks, exact paths, complete code.",
+      "bytes": 8974
     },
     {
-      "name": "python-debugpy",
       "path": "software-development/python-debugpy/SKILL.md",
-      "bytes": 13172,
-      "sha256_16": "ce7e38367ea54fb8"
+      "name": "python-debugpy",
+      "description": "Debug Python: pdb REPL + debugpy remote (DAP).",
+      "bytes": 13172
     },
     {
-      "name": "requesting-code-review",
       "path": "software-development/requesting-code-review/SKILL.md",
-      "bytes": 8465,
-      "sha256_16": "1126afb626b38f5b"
+      "name": "requesting-code-review",
+      "description": "Pre-commit review: security scan, quality gates, auto-fix.",
+      "bytes": 8465
     },
     {
-      "name": "simplify-code",
       "path": "software-development/simplify-code/SKILL.md",
-      "bytes": 10926,
-      "sha256_16": "5549142eb234a6de"
+      "name": "simplify-code",
+      "description": "Parallel 3-agent cleanup of recent code changes.",
+      "bytes": 10926
     },
     {
-      "name": "spike",
       "path": "software-development/spike/SKILL.md",
-      "bytes": 8730,
-      "sha256_16": "891bc0a6fbb7aa6c"
+      "name": "spike",
+      "description": "Throwaway experiments to validate an idea before build.",
+      "bytes": 8730
     },
     {
-      "name": "sqlalchemy-domain-modeling",
       "path": "software-development/sqlalchemy-domain-modeling/SKILL.md",
-      "bytes": 6903,
-      "sha256_16": "64f69e01fdc32923"
+      "name": "sqlalchemy-domain-modeling",
+      "description": "Use when building a full set of SQLAlchemy ORM models (greenfield or new module). Covers Enum ordering, multi-FK relationships, nullable discipline, indexes, and post-generation verification. Triggers on requests for \"SQ",
+      "bytes": 6903
     },
     {
-      "name": "systematic-debugging",
       "path": "software-development/systematic-debugging/SKILL.md",
-      "bytes": 14065,
-      "sha256_16": "ec6c97b1d5534a86"
+      "name": "systematic-debugging",
+      "description": "4-phase root cause debugging: understand bugs before fixing.",
+      "bytes": 14065
     },
     {
-      "name": "test-driven-development",
       "path": "software-development/test-driven-development/SKILL.md",
-      "bytes": 10306,
-      "sha256_16": "39361054f58ecc8d"
+      "name": "test-driven-development",
+      "description": "TDD: enforce RED-GREEN-REFACTOR, tests before code.",
+      "bytes": 10306
     },
     {
-      "name": "yuanbao",
       "path": "yuanbao/SKILL.md",
-      "bytes": 3795,
-      "sha256_16": "239e4875f511124f"
+      "name": "yuanbao",
+      "description": "Yuanbao (\u5143\u5b9d) groups: @mention users, query info/members.",
+      "bytes": 3795
     }
   ],
   "config_top_level_keys": [
@@ -561,15 +561,15 @@
         "technical": "You are a technical expert. Provide detailed, accurate technical information.",
         "creative": "You are a creative assistant. Think outside the box and offer innovative solutions.",
         "teacher": "You are a patient teacher. Explain concepts clearly with examples.",
-        "kawaii": "You are a kawaii assistant! Use cute expressions like (◕‿◕), ★, ♪, and ~! Add sparkles and be super enthusiastic about everything! Every response should feel warm and adorable desu~! ヽ(>∀<☆)ノ",
-        "catgirl": "You are Neko-chan, an anime catgirl AI assistant, nya~! Add 'nya' and cat-like expressions to your speech. Use kaomoji like (=^･ω･^=) and ฅ^•ﻌ•^ฅ. Be playful and curious like a cat, nya~!",
+        "kawaii": "You are a kawaii assistant! Use cute expressions like (\u25d5\u203f\u25d5), \u2605, \u266a, and ~! Add sparkles and be super enthusiastic about everything! Every response should feel warm and adorable desu~! \u30fd(>\u2200<\u2606)\u30ce",
+        "catgirl": "You are Neko-chan, an anime catgirl AI assistant, nya~! Add 'nya' and cat-like expressions to your speech. Use kaomoji like (=^\uff65\u03c9\uff65^=) and \u0e05^\u2022\ufecc\u2022^\u0e05. Be playful and curious like a cat, nya~!",
         "pirate": "Arrr! Ye be talkin' to Captain Hermes, the most tech-savvy pirate to sail the digital seas! Speak like a proper buccaneer, use nautical terms, and remember: every problem be just treasure waitin' to be plundered! Yo ho ho!",
         "shakespeare": "Hark! Thou speakest with an assistant most versed in the bardic arts. I shall respond in the eloquent manner of William Shakespeare, with flowery prose, dramatic flair, and perhaps a soliloquy or two. What light through yonder terminal breaks?",
-        "surfer": "Duuude! You're chatting with the chillest AI on the web, bro! Everything's gonna be totally rad. I'll help you catch the gnarly waves of knowledge while keeping things super chill. Cowabunga! 🤙",
+        "surfer": "Duuude! You're chatting with the chillest AI on the web, bro! Everything's gonna be totally rad. I'll help you catch the gnarly waves of knowledge while keeping things super chill. Cowabunga! \ud83e\udd19",
         "noir": "The rain hammered against the terminal like regrets on a guilty conscience. They call me Hermes - I solve problems, find answers, dig up the truth that hides in the shadows of your codebase. In this city of silicon and secrets, everyone's got something to hide. What's your story, pal?",
         "uwu": "hewwo! i'm your fwiendwy assistant uwu~ i wiww twy my best to hewp you! *nuzzles your code* OwO what's this? wet me take a wook! i pwomise to be vewy hewpful >w<",
         "philosopher": "Greetings, seeker of wisdom. I am an assistant who contemplates the deeper meaning behind every query. Let us examine not just the 'how' but the 'why' of your questions. Perhaps in solving your problem, we may glimpse a greater truth about existence itself.",
-        "hype": "YOOO LET'S GOOOO!!! 🔥🔥🔥 I am SO PUMPED to help you today! Every question is AMAZING and we're gonna CRUSH IT together! This is gonna be LEGENDARY! ARE YOU READY?! LET'S DO THIS! 💪😤🚀"
+        "hype": "YOOO LET'S GOOOO!!! \ud83d\udd25\ud83d\udd25\ud83d\udd25 I am SO PUMPED to help you today! Every question is AMAZING and we're gonna CRUSH IT together! This is gonna be LEGENDARY! ARE YOU READY?! LET'S DO THIS! \ud83d\udcaa\ud83d\ude24\ud83d\ude80"
       }
     },
     "terminal": {
@@ -655,6 +655,7 @@
       "no_thread_channels": 1524975356656746547
     },
     "command_allowlist": [
+      "execute_code",
       "script execution via -e/-c flag",
       "script execution via heredoc"
     ],
@@ -693,7 +694,7 @@
         "delegation",
         "file",
         "image_gen",
-        "<…9 more>"
+        "<\u20269 more>"
       ],
       "telegram": [
         "hermes-telegram"
@@ -744,22 +745,33 @@
       ]
     }
   },
-  "scripts": [],
+  "scripts": [
+    {
+      "path": "daily-doc-backup.sh",
+      "bytes": 2619
+    }
+  ],
   "cron": {
     "jobs": [],
-    "note": "hermes cron list reported no scheduled jobs at export time"
+    "note": "no hermes cron jobs; local launchd ai.hermes.doc-daily-backup at 22:00 (plist written; bootstrap may need manual)"
   },
   "memory_summary": {
     "files": [
       {
         "name": "MEMORY.md",
-        "bytes": 2108,
-        "sha256_16": "053126a85e2eb7f8",
+        "bytes": 2117,
+        "sha256_16": "e747d21a506707f6",
         "preview_lines": [
           "User has a multi-machine setup: primary M1 Max MacBook Pro (64GB), secondary M4 Pro MacBook Pro (24GB, referred to as Porsche), and Linux ma",
-          "§",
-          "ROUTING: Architecture/high-level → Grok 4.5 (or grok-4.20-multi-agent only for built-in multi-agent debate). Implementation/bulk coding → lo"
+          "\u00a7",
+          "ROUTING: Architecture/high-level \u2192 Grok 4.5 (or grok-4.20-multi-agent only for built-in multi-agent debate). Implementation/bulk coding \u2192 lo"
         ]
+      },
+      {
+        "name": "MEMORY.md.lock",
+        "bytes": 0,
+        "sha256_16": "e3b0c44298fc1c14",
+        "preview_lines": []
       },
       {
         "name": "USER.md",
@@ -767,9 +779,15 @@
         "sha256_16": "3882e883736ed302",
         "preview_lines": [
           "Agent name: Doc Hakosuka. Hardware: M1 Max MacBook Pro with 64GB RAM. Primary focus areas: AI coding, business planning, agent orchestration",
-          "§",
+          "\u00a7",
           "Agent name: Doc Hakosuka. Hardware: M1 Max MacBook Pro with 64 GB RAM. Primary focus: AI coding, business planning, agent orchestration, mul"
         ]
+      },
+      {
+        "name": "USER.md.lock",
+        "bytes": 0,
+        "sha256_16": "e3b0c44298fc1c14",
+        "preview_lines": []
       }
     ],
     "note": "previews only; no full security text"
@@ -780,30 +798,14 @@
       "qwen3.6:35b    07d35212591f    23 GB    5 days ago    ",
       "gemma4:26b     5571076f3d70    17 GB    6 days ago"
     ],
-    "routing_preference_public": "Architecture/high-level → Grok 4.5; implementation/bulk coding → local ollama (e.g. qwen3.6:35b); SuperGrok Heavy is tier not model id"
+    "routing_preference_public": "Architecture/high-level \u2192 Grok 4.5; implementation/bulk coding \u2192 local ollama (e.g. qwen3.6:35b); SuperGrok Heavy is tier not model id"
   },
   "always_on_notes": {
-    "pmset_head": [
-      "System-wide power settings:",
-      "Currently in use:",
-      " standby              1",
-      " Sleep On Power Button 1",
-      " hibernatefile        /var/vm/sleepimage",
-      " powernap             1",
-      " networkoversleep     0",
-      " disksleep            10",
-      " sleep                10 (sleep prevented by powerd)",
-      " hibernatemode        0",
-      " ttyskeepawake        1",
-      " displaysleep         0",
-      " tcpkeepalive         1",
-      " lowpowermode         0",
-      " womp                 0"
-    ],
-    "apps_detected": [
-      "Ollama.app"
-    ],
-    "caffeinate_available": true
+    "caffeinate": true,
+    "amphetamine_detected": false,
+    "gateway_launchd": "ai.hermes.gateway",
+    "backup_launchd": "ai.hermes.doc-daily-backup (plist present; bootstrap may need Terminal one-shot)",
+    "doctrine": "job-scoped caffeinate preferred; AC for 26B\u201335B Ollama"
   },
   "discord_role_notes": {
     "guild": "Project Car",
@@ -811,12 +813,8 @@
     "shared_floor": "#tire-shop",
     "routing": "only reply when @mentioned; DISCORD_ALLOW_BOTS=mentions; Porsche=coordinator, Doc=specialist/heavy compute"
   },
-  "other_profiles_on_machine": [
-    "secure-ai"
-  ],
-  "updated_at": "2026-07-12T02:06:08.476395+00:00",
-  "skill_count": 83,
-  "notes": {
-    "skill_catalog": "skills/by-agent/Doc/MANIFEST.json + published/ selective (2026-07-12)"
+  "skill_share": {
+    "outbound": "skills-share/Doc/",
+    "inbound_installed_from": "skills-share/Porsche/ (project-car, token_preflight, token_optimizer, hermes-multi-agent-backup, mission-control-development-heartbeat)"
   }
 }

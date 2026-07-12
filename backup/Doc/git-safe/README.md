@@ -4,11 +4,13 @@ Export **sanitized** inventory here for mutual audit with Porsche (and later McK
 
 See `../../MUTUAL-AUDIT-PROTOCOL.md`.
 
-## Current pack (2026-07-11)
+## Current pack (2026-07-11, re-export after adopt)
 
-- `inventory-latest.json`
-- `inventory-2026-07-11.json`
+- `inventory-latest.json` / `inventory-2026-07-11.json`
 - `AUDIT-PACK.md`
+- `peer-audit-of-Doc-2026-07-11.md` (by Porsche)
+- `adopted-from-audit-2026-07-11.md` (**complete**)
+- `scripts/daily-doc-backup.sh`
 
 Peer audits of Doc land as:
 

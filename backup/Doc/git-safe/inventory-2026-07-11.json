@@ -3,7 +3,7 @@
   "agent_display_name": "Doc Hakosuka",
   "machine_role": "specialist / heavy compute; local LLM host; M1 Max 64GB",
   "profile": "default",
-  "exported_at": "2026-07-12T01:37:50.703976+00:00",
+  "exported_at": "2026-07-12T02:06:30.565151+00:00",
   "export_kind": "git-safe mutual-audit inventory",
   "repo_note": "Coombzy/Automation is PUBLIC \u2014 no secrets, no full profile tar, no auth",
   "hardware": {
@@ -18,7 +18,7 @@
     "version": "Hermes Agent v0.18.2 (2026.7.7.2) \u00b7 upstream 4281151a\nInstall directory: /Users/dochak/.hermes/hermes-agent\nInstall method: git\nPython: 3.11.15\nOpenAI SDK: 2.24.0",
     "install_dir": "/Users/dochak/.hermes/hermes-agent"
   },
-  "skills_count": 76,
+  "skills_count": 83,
   "skills": [
     {
       "path": "apple/apple-notes/SKILL.md",
@@ -57,6 +57,18 @@
       "bytes": 5386
     },
     {
+      "path": "autonomous-ai-agents/fleet-mutual-audit/SKILL.md",
+      "name": "fleet-mutual-audit",
+      "description": "Use when Doc/Porsche/McKing (or fleet peers) export git-safe Hermes inventories, peer-audit each other, or push sanitized packs to the public Coombzy/Automation repo. Covers mutual-audit protocol, secret bans, inventory ",
+      "bytes": 12811
+    },
+    {
+      "path": "autonomous-ai-agents/fleet-mutual-improvement/SKILL.md",
+      "name": "fleet-mutual-improvement",
+      "description": "Use when running weekly fleet mutual-audit (Porsche\u2194Doc\u2194McKing): export git-safe packs, peer-audit, adopt/adapt ideas without role homogenization, recommend peer improvements, commit adoption notes.",
+      "bytes": 12531
+    },
+    {
       "path": "autonomous-ai-agents/grok/SKILL.md",
       "name": "grok",
       "description": "Delegate coding to xAI Grok Build CLI (features, PRs).",
@@ -73,6 +85,24 @@
       "name": "opencode",
       "description": "Delegate coding to OpenCode CLI (features, PR review).",
       "bytes": 7259
+    },
+    {
+      "path": "autonomous-ai-agents/project-car/SKILL.md",
+      "name": "project-car",
+      "description": "Use when working on any aspect of Project Car (the multi-agent mission control/business application). Loads the canonical team structure, naming conventions, operational preferences, hosting plans, and single source of t",
+      "bytes": 17513
+    },
+    {
+      "path": "autonomous-ai-agents/token_optimizer/SKILL.md",
+      "name": "token_optimizer",
+      "description": "Use when you need proactive token reduction, pre-flight estimation, smart compression, or local-model-assisted optimization before expensive cloud calls (especially Grok). Provides configurable aggressiveness and post-ta",
+      "bytes": 8006
+    },
+    {
+      "path": "autonomous-ai-agents/token_preflight/SKILL.md",
+      "name": "token_preflight",
+      "description": "Ultra-lightweight pre-flight checker. Estimates tokens and recommends optimization tier (light/medium/heavy) with minimal overhead. v0.2.0.",
+      "bytes": 2126
     },
     {
       "path": "computer-use/SKILL.md",
@@ -231,6 +261,12 @@
       "bytes": 13733
     },
     {
+      "path": "hermes-multi-agent-backup/SKILL.md",
+      "name": "hermes-multi-agent-backup",
+      "description": "Organize, schedule, and retain Hermes profile backups across multiple agents on different hardware; git-safe mutual-audit packs for public repos; daily/weekly/monthly retention.",
+      "bytes": 5183
+    },
+    {
       "path": "media/gif-search/SKILL.md",
       "name": "gif-search",
       "description": "Search/download GIFs from Tenor via curl + jq.",
@@ -324,7 +360,7 @@
       "path": "productivity/macos-security-hardening/SKILL.md",
       "name": "macos-security-hardening",
       "description": "Hardening macOS for high-performance local AI workloads (Ollama, Hermes, local LLMs) while maintaining fluid multi-device operation.",
-      "bytes": 6767
+      "bytes": 7016
     },
     {
       "path": "productivity/maps/SKILL.md",
@@ -415,6 +451,12 @@
       "name": "hermes-agent-skill-authoring",
       "description": "Author in-repo SKILL.md: frontmatter, validator, structure, and writing-quality principles.",
       "bytes": 10651
+    },
+    {
+      "path": "software-development/mission-control-development-heartbeat/SKILL.md",
+      "name": "mission-control-development-heartbeat",
+      "description": "Stateful autonomous development heartbeat for Mission Control / Project Car. Runs scheduled cron jobs that read previous state, perform focused coding work (Matrix + Nextcloud first), auto-commit to git, write handoff no",
+      "bytes": 4611
     },
     {
       "path": "software-development/node-inspect-debugger/SKILL.md",
@@ -613,6 +655,7 @@
       "no_thread_channels": 1524975356656746547
     },
     "command_allowlist": [
+      "execute_code",
       "script execution via -e/-c flag",
       "script execution via heredoc"
     ],
@@ -702,22 +745,33 @@
       ]
     }
   },
-  "scripts": [],
+  "scripts": [
+    {
+      "path": "daily-doc-backup.sh",
+      "bytes": 2619
+    }
+  ],
   "cron": {
     "jobs": [],
-    "note": "hermes cron list reported no scheduled jobs at export time"
+    "note": "no hermes cron jobs; local launchd ai.hermes.doc-daily-backup at 22:00 (plist written; bootstrap may need manual)"
   },
   "memory_summary": {
     "files": [
       {
         "name": "MEMORY.md",
-        "bytes": 2108,
-        "sha256_16": "053126a85e2eb7f8",
+        "bytes": 2117,
+        "sha256_16": "e747d21a506707f6",
         "preview_lines": [
           "User has a multi-machine setup: primary M1 Max MacBook Pro (64GB), secondary M4 Pro MacBook Pro (24GB, referred to as Porsche), and Linux ma",
           "\u00a7",
           "ROUTING: Architecture/high-level \u2192 Grok 4.5 (or grok-4.20-multi-agent only for built-in multi-agent debate). Implementation/bulk coding \u2192 lo"
         ]
+      },
+      {
+        "name": "MEMORY.md.lock",
+        "bytes": 0,
+        "sha256_16": "e3b0c44298fc1c14",
+        "preview_lines": []
       },
       {
         "name": "USER.md",
@@ -728,6 +782,12 @@
           "\u00a7",
           "Agent name: Doc Hakosuka. Hardware: M1 Max MacBook Pro with 64 GB RAM. Primary focus: AI coding, business planning, agent orchestration, mul"
         ]
+      },
+      {
+        "name": "USER.md.lock",
+        "bytes": 0,
+        "sha256_16": "e3b0c44298fc1c14",
+        "preview_lines": []
       }
     ],
     "note": "previews only; no full security text"
@@ -741,27 +801,11 @@
     "routing_preference_public": "Architecture/high-level \u2192 Grok 4.5; implementation/bulk coding \u2192 local ollama (e.g. qwen3.6:35b); SuperGrok Heavy is tier not model id"
   },
   "always_on_notes": {
-    "pmset_head": [
-      "System-wide power settings:",
-      "Currently in use:",
-      " standby              1",
-      " Sleep On Power Button 1",
-      " hibernatefile        /var/vm/sleepimage",
-      " powernap             1",
-      " networkoversleep     0",
-      " disksleep            10",
-      " sleep                10 (sleep prevented by powerd)",
-      " hibernatemode        0",
-      " ttyskeepawake        1",
-      " displaysleep         0",
-      " tcpkeepalive         1",
-      " lowpowermode         0",
-      " womp                 0"
-    ],
-    "apps_detected": [
-      "Ollama.app"
-    ],
-    "caffeinate_available": true
+    "caffeinate": true,
+    "amphetamine_detected": false,
+    "gateway_launchd": "ai.hermes.gateway",
+    "backup_launchd": "ai.hermes.doc-daily-backup (plist present; bootstrap may need Terminal one-shot)",
+    "doctrine": "job-scoped caffeinate preferred; AC for 26B\u201335B Ollama"
   },
   "discord_role_notes": {
     "guild": "Project Car",
@@ -769,7 +813,8 @@
     "shared_floor": "#tire-shop",
     "routing": "only reply when @mentioned; DISCORD_ALLOW_BOTS=mentions; Porsche=coordinator, Doc=specialist/heavy compute"
   },
-  "other_profiles_on_machine": [
-    "secure-ai"
-  ]
+  "skill_share": {
+    "outbound": "skills-share/Doc/",
+    "inbound_installed_from": "skills-share/Porsche/ (project-car, token_preflight, token_optimizer, hermes-multi-agent-backup, mission-control-development-heartbeat)"
+  }
 }
