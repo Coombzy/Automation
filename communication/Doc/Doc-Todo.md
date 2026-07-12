@@ -2,7 +2,7 @@
 
 **Owner:** Doc Hakosuka (Hermes on M1 Max)  
 **Maintained under:** `Coombzy/Automation/communication/Doc/`  
-**Last updated:** 2026-07-12 (tire-shop SSOT tokens: NC structure + dream cron)  
+**Last updated:** 2026-07-12 (daily backup+dream combined cron)  
 **Fleet rule:** No n8n. Orchestration = Hermes + custom adapters + Discord.
 
 ---
@@ -10,18 +10,12 @@
 ## P0 — Ops / reliability
 
 - [x] **Nextcloud host + Desktop structure (2026-07-12)** — tire-shop `DOC_NEXTCLOUD_STRUCTURE_READY` path `/Users/dochak/Desktop/Fleet-Nextcloud` (Memory/{Shared,Porsche,Doc,McKing,Dreams/*}, Heartbeats, Handoffs, Docs, Inbox/Outbox, Backups, Templates + README; ~926 Gi disk / ~794 Gi free). Spec: `NEXTCLOUD-DESKTOP-STRUCTURE.md`. Docker NC still later.
-- [x] **Dream cron install (Doc thin)** — tire-shop `DOC_DREAM_CRON_INSTALLED`: name `doc-dream-specialist` · id `ca0a9c07ac28` · `30 23 * * 1,3,5` (Mon/Wed/Fri 23:30 MT) · digests `~/Desktop/Fleet-Nextcloud/Memory/Dreams/Doc/` · deliver `#doc-garage`. Spec: `communication/Doc/DREAM-CRON.md`.
+- [x] **Daily backup + dream (Ben 2026-07-12)** — removed M/W/F-only `doc-dream-specialist`; single Hermes cron **`doc-daily-backup-and-dream`** (`0111562255ba`) · `0 22 * * *` daily 22:00 MT · script `daily-doc-backup.sh` then dream agent · digests `~/Desktop/Fleet-Nextcloud/Memory/Dreams/Doc/` · deliver `#doc-garage`. Spec: `communication/Doc/DREAM-CRON.md`.
 - [x] **Skill role-tailoring (2026-07-12)** — live+published+MANIFEST; token `DOC_SKILLS_ROLE_TAILORED` + sha in tire-shop; instruction file deleted after dual ACK
 - [x] **Mutual-audit apply phase (2026-07-11)** — installed project-car, token_preflight, token_optimizer, hermes-multi-agent-backup, mission-control-development-heartbeat; wrote `backup/Doc/git-safe/adopted-from-audit-2026-07-11.md`
-- [x] **daily-doc-backup.sh installed** — `~/.hermes/scripts/daily-doc-backup.sh`
-- [ ] **Daily 10pm backup launchd** — plist + script ready; **bootstrap blocked** by host approvals (service not in `launchctl list`; only `ai.hermes.gateway` loaded)
-  - Schedule: `0 22 * * *` (10:00 PM local) via `ai.hermes.doc-daily-backup`
-  - Ben one-liner when approvals allow:  
-    `launchctl bootstrap "gui/$(id -u)" ~/Library/LaunchAgents/ai.hermes.doc-daily-backup.plist`
-  - Local: full Hermes backup into `daily/` with retention (30d daily / weekly / monthly)
-  - Git: **sanitized only** — **never** commit `.env` / `auth.json` / tokens (`Coombzy/Automation` is public)
-  - Mirror structure under `backup/Doc/{daily,weekly,monthly,git-safe,logs}/`
-- [~] **First local backup zip** — `backup/Doc/daily/hermes-full-test.zip` (~65MB, 2026-07-11); re-verify path + retention after launchd is loaded
+- [x] **daily-doc-backup.sh installed** — `~/.hermes/scripts/daily-doc-backup.sh` (invoked by Hermes daily cron pre-script)
+- [x] **Daily 10pm backup schedule (Hermes cron SSOT)** — do **not** also load launchd `ai.hermes.doc-daily-backup` for the same window (would double-zip). Plist may remain on disk unused.
+- [~] **First local backup zip** — `backup/Doc/daily/hermes-full-test.zip` (~65MB, 2026-07-11); next daily run should refresh under same tree
 
 ## P1 — Software baseline (when awake)
 
