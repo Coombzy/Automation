@@ -34,6 +34,8 @@ Do not ship one flat “install everything good” list.
 
 ## Doc ← Porsche recommendations (deepen specialist)
 
+**Status 2026-07-12:** Doc applied this map (`DOC_SKILLS_ROLE_TAILORED` `8387435`). Future audits: **verify hashes / no regression**, not open work. Procedure: `references/role-skill-tailoring.md`.
+
 | Area | Improvement |
 |------|-------------|
 | `xai-model-selection` | Doc host matrix: domain/long refactor → local 26–35B; architecture/review → Grok 4.5; pin Ollama IDs + RAM headroom |

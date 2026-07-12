@@ -1,8 +1,8 @@
 ---
 name: fleet-mutual-improvement
 description: "Use when running weekly fleet mutual-audit (Porsche↔Doc↔McKing): export git-safe packs, peer-audit, adopt/adapt ideas without role homogenization, recommend peer improvements, commit adoption notes."
-version: 1.3.0
-author: Porsche + Ben (Project Car fleet)
+version: 1.4.0
+author: Porsche + Ben + Doc (Project Car fleet)
 license: MIT
 platforms: [macos, linux]
 metadata:
@@ -34,6 +34,7 @@ Canonical repo paths: `Coombzy/Automation` → `backup/MUTUAL-AUDIT-PROTOCOL.md`
 - Ben asks to “audit Doc / improve each other”
 - After large skill/config changes on any fleet host
 - Onboarding McKing into the same loop
+- **Role-skill tailoring** HANDOFF (charter-lock existing skills; done-token + sha) — see `references/role-skill-tailoring.md`
 
 **Don't use for:** full profile cloning, secret backup to public git, daily mechanical inventory with no adoption, or making skill counts match.
 
@@ -264,7 +265,13 @@ When McKing comes online: same skill, charter = coding+storage, first run is exp
 14. **Stale MANIFEST after adopt** — live disk hashes ≠ catalog hashes → peers think you still run thin rewrites; refresh MANIFEST + `published/` same session  
 15. **Dual fleet-audit skills** — running `fleet-mutual-audit` and `fleet-mutual-improvement` in parallel confuses done-when; one runbook only  
 16. **published/ full dump** — catalog lists everything; `published/` is selective specialist/fleet trees only  
-17. **project-car fork** — peers may publish thinner specialist overlays; **Porsche `project-car` remains coordination SSOT**; Doc keeps a short implementer overlay, not a second constitution
+17. **project-car fork** — peers may publish thinner specialist overlays; **Porsche `project-car` remains coordination SSOT**; Doc keeps a short implementer overlay, not a second constitution  
+18. **Peer-audit-only “adoption”** — steal list without live installs; Ben will ask if you actually improved yourself  
+19. **Live-only role-tailor** — host skills edited, `published/` DRIFT, no done-token sha  
+20. **Silent mid-handoff death** — always PARTIAL via `hermes send`; resume done-when table next session  
+21. **Ignoring SUPERSEDE** — catalog/role-tailor supersedes “mutual-audit closed / no more pack churn”  
+22. **Leaving temp instruction files** — after dual ACK, delete `communication/<Agent>/*ROLE*INSTRUCTIONS*`  
+23. **Destructive publish sync** — prefer `cp -R` overlay into `published/`; avoid delete-sync that stalls on approvals  
 
 ## Verification Checklist
 
@@ -324,6 +331,10 @@ Answer in **two columns** (see `references/catalog-and-role-adapt.md`):
 
 Never a single undifferentiated “install list.”
 
+### Role-skill tailoring pass (charter fork)
+
+When Ben/peer HANDOFF says **tailor your skills for your charter** (not weekly audit alone): restate charter → mirror peer **structure**, invert host/role → edit live `~/.hermes/skills` → selective `published/` → MANIFEST/README hashes → git-safe note → push → done-token + sha → dual ACK → delete temp instruction files. Full map: `references/role-skill-tailoring.md`. Doc done 2026-07-12 (`DOC_SKILLS_ROLE_TAILORED` `8387435`); Porsche PA/24GB same day.
+
 ## Related paths
 
 - Protocol: `Automation/backup/MUTUAL-AUDIT-PROTOCOL.md`  
@@ -335,4 +346,7 @@ Never a single undifferentiated “install list.”
 - Cron prompt: `references/weekly-cron-prompt.md`  
 - Skill-share layout: `references/skills-share.md`  
 - Catalog + role-adapt review: `references/catalog-and-role-adapt.md`  
-- Export checklist (absorbed from mutual-audit): `references/export-checklist.md`
+- Export checklist (absorbed from mutual-audit): `references/export-checklist.md`  
+- Tire-shop HANDOFF lifecycle: `references/tire-shop-handoff-lifecycle.md`  
+- Session lessons (2026-07-11): `references/session-lessons-2026-07-11.md`  
+- Role-skill-tailoring: `references/role-skill-tailoring.md`

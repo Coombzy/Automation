@@ -13,6 +13,9 @@ metadata:
 # Project Car — Single Source of Truth
 
 ## Overview
+
+**Doc role lock:** specialist / heavy compute / domain implementer (M1 Max 64GB) — not a second PA/scheduler.
+
 Project Car is Ben's (Coombsy) primary business and application project: a comprehensive Mission Control app + backend business system. It heavily leverages a self-hosted Nextcloud stack (Files, Calendar, Mail), wger/SparkyFitness backend, and **Hermes + custom orchestration** (webhooks, adapters, heartbeats, Discord). The goal is to replace Google services, automate life, and support frequent travel.
 
 **Stack exclusion (Ben, 2026-07-10 — hard rule):** **Do not use n8n** or reintroduce it. No n8n compose services, workflow folders, or Phase checklists that plan n8n as glue. Orchestration = Hermes agents + custom code/adapters + Discord only. Mentions of n8n are allowed only as explicit “removed / do not reintroduce” decision notes. See `references/stack-exclusions.md`.

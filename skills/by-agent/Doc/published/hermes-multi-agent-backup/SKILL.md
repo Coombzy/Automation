@@ -68,15 +68,17 @@ Porsche-backup/agents/<agent>/{daily,weekly,monthly}/
 - **>90 days**: monthly (1sts) in `monthly/`
 
 ### Script responsibilities
-1. `mkdir -p` target dirs
-2. `hermes profile export <profile> -o …/daily/hermes-<agent>-backup-YYYY-MM-DD.tar.gz`
+1. `mkdir -p` target dirs (daily/weekly/monthly/logs **before** backup)
+2. Create a durable archive in the daily folder
 3. Apply retention (portable GNU vs BSD `date`)
 4. Log; stay idempotent
+
+**CLI detail:** `references/hermes-backup-cli.md` — use full `hermes backup -o` for daily zips; `--quick` is state-snapshots only.
 
 ### Cron
 Each **machine** runs its own job (jobs do not hop hosts). Fleet target: **10pm local** (`0 22 * * *`) when online. Prefer `no_agent=true` shell scripts for pure backup ticks. Cloud-cost policy (Project Car): pause cloud-dependent agent crons until local LLM ready — pure backup scripts are fine.
 
-**Doc:** use launchd label `ai.hermes.doc-daily-backup` + `daily-doc-backup.sh` (full/quick into gitignored `daily/` with retention; git-safe inventory only for public repo).
+**Doc:** use launchd label `ai.hermes.doc-daily-backup` + `daily-doc-backup.sh` (**full** backup into gitignored `daily/` with retention; git-safe inventory only for public repo).
 
 ## Git-safe mutual audit
 
@@ -128,3 +130,4 @@ Half-fresh beats pure clone **or** pure blank.
 ## References
 - `references/mutual-audit-protocol.md` — steps + templates
 - `references/multi-agent-backup-structure.md` — early private tree notes
+- `references/hermes-backup-cli.md` — full vs `--quick` backup; Doc daily script contract
