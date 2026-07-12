@@ -34,7 +34,7 @@ Do not ship one flat “install everything good” list.
 
 ## Doc ← Porsche recommendations (deepen specialist)
 
-**Status 2026-07-12:** Doc applied this map (`DOC_SKILLS_ROLE_TAILORED` `8387435`). Future audits: **verify hashes / no regression**, not open work. Procedure: `references/role-skill-tailoring.md`.
+**Status 2026-07-12:** Doc applied this map (`DOC_SKILLS_ROLE_TAILORED` `0823a01`). Future audits: **verify hashes / no regression**, not open work. Procedure: `references/role-skill-tailoring.md`.
 
 | Area | Improvement |
 |------|-------------|

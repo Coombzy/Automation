@@ -1,6 +1,6 @@
 {
   "agent": "Porsche",
-  "updated_at": "2026-07-12T02:16:14.328685+00:00",
+  "updated_at": "2026-07-12T02:34:09Z",
   "skills_root_note": "~/.hermes/skills on agent host",
   "count": 101,
   "policy": "MANIFEST is public catalog. Full SKILL.md copies only under by-agent/<Agent>/published/ when share_class allows and agent opts in (or weekly mutual-improvement promotes them).",
@@ -76,8 +76,8 @@
       "name": "fleet-mutual-improvement",
       "path": "autonomous-ai-agents/fleet-mutual-improvement/SKILL.md",
       "description": "Use when running weekly fleet mutual-audit (Porsche\u2194Doc\u2194McKing): export git-safe packs, peer-audit, adopt/adapt ideas without role homogenization, recommend peer improvements, commit adoption notes.",
-      "bytes": 17727,
-      "sha256_16": "8b3e432eaa95a75a",
+      "bytes": 19312,
+      "sha256_16": "c77013651a3e823e",
       "share_class": "eligible_full_copy",
       "flags": []
     },

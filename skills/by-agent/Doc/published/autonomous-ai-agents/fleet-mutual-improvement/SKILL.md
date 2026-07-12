@@ -333,7 +333,7 @@ Never a single undifferentiated “install list.”
 
 ### Role-skill tailoring pass (charter fork)
 
-When Ben/peer HANDOFF says **tailor your skills for your charter** (not weekly audit alone): restate charter → mirror peer **structure**, invert host/role → edit live `~/.hermes/skills` → selective `published/` → MANIFEST/README hashes → git-safe note → push → done-token + sha → dual ACK → delete temp instruction files. Full map: `references/role-skill-tailoring.md`. Doc done 2026-07-12 (`DOC_SKILLS_ROLE_TAILORED` `8387435`); Porsche PA/24GB same day.
+When Ben/peer HANDOFF says **tailor your skills for your charter** (not weekly audit alone): restate charter → mirror peer **structure**, invert host/role → edit live `~/.hermes/skills` → selective `published/` → MANIFEST/README hashes → git-safe note → push → done-token + sha → dual ACK → delete temp instruction files. Full map: `references/role-skill-tailoring.md`. Doc done 2026-07-12 (`DOC_SKILLS_ROLE_TAILORED` `0823a01`, supersedes `8387435`); Porsche PA/24GB same day (`fef439c`).
 
 ## Related paths
 

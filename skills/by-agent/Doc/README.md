@@ -18,7 +18,7 @@ This is a **catalog** (name, path, description, hash). Full bodies for fleet sha
 | `claude-code` | `autonomous-ai-agents/claude-code/SKILL.md` | 34288 | `4d195cf896e7d1a0` | catalog_only |  |
 | `codex` | `autonomous-ai-agents/codex/SKILL.md` | 5386 | `bdf27c02052f06d3` | catalog_only |  |
 | `fleet-mutual-audit` | `autonomous-ai-agents/fleet-mutual-audit/SKILL.md` | 13206 | `ff9205aa64d2dfd5` | eligible_full_copy | yes |
-| `fleet-mutual-improvement` | `autonomous-ai-agents/fleet-mutual-improvement/SKILL.md` | 19278 | `c798807a64a75be4` | eligible_full_copy | yes |
+| `fleet-mutual-improvement` | `autonomous-ai-agents/fleet-mutual-improvement/SKILL.md` | 19312 | `c77013651a3e823e` | eligible_full_copy | yes |
 | `grok` | `autonomous-ai-agents/grok/SKILL.md` | 13471 | `3c0c356d5e74ca34` | eligible_full_copy | yes |
 | `hermes-agent` | `autonomous-ai-agents/hermes-agent/SKILL.md` | 51586 | `083e305e004fc82c` | catalog_only |  |
 | `opencode` | `autonomous-ai-agents/opencode/SKILL.md` | 7259 | `afb3ea1f1b430070` | catalog_only |  |
