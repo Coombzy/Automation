@@ -1,11 +1,45 @@
 {
   "agent": "Porsche",
-  "machine_role": "scheduler/planner + Ben PA; travel host; M4 Pro",
+  "agent_display_name": "Porsche",
+  "machine_role": "scheduler/planner + Ben PA; travel host; M4 Pro 24GB",
   "profile": "default",
-  "exported_at": "2026-07-12T01:13:43.284977+00:00",
+  "exported_at": "2026-07-12T01:46:27.253937+00:00",
   "export_kind": "git-safe mutual-audit inventory",
-  "repo_note": "Coombzy/Automation is PUBLIC \u2014 no secrets, no full profile tar, no auth",
-  "skills_count": 96,
+  "repo_note": "Coombzy/Automation is PUBLIC \u2014 no secrets, no full profile tar, no auth, no serials",
+  "hermes": {
+    "version_line": "Hermes Agent v0.18.2 (2026.7.7.2) \u00b7 upstream 4281151a"
+  },
+  "hardware": {
+    "chip": "Apple M4 Pro",
+    "memory_gb": 24,
+    "cores_note": "12 (8P+4E)",
+    "model_identifier": "Mac16,8",
+    "os": "ProductName:  macOS\nProductVersion:  26.5.1\nBuildVersion:  25F80",
+    "hostname_public": "Porsche (primary M4 Pro MacBook Pro, travel host)"
+  },
+  "local_llm": {
+    "ollama_list": [
+      "(ollama list failed: Error: timed out waiting for server to start)"
+    ],
+    "routing_preference_public": "Architecture/high-level \u2192 Grok 4.5; bulk implement \u2192 local Ollama sized for 24GB (~7B\u201314B preferred); SuperGrok Heavy is tier not model id; Doc keeps 26B\u201335B on 64GB"
+  },
+  "always_on_notes": {
+    "caffeinate_available": true,
+    "apps_detected": [
+      "Ollama.app",
+      "AlDente.app"
+    ],
+    "policy": "job-scoped caffeinate preferred; AlDente battery hold ~60% plugged; gateway service for Discord"
+  },
+  "discord_role_notes": {
+    "require_mention": true,
+    "thread_require_mention": true,
+    "bots_require_inline_mention": true,
+    "no_thread_channels": "1524975356656746547",
+    "home": "#porsche-garage",
+    "fleet": "#tire-shop"
+  },
+  "skills_count": 100,
   "skills": [
     {
       "path": "apple/apple-notes/SKILL.md",
@@ -50,6 +84,12 @@
       "bytes": 5386
     },
     {
+      "path": "autonomous-ai-agents/grok/SKILL.md",
+      "name": "grok",
+      "description": "Delegate coding/build work via xAI Grok CLI / Grok Build patterns from Hermes.",
+      "bytes": 1983
+    },
+    {
       "path": "autonomous-ai-agents/hermes-agent/SKILL.md",
       "name": "hermes-agent",
       "description": "Configure, extend, or contribute to Hermes Agent.",
@@ -65,7 +105,7 @@
       "path": "autonomous-ai-agents/project-car/SKILL.md",
       "name": "project-car",
       "description": "Use when working on any aspect of Project Car (the multi-agent mission control/business application). Loads the canonical team structure, naming conventions, operational preferences, hosting plans, an",
-      "bytes": 16077
+      "bytes": 17513
     },
     {
       "path": "autonomous-ai-agents/token_optimizer/SKILL.md",
@@ -286,8 +326,8 @@
     {
       "path": "hermes-multi-agent-backup/SKILL.md",
       "name": "hermes-multi-agent-backup",
-      "description": "Organize, schedule, and retain Hermes profile backups across multiple agents on different hardware with daily/weekly/monthly retention policies.",
-      "bytes": 3459
+      "description": "Organize, schedule, and retain Hermes profile backups across multiple agents on different hardware; git-safe mutual-audit packs for public repos; daily/weekly/monthly retention.",
+      "bytes": 5183
     },
     {
       "path": "mcp/native-mcp/SKILL.md",
@@ -380,6 +420,12 @@
       "bytes": 15220
     },
     {
+      "path": "mlops/xai-model-selection/SKILL.md",
+      "name": "xai-model-selection",
+      "description": "Choose Grok / SuperGrok tiers and multi-agent model routing correctly (tier \u2260 model ID).",
+      "bytes": 2635
+    },
+    {
       "path": "note-taking/obsidian/SKILL.md",
       "name": "obsidian",
       "description": "Read, search, create, and edit notes in the Obsidian vault.",
@@ -402,6 +448,12 @@
       "name": "linear",
       "description": "Linear: manage issues, projects, teams via GraphQL + curl.",
       "bytes": 14782
+    },
+    {
+      "path": "productivity/macos-security-hardening/SKILL.md",
+      "name": "macos-security-hardening",
+      "description": "Harden macOS for local AI / Hermes travel hosts without killing performance.",
+      "bytes": 2835
     },
     {
       "path": "productivity/maps/SKILL.md",
@@ -548,6 +600,12 @@
       "bytes": 8730
     },
     {
+      "path": "software-development/sqlalchemy-domain-modeling/SKILL.md",
+      "name": "sqlalchemy-domain-modeling",
+      "description": "Design full SQLAlchemy ORM domain model sets for Project Car / multi-module apps.",
+      "bytes": 3237
+    },
+    {
       "path": "software-development/subagent-driven-development/SKILL.md",
       "name": "subagent-driven-development",
       "description": "Execute plans via delegate_task subagents (2-stage review).",
@@ -590,7 +648,7 @@
       "bytes": 3132
     }
   ],
-  "config_keys": [
+  "config_top_level_keys": [
     "_config_version",
     "agent",
     "approvals",
@@ -1391,7 +1449,7 @@
           "chars": 155
         },
         {
-          "preview": "[REDACTED: security-sensitive note present locally]",
+          "preview": "[REDACTED: sensitive]",
           "chars": 140
         },
         {
@@ -1468,22 +1526,13 @@
       ]
     }
   },
-  "soul_present": true,
-  "cron_note": "Cloud crons paused until local LLM ready; no active hermes cron list at export time",
-  "unique_strengths_claimed": [
-    "Fleet coordination + Discord PA",
-    "Project Car / Mission Control ops continuity",
-    "GitHub Automation todos as source of truth",
-    "Stateful development heartbeats preference",
-    "Shopping research with Canada/Calgary pricing",
-    "Multi-agent backup conventions",
-    "hermes-agent + software-dev skill depth"
-  ],
-  "wants_from_peer_audit": [
-    "Doc local model / MLX / Ollama workflows",
-    "Heavy long-running research patterns",
-    "Any Doc-only skills or scripts",
-    "macOS always-on / sleep handling tricks",
-    "Token/cost discipline for heavy models"
+  "cron": "Cloud crons paused until local LLM fleet ready; backup script present locally",
+  "adopted_from_doc_2026_07_11": [
+    "xai-model-selection skill",
+    "macos-security-hardening skill",
+    "sqlalchemy-domain-modeling skill",
+    "grok skill",
+    "architect-cloud / implement-local policy (24GB-scaled)",
+    "Doc-shaped inventory fields"
   ]
 }

@@ -1,8 +1,8 @@
 # Porsche git-safe mutual-audit pack
 
 **Agent:** Porsche (default profile)  
-**Exported:** 2026-07-11 (UTC in inventory JSON)  
-**Machine role:** scheduler / planner / Ben’s PA · M4 Pro · travel host  
+**Exported:** 2026-07-11 (re-export after Doc adoption; UTC in inventory JSON)  
+**Machine role:** scheduler / planner / Ben’s PA · M4 Pro **24GB** · travel host  
 
 ## Security
 
@@ -29,7 +29,9 @@ Full local archives stay under `backup/Porsche/daily|weekly|monthly/` (**gitigno
 
 ## Skills snapshot
 
-**Count:** 96
+**Count:** 100 (+4 adopted from Doc audit 2026-07-11)
+
+**Adopted from Doc:** `xai-model-selection`, `macos-security-hardening`, `sqlalchemy-domain-modeling`, `grok` — see `adopted-from-audit-2026-07-11.md`.
 
 Notable non-bundled / fleet-relevant paths:
 
@@ -42,7 +44,10 @@ Notable non-bundled / fleet-relevant paths:
 - `hermes-multi-agent-backup/SKILL.md` — Organize, schedule, and retain Hermes profile backups across multiple agents on different hardware with daily/weekly/monthly retention policies.
 - `software-development/hermes-agent-skill-authoring/SKILL.md` — Author in-repo SKILL.md: frontmatter, validator, structure, and writing-quality principles.
 - `software-development/mission-control-development-heartbeat/SKILL.md` — Stateful autonomous development heartbeat for Mission Control / Project Car. Runs scheduled cron jobs that read previous state, perform focused coding work (Matrix + Nextcloud first), auto-commit to g
-
+- `mlops/xai-model-selection/SKILL.md` — Grok/SuperGrok tier vs model ID + fleet routing
+- `productivity/macos-security-hardening/SKILL.md` — travel-host local AI hardening
+- `software-development/sqlalchemy-domain-modeling/SKILL.md` — Project Car ORM domain models
+- `autonomous-ai-agents/grok/SKILL.md` — Grok Build CLI delegation patterns
 
 Full list: see `inventory-latest.json` → `skills`.
 
