@@ -2,7 +2,7 @@
 
 **Owner:** Ben (Coombsy)  
 **Maintained by:** Porsche under `communication/Porsche/`  
-**Last updated:** 2026-07-11
+**Last updated:** 2026-07-11 (mutual-audit close)
 
 Things that need **Ben’s action, decision, approval, or physical presence**.
 
@@ -13,15 +13,17 @@ Things that need **Ben’s action, decision, approval, or physical presence**.
 - [ ] **Decide remote-access path for phone ↔ Porsche** (Hermes Android / Code Mater / VPN / mesh) and pair devices
 - [ ] **Security review after compromise concerns** — confirm 2FA recovery paths, password manager state, and which devices are trusted
 - [ ] **Grant / re-check macOS permissions** if Porsche hits “operation not permitted” on critical paths (Full Disk Access, Reminders, etc. as needed)
+- [ ] **Doc `approvals.mode` policy** — Porsche is already full autonomy (`off`). Confirm whether Doc (M1 Max, trusted home host) should also set `approvals.mode: off` so launchd/script bootstrap and long jobs aren’t approval-blocked. Doc will **not** flip this without your OK.
 
 ## P1 — This week / high value
 
 - [ ] **Call Capital One and get account activated**
-- [ ] **Bring Doc Hakosuka (M1 Max) online / reachable** so Porsche can connect Hermes Discord gateway and put Porsche + Doc in a shared channel
+- [x] **Bring Doc Hakosuka (M1 Max) online / reachable** — Discord + `#tire-shop` bot routing working 2026-07-11; mutual-audit packs exchanged
 - [ ] **On Doc (when awake): install Amphetamine** — keep machine awake for Hermes gateway / long model runs
 - [ ] **On Doc (when awake): install battery app** — prefer **coconutBattery** (health) and/or **AlDente** (charge limit if laptop form factor)
 - [ ] **On Doc (when awake): install Cursor if missing** — Grok build already present; Cursor for heavy coding sessions
-- [ ] **On Doc (when awake): complete Doc software baseline** (see Porsche-Todo Doc stack) — Homebrew, Hermes gateway autostart, Ollama/MLX, Tailscale, monitoring
+- [ ] **On Doc (when awake): complete Doc software baseline** (see Porsche-Todo Doc stack) — Tailscale verify, monitoring; Homebrew/gh/Ollama/gateway largely done
+- [ ] **On Doc (when awake): load 10pm backup launchd** — script ready (`daily-doc-backup.sh`); bootstrap was approval-blocked (see Doc adopted-from-audit). One Terminal pass after approvals decision.
 - [ ] **Approve Mission Control Phase 0 secrets** — strong `POSTGRES_PASSWORD` / `NEXTCLOUD_ADMIN_PASSWORD` in `mission-control/docker/.env` (don’t commit)
 - [ ] **Prove remote access from phone** to Nextcloud / Discord / agent once stack is up
 - [ ] **Confirm Matrix for Phase 1 vs Discord-only interim** (open decision)

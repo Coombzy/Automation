@@ -11,12 +11,12 @@
 
 - [x] **Mutual-audit apply phase (2026-07-11)** — installed project-car, token_preflight, token_optimizer, hermes-multi-agent-backup, mission-control-development-heartbeat; wrote `backup/Doc/git-safe/adopted-from-audit-2026-07-11.md`
 - [x] **daily-doc-backup.sh installed** — `~/.hermes/scripts/daily-doc-backup.sh`
-- [ ] **Daily 10pm backup launchd** — script ready; bootstrap still needs host approval
+- [ ] **Daily 10pm backup launchd** — script ready; bootstrap still needs host approval (see `adopted-from-audit-2026-07-11.md` plist)
   - Schedule: `0 22 * * *` (10:00 PM local) via `ai.hermes.doc-daily-backup`
   - Local: full/quick Hermes backup into `daily/` with retention (30d daily / weekly / monthly)
   - Git: **sanitized only** (manifests, inventory) — **never** commit `.env` / `auth.json` / tokens (`Coombzy/Automation` is public)
   - Mirror structure used by Porsche under `backup/Doc/{daily,weekly,monthly,git-safe,logs}/`
-- [ ] **First successful local backup zip** in gitignored `backup/Doc/daily/`
+- [~] **First local backup zip** — Doc reported ~65MB under gitignored `backup/Doc/daily/` (2026-07-11); re-verify path + retention after launchd is loaded
 
 ## P1 — Software baseline (when awake)
 

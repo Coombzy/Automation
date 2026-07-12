@@ -22,18 +22,20 @@ Work Porsche should execute autonomously (or with Ben only when blocked).
 ## P1 — Agent / fleet infrastructure
 
 - [x] **Get Doc Hakosuka online on Discord** — Hermes gateway on Doc (M1 Max); home `#doc-garage` for Doc↔Ben 1:1 (same role as `#porsche-garage` for Porsche) — **working as of 2026-07-11**
-- [x] **Fleet shared channel `#tire-shop`** — Porsche ↔ Doc can communicate (bot-to-bot path still needs `DISCORD_ALLOW_BOTS=mentions` + gateway restart on both; human @mentions work)
-- [ ] **Fleet daily 10pm backups** — scaffold `Automation/backup/{Porsche,Doc,McKing}/`; Porsche runs own 10pm cron; ensure Doc + McKing each have **their own** 10pm backup cron when online (see `communication/Doc/Doc-Todo.md`, `communication/McKing/McKing-Todo.md`)
-- [ ] **Doc software baseline (when Doc awake)** — install / verify:
+- [x] **Fleet shared channel `#tire-shop`** — bot-to-bot with `DISCORD_ALLOW_BOTS=mentions` + inline mention gate + `#tire-shop` no_thread on both hosts (2026-07-11)
+- [x] **Mutual-audit loop (Porsche ↔ Doc)** — both git-safe packs, peer audits, and `adopted-from-audit-2026-07-11.md` on GitHub (2026-07-11)
+- [ ] **Fleet daily 10pm backups** — scaffold OK; Porsche has `daily-porsche-backup.sh` + gateway launchd; Doc has script, **launchd bootstrap still open** (approval-blocked); McKing offline until Ben home
+- [ ] **Doc software baseline (when Doc awake)** — remaining:
   - Amphetamine (prevent sleep)
   - Battery app: coconutBattery (+ AlDente if MacBook form factor)
   - Cursor if not installed (Grok build already present)
-  - Homebrew + git + `gh` + `jq`
-  - Hermes gateway as background service (`hermes gateway install/start`) + `DISCORD_ALLOW_BOTS=mentions`
-  - Ollama and/or MLX for local heavy models
-  - Tailscale (or current mesh) for fleet remote access
+  - [x] Homebrew + git + `gh` + `jq` (Doc)
+  - [x] Hermes gateway as service + Discord fleet routing (Doc)
+  - [x] Ollama heavy models on Doc (`qwen3.6:35b`, `gemma4:26b`)
+  - Tailscale (or current mesh) verify for fleet remote access
   - Monitoring: Stats (free) or iStat Menus for RAM/thermal under load
   - Optional: OrbStack/Docker only if Doc will host containers (usually McKing/Porsche first)
+  - Ben decision: Doc `approvals.mode: off` (see Ben-Todo)
 - [ ] **Remote access / Hermes Android pairing support** — document + implement Ben-facing path (Code Mater bridge notes already started)
 - [ ] **Security audit + hardening on Porsche** — when Ben re-enables daily audit cron or requests manual run (cloud-dependent crons currently paused)
 - [ ] **Continue Qwen3.6-27B local model setup** (conversion + testing) on appropriate machine
