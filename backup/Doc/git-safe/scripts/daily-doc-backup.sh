@@ -60,7 +60,7 @@ fi
 # Default off for unattended cron (needs careful secret-free inventory script).
 # Manual: DOC_BACKUP_GITSAFE=1 ~/.hermes/scripts/daily-doc-backup.sh
 if [[ "${DOC_BACKUP_GITSAFE:-0}" == "1" ]]; then
-  log "git-safe export requested — run fleet-mutual-audit inventory path manually if not automated"
+  log "git-safe export requested — run fleet-mutual-improvement inventory path manually if not automated"
   if [[ -d "$CLONE/.git" ]]; then
     git -C "$CLONE" pull --ff-only >>"$LOG" 2>&1 || log "WARN: git pull failed"
   fi
