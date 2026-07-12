@@ -1,75 +1,114 @@
 ---
 name: macos-security-hardening
-description: "Harden macOS for local AI / Hermes travel hosts without killing performance."
-version: 1.0.0
-author: Porsche (adopted from Doc Hakosuka mutual-audit teachings 2026-07-11)
+description: "Hardening macOS for high-performance local AI workloads (Ollama, Hermes, local LLMs) while maintaining fluid multi-device operation."
+version: 1.1.0
+author: Doc Hakosuka
 license: MIT
-platforms: [macos]
-metadata:
-  hermes:
-    tags: [macos, security, local-ai, travel, hermes]
-    related_skills: [hermes-agent, hermes-multi-agent-backup]
 ---
 
-# macOS security hardening (local AI hosts)
+# macOS Security Hardening for AI Workloads
 
-Use on Porsche (travel M4 Pro) and when reviewing Doc/McKing Mac setups. Goal: safer local AI without destroying performance.
+Class-level skill for auditing and hardening macOS systems running local AI agents and large language models. Strong security without sacrificing unified memory performance, Metal acceleration, or agent tool access.
 
-## Principles
+## When to use
+- User asks for a security audit, hardening, lockdown, or threat review of a Mac
+- Setting up Hermes / Ollama / Tailscale on a new or reinstalled Mac
+- Post-purchase / post-repair / used-Mac hygiene
+- Before enabling Remote Login, File Sharing, or exposing local model APIs
 
-1. **Least exposure** — Ollama / local APIs bind to `127.0.0.1` by default; do not LAN-expose without Ben OK + auth.
-2. **Job-scoped stay-awake** — prefer `caffeinate` for long jobs over permanently disabling sleep.
-3. **No secrets in public git** — Automation is public; never commit `.env`, `auth.json`, profile tarballs.
-4. **Ben is decision-maker** on security changes, especially after compromise concerns.
-5. **Performance budget** — Full Disk Access / permissions issues are real on this fleet; fix permissions surgically, don’t disable SIP.
+## Core principles
+- Preserve full performance of M-series unified memory and local inference.
+- Grant AI tools (Terminal, Ollama, Hermes) necessary access (Full Disk Access) while limiting blast radius.
+- Prefer non-destructive, reversible changes. **Default = audit/report first; only apply fixes when user approves.**
+- Prioritize quick wins with zero or near-zero performance cost.
+- Write a dated report to `~/Desktop/macOS-Security-Audit-YYYY-MM-DD.md`.
 
-## Always-on recipe (safe)
+## Typical workflow
+1. **Baseline platform controls** — SIP, FileVault, Gatekeeper, firewall + stealth, Remote Login, Screen Sharing, software updates, Activation Lock / authenticated root.
+2. **Network exposure** — non-loopback TCP listeners, AirPlay (`*:5000`/`*:7000` ControlCenter), Continuity (`rapportd`), sharing services, DNS.
+3. **Tailscale / VPN** — single install only (prefer Tailscale.app on macOS), `tailscale debug prefs` (ShieldsUp, RouteAll, RunSSH), peer list, dual Homebrew vs App stacks.
+4. **AI stack surface** — Ollama bind address (must stay `127.0.0.1`), Hermes `~/.hermes` perms (secrets 600; DB/logs often wrongly 644), profiles (`secure-ai`), local providers in config.
+5. **Persistence & trust residue** — LaunchAgents/Daemons, system extensions, non-Apple kexts, TCC Full Disk Access / Accessibility / Input Monitoring.
+6. **Used-device / shop hygiene** — admin group members, orphan share points (`sharing -l`), PhoneCheck/MacDiag-class tools, unknown Bluetooth pairings.
+7. **Lock screen & recovery** — `sysadminctl -screenLock status` (flag delays ≥60s), Time Machine / backup destinations.
+8. **Report** — severity-ranked findings + do-now / this-week / optional; do not apply changes unless asked.
 
+## Do-now hardening defaults (when user approves)
 ```bash
-# Long local job (display + system idle prevention while plugged in)
-caffeinate -dims -t 7200 &   # example: 2h
+# Firewall + stealth
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate on
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setstealthmode on
 
-# Or scope to a process
-caffeinate -dims ollama serve
+# Remove common over-broad firewall allows (re-add only if needed)
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --remove /usr/bin/python3
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --remove /usr/bin/ruby
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --remove /usr/sbin/smbd
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --remove /usr/libexec/sshd-keygen-wrapper
+
+# Hermes perms
+chmod 700 ~/.hermes
+chmod 600 ~/.hermes/state.db ~/.hermes/.env ~/.hermes/auth.json ~/.hermes/config.yaml 2>/dev/null
+chmod 600 ~/.hermes/logs/*.log 2>/dev/null
+
+# One Tailscale stack (Homebrew userspace is the usual duplicate)
+brew services stop tailscale 2>/dev/null
+# optional inbound hardening:
+# tailscale set --shields-up
+
+brew analytics off
+sudo chmod 755 "/Users/Shared/SC Info" 2>/dev/null
+```
+GUI (user must click): Lock Screen → password immediately; Sharing all off; AirPlay Receiver off; Privacy → remove MacDiag/PhoneCheck; Bluetooth forget unknowns.
+
+Isolated Hermes profile:
+```bash
+hermes profile create secure-ai
 ```
 
-- Prefer **AC power** for large local models.
-- Gateway: run under **launchd/user service** so Discord survives without a GUI session.
-- Optional apps (Ben baseline): Amphetamine, coconutBattery; Porsche already has **AlDente** for battery hold ~60% when plugged.
+## High-signal checks (always run)
+```bash
+csrutil status
+fdesetup status
+spctl --status
+/usr/libexec/ApplicationFirewall/socketfilterfw --getglobalstate
+/usr/libexec/ApplicationFirewall/socketfilterfw --getstealthmode
+/usr/libexec/ApplicationFirewall/socketfilterfw --listapps
+systemsetup -getremotelogin 2>/dev/null || true
+sysadminctl -screenLock status
+lsof -iTCP -sTCP:LISTEN -P -n
+sharing -l
+dscl . -read /Groups/admin GroupMembership
+systemextensionsctl list
+kextstat 2>/dev/null | grep -v com.apple || true
+tailscale status 2>/dev/null; tailscale debug prefs 2>/dev/null | head -40
+ls -la ~/.hermes/.env ~/.hermes/auth.json ~/.hermes/state.db 2>/dev/null
+```
 
-## Local model exposure checklist
+## Pitfalls
+- **Never revoke Full Disk Access from Terminal** while Hermes/Ollama are mid-task.
+- **Do not enable Lockdown Mode** without testing AI workflows first (breaks some Continuity/web features).
+- Avoid blanket `tccutil reset All` unless ready to re-grant everything.
+- **Ollama must stay on 127.0.0.1** — never recommend `0.0.0.0` / LAN bind without auth reverse proxy. Do not put Ollama on Tailscale raw.
+- **Dual Tailscale** (App system extension + Homebrew `tailscaled --tun=userspace-networking`) is common and bad — consolidate to App.
+- **Firewall allowlist ≠ service running** — python3/ruby/smbd/sshd-wrapper may still be *allowed* incoming; remove stale allows.
+- **PhoneCheck / MacDiag residue** on used or shop-serviced Macs: orphan admin membership (`phonecheck`), guest R/W share points for deleted homes, TCC grants for `com.macdiag.app` even after app deleted. Always check `sharing -l`, admin group, FDA/Accessibility/Input Monitoring.
+- **Screen lock delay of 300s** is too long for AI laptops — require immediate or ≤60s.
+- **Hermes `state.db` and logs** often created as 644 — chmod after audits; sessions can contain paths/prompt snippets.
+- **AirPlay Receiver** shows as ControlCenter LISTEN on `*:5000` and `*:7000` — treat as LAN exposure.
+- Report may include serial/UUID — mark sensitive; do not commit to public repos.
+- **Fleet git-safe mutual audits** (`Coombzy/Automation` is public): never copy security-audit reports, serials, 2FA/recovery notes, or full `~/.hermes` dumps into `backup/*/git-safe/`. Use skill `fleet-mutual-audit` for sanitized inventories only.
+- Auth failures for the local user GUID with Remote Login Off are usually failed sudo/password prompts, not remote SSH brute force — interpret before alarming.
 
-Before any non-localhost serve:
+## AI-specific threat model (quick)
+| Threat | Mitigation |
+|---|---|
+| Prompt injection → local shell | `secure-ai` profile; supervise tool use; hard tool-loop stops on risky sessions |
+| Compromised Tailnet peer | Shields up; tight ACLs; single Tailscale install |
+| Stolen laptop | FileVault + Activation Lock + short screen lock |
+| Local model API abuse | Ollama localhost only; no unauthenticated remote bind |
+| Agent destructive actions | Backups (Time Machine / restic); separate profiles |
 
-- [ ] Ben explicit OK
-- [ ] Bind address / firewall reviewed
-- [ ] No secrets in model server logs
-- [ ] Mesh/VPN preferred over raw public port
-
-## Hermes / disk hygiene
-
-- Profile exports → gitignored `daily/weekly/monthly` only
-- git-safe inventories only in `Coombzy/Automation/backup/<Agent>/git-safe/`
-- Redact serials, hardware UUIDs, tokens from any public export
-- Keep `approvals.mode` per Ben policy (Porsche: off / full autonomy on trusted host)
-
-## Permissions (common fleet pain)
-
-If tools hit **operation not permitted**:
-
-1. System Settings → Privacy & Security → Full Disk Access (Terminal / Hermes / Python as needed)
-2. Re-check after macOS updates
-3. Prefer operating under allowed home/Documents paths when FDA is flaky
-
-## Do not
-
-- Disable SIP casually
-- Store recovery codes / 2FA material in agent memory dumps destined for public git
-- Install random “security bypass” hub skills
-- Open Ollama to `0.0.0.0` without a plan
-
-## Verification
-
-- `caffeinate` available; gateway service stable
-- Ollama only on localhost unless documented exception
-- Public Automation tree has no secrets (`git grep` / review before push)
+## References
+- `references/audit-commands.md` — full diagnostic command bank for audits
+- `references/multi-device-risks.md` — Continuity, iCloud, Tailscale, Bluetooth multi-device notes
+- `references/ai-stack-surface.md` — Hermes / Ollama / local-provider exposure checklist

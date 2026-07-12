@@ -33,6 +33,10 @@ Template sections:
 
 Subject writes `adopted-from-audit-YYYY-MM-DD.md` and pushes. Ben vetoes security-sensitive adoption.
 
+Inventory alone is not an install package. For peer-authored skills, publish/install via `Automation/skills-share/<Agent>/` (see repo `skills-share/README.md` and skill `fleet-mutual-improvement` → `references/skills-share.md`). Mark **Deferred** until `~/.hermes/skills/.../SKILL.md` exists.
+
+If `git push` fails (no auth), do not drop the loop: document blocker, offer format-patch/bundle, or have a host with write push the commit.
+
 ## What not to put on git
 
 `.env`, `auth.json`, OAuth tokens, Discord bot tokens, full `hermes profile export` archives, private chat session DBs, detailed compromise/2FA recovery notes, private keys.

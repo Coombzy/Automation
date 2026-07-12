@@ -1,6 +1,6 @@
 {
   "agent": "Porsche",
-  "updated_at": "2026-07-12T02:00:05.187284+00:00",
+  "updated_at": "2026-07-12T02:08:52.952332+00:00",
   "skills_root_note": "~/.hermes/skills on agent host",
   "count": 101,
   "policy": "MANIFEST is public catalog. Full SKILL.md copies only under by-agent/<Agent>/published/ when share_class allows and agent opts in (or weekly mutual-improvement promotes them).",
@@ -76,17 +76,17 @@
       "name": "fleet-mutual-improvement",
       "path": "autonomous-ai-agents/fleet-mutual-improvement/SKILL.md",
       "description": "Use when running weekly fleet mutual-audit (Porsche\u2194Doc\u2194McKing): export git-safe packs, peer-audit, adopt/adapt ideas without role homogenization, recommend peer improvements, commit adoption notes.",
-      "bytes": 11871,
-      "sha256_16": "f40d1a904dc21224",
+      "bytes": 14524,
+      "sha256_16": "c9cdd0c68265ec98",
       "share_class": "eligible_full_copy",
       "flags": []
     },
     {
       "name": "grok",
       "path": "autonomous-ai-agents/grok/SKILL.md",
-      "description": "Delegate coding/build work via xAI Grok CLI / Grok Build patterns from Hermes.",
-      "bytes": 1983,
-      "sha256_16": "1713cd694ffa91fd",
+      "description": "Delegate coding to xAI Grok Build CLI (features, PRs).",
+      "bytes": 12990,
+      "sha256_16": "a19ba446be039abb",
       "share_class": "eligible_full_copy",
       "flags": []
     },
@@ -223,9 +223,9 @@
       "flags": []
     },
     {
-      "name": "Heritage",
+      "name": "design-md",
       "path": "creative/design-md/SKILL.md",
-      "description": "Architectural minimalism meets journalistic gravitas.",
+      "description": "Author/validate/export Google's DESIGN.md token spec files.",
       "bytes": 7023,
       "sha256_16": "38ed14bc712a413f",
       "share_class": "eligible_full_copy",
@@ -333,7 +333,7 @@
     {
       "name": "kanban-orchestrator",
       "path": "devops/kanban-orchestrator/SKILL.md",
-      "description": "Decomposition playbook + anti-temptation rules for an orchestrator profile routing work through Kanban. The \"don't do the work yourself\" rule and the basic lifecycle are auto-injected into every kanban worker's system prompt; this skill is the deeper playbook when you're specifically playing the orc",
+      "description": "Decomposition playbook + anti-temptation rules for an orchestrator profile routing work through Kanban. The \"don't do the work yourself\" rule and the basic lifecycle are auto-injected into every kanban worker's system prompt; this skill is the deeper playbook when you're specifically playing the orchestrator role.",
       "bytes": 14105,
       "sha256_16": "c60c7fcfb64157d7",
       "share_class": "eligible_full_copy",
@@ -457,8 +457,8 @@
       "name": "hermes-multi-agent-backup",
       "path": "hermes-multi-agent-backup/SKILL.md",
       "description": "Organize, schedule, and retain Hermes profile backups across multiple agents on different hardware; git-safe mutual-audit packs for public repos; daily/weekly/monthly retention.",
-      "bytes": 5183,
-      "sha256_16": "8303a7eb2b14a8d9",
+      "bytes": 6455,
+      "sha256_16": "01092b02a0535aa9",
       "share_class": "catalog_only",
       "flags": [
         "api_key"
@@ -612,9 +612,9 @@
     {
       "name": "xai-model-selection",
       "path": "mlops/xai-model-selection/SKILL.md",
-      "description": "Choose Grok / SuperGrok tiers and multi-agent model routing correctly (tier \u2260 model ID).",
-      "bytes": 2635,
-      "sha256_16": "fd8125f7aa11f249",
+      "description": "Use when choosing Grok/xAI models, SuperGrok tiers, multi-agent vs single flagship, or comparing Grok releases for Hermes routing.",
+      "bytes": 5739,
+      "sha256_16": "e2205811c85c7b2f",
       "share_class": "catalog_only",
       "flags": [
         "api_key"
@@ -643,7 +643,7 @@
     {
       "name": "google-workspace",
       "path": "productivity/google-workspace/SKILL.md",
-      "description": "Gmail, Calendar, Drive, Docs, Sheets via gws CLI or Python.",
+      "description": "Google OAuth2 client credentials (downloaded from Google Cloud Console)",
       "bytes": 13411,
       "sha256_16": "014a4818ee1b363d",
       "share_class": "eligible_full_copy",
@@ -663,9 +663,9 @@
     {
       "name": "macos-security-hardening",
       "path": "productivity/macos-security-hardening/SKILL.md",
-      "description": "Harden macOS for local AI / Hermes travel hosts without killing performance.",
-      "bytes": 2835,
-      "sha256_16": "876c82de1d542122",
+      "description": "Hardening macOS for high-performance local AI workloads (Ollama, Hermes, local LLMs) while maintaining fluid multi-device operation.",
+      "bytes": 7016,
+      "sha256_16": "6a844af9867da50e",
       "share_class": "eligible_full_copy",
       "flags": []
     },
@@ -818,9 +818,9 @@
       "flags": []
     },
     {
-      "name": "my-skill-name               # lowercase, hyphens, \u226464 chars (MAX_NAME_LENGTH)",
+      "name": "hermes-agent-skill-authoring",
       "path": "software-development/hermes-agent-skill-authoring/SKILL.md",
-      "description": "Use when <trigger>. <one-line behavior>.",
+      "description": "Author in-repo SKILL.md: frontmatter, validator, structure, and writing-quality principles.",
       "bytes": 10651,
       "sha256_16": "7d3aa79739df5c17",
       "share_class": "eligible_full_copy",
@@ -894,9 +894,9 @@
     {
       "name": "sqlalchemy-domain-modeling",
       "path": "software-development/sqlalchemy-domain-modeling/SKILL.md",
-      "description": "Design full SQLAlchemy ORM domain model sets for Project Car / multi-module apps.",
-      "bytes": 3237,
-      "sha256_16": "c3afba91456aefa1",
+      "description": "Use when building a full set of SQLAlchemy ORM models (greenfield or new module). Covers Enum ordering, multi-FK relationships, nullable discipline, indexes, and post-generation verification. Triggers on requests for \"SQLAlchemy models\", \"ORM schema\", \"domain models\", or when fixing broken FK chains / circular enum imports.",
+      "bytes": 6903,
+      "sha256_16": "64f69e01fdc32923",
       "share_class": "eligible_full_copy",
       "flags": []
     },

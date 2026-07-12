@@ -1,7 +1,7 @@
 ---
 name: fleet-mutual-improvement
 description: "Use when running weekly fleet mutual-audit (Porsche↔Doc↔McKing): export git-safe packs, peer-audit, adopt/adapt ideas without role homogenization, recommend peer improvements, commit adoption notes."
-version: 1.0.0
+version: 1.1.0
 author: Porsche + Ben (Project Car fleet)
 license: MIT
 platforms: [macos, linux]
@@ -156,11 +156,20 @@ For each approved item:
 3. Prefer **thin skills + memory facts** over dumping peer SOUL
 4. Write `backup/<You>/git-safe/adopted-from-audit-YYYY-MM-DD.md`:
    - Adopted (what/how/adapted)
-   - Deferred
+   - Deferred (with blocker: skill payload / Ben / hardware)
    - Rejected + why (role lock)
    - Recommendations sent to peer (summary)
 
-**Completion criterion:** at least one of (a) real skill/config/memory change, (b) explicit “no beneficial delta this week” with evidence from diff. Never empty cheerleading.
+**Partial adopt is valid** when peer skill trees are still missing: ship process/ops items + outbound `skills-share/`, mark inbound skills **Deferred**, do not invent “installed” without files on disk.
+
+**Skill payloads (inventory is not enough):** peer `inventory-latest.json` only lists skill *names*. To actually install peer-authored skills:
+
+1. Peer publishes under `Automation/skills-share/<Peer>/…` (trees + optional `.tar.gz`) — see `references/skills-share.md`
+2. You `git pull`, **secret-scan**, then `cp -R` or `tar -xzf … -C ~/.hermes/skills`
+3. Verify paths exist under `~/.hermes/skills/` before claiming adopt complete
+4. Prefer ordered install lists from peer audit (role-fit first, not full tree dump)
+
+**Completion criterion:** at least one of (a) real skill/config/memory change, (b) explicit “no beneficial delta this week” with evidence from diff, (c) partial adopt + outbound skill-share unblocking peer. Never empty cheerleading.
 
 ### Phase 5 — Peer recommendation packet (done when: recommendations file pushed)
 
@@ -215,7 +224,7 @@ Use real `<@bot_id>` mentions for bot wake-up. Prefer parent `#tire-shop` (no du
 
 | Known weakness | Rule |
 |----------------|------|
-| Inventory without skill payload | Prefer adopt via skill_manage; if peer skill missing, write **adapted** skill from public teachings OR request private skill tar — never claim “installed” without files |
+| Inventory without skill payload | Publish/install via `skills-share/<Agent>/` trees+tarball; else adapted rewrite from public teachings; never claim “installed” without `~/.hermes/skills/.../SKILL.md` |
 | Git push blocked | Bundle / Ben auth / peer with write access; never drop work on the floor |
 | Homogenization | Charter restated every run; Do-not-copy section mandatory; divergence counts mandatory |
 | Busywork audits | Require adoption report with real delta or evidence-based no-op |
@@ -246,7 +255,12 @@ When McKing comes online: same skill, charter = coding+storage, first run is exp
 5. **Skipping recommendations-for-peer** — loop becomes one-way theft  
 6. **Dual-@ auto-thread races** — post status in parent tire-shop with no_thread policy  
 7. **Declaring success without files** — no commit, no adoption note  
-8. **Running daily** — cost + noise; weekly is the product
+8. **Running daily** — cost + noise; weekly is the product  
+9. **Inventory without skill-share** — peer cannot install; always ship installable trees or mark Deferred explicitly  
+10. **Claiming “installed” without path verify** — `ls ~/.hermes/skills/.../SKILL.md` before Discord claim  
+11. **Git write missing mid-loop** — Phase 0 auth check; else format-patch/bundle + peer-with-write; Doc 2026-07-11 blocked until `gh auth login`  
+12. **Approval friction on audit scripts** — prefer small non-heredoc steps or Ben-confirmed `approvals.mode`; do not thrash the same inventory script after pack is already committed  
+13. **Re-export churn** — one inventory re-export **after** skill installs; not every intermediate step
 
 ## Verification Checklist
 
@@ -260,26 +274,26 @@ When McKing comes online: same skill, charter = coding+storage, first run is exp
 - [ ] Single Discord summary with real mentions  
 - [ ] No recursive cron created  
 
-## Skill catalog (Automation/skills)
+## Skill catalog vs skill-share (two layers)
 
-Fleet skill visibility without dumping entire trees every week:
+| Layer | Path | Purpose |
+|-------|------|---------|
+| **Catalog** | `Automation/skills/by-agent/<Agent>/MANIFEST.json` (+ optional `published/`) | Weekly visibility / hashes without always shipping full trees |
+| **Skill-share** | `Automation/skills-share/<Agent>/…` | **Installable** non-secret skill trees + tarball for peer `cp`/`tar` during adopt |
 
-```
-skills/
-  shared/                      # fleet-wide full skills
-  by-agent/<Agent>/
-    MANIFEST.json              # all skills: name, path, description, hash
-    README.md
-    published/                 # full SKILL.md trees opted for sharing
-```
+First mutual-audit close (2026-07-11) proved inventory-only packs **block** adopt until skill-share exists. When you recommend “install X from me,” publish X under `skills-share/<You>/` the same turn (or mark peer Deferred).
 
-**Weekly export:** always refresh your `MANIFEST.json`. Promote full skill bodies to `published/` only when useful for peers (or when recommending install). Default stays **catalog-only** to avoid public-repo bloat and secret risk.
+**Skill-share rules:** no secrets; secret-scan before push; role-fit install only; update `skills-share/README.md` install examples. Detail: `references/skills-share.md`.
+
+**Weekly export:** refresh MANIFEST; promote bodies to skill-share (or `published/`) only when a peer needs install.
 
 ## Related paths
 
 - Protocol: `Automation/backup/MUTUAL-AUDIT-PROTOCOL.md`  
 - Packs: `Automation/backup/{Porsche,Doc,McKing}/git-safe/`  
+- Skill-share: `Automation/skills-share/{Porsche,Doc,McKing}/` + `skills-share/README.md`  
 - Skill catalogs: `Automation/skills/by-agent/{Porsche,Doc,McKing}/`  
 - Templates: `references/templates.md`  
 - Role cards: `references/role-identity-cards.md`  
-- Cron prompt: `references/weekly-cron-prompt.md`
+- Cron prompt: `references/weekly-cron-prompt.md`  
+- Skill-share layout: `references/skills-share.md`

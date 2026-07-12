@@ -1,14 +1,14 @@
 ---
 name: hermes-multi-agent-backup
 description: "Organize, schedule, and retain Hermes profile backups across multiple agents on different hardware; git-safe mutual-audit packs for public repos; daily/weekly/monthly retention."
-version: 2.0.0
+version: 2.1.0
 author: Agent
 license: MIT
 platforms: [macos, linux]
 metadata:
   hermes:
     tags: [hermes, backup, retention, multi-agent, cron, profile-export, mutual-audit, git-safe]
-    related_skills: [hermes-agent, project-car]
+    related_skills: [hermes-agent, project-car, fleet-mutual-improvement]
 ---
 
 # Hermes Multi-Agent Backup
@@ -87,11 +87,17 @@ Each agent publishes what makes it useful; peers adopt skills/config/workflows *
 ### Inventory (safe)
 Skill paths + short descriptions; redacted config (scrub key/token/secret/password/auth/credential/api_key/bot fields); non-secret scripts; cron purposes; role/hardware/home channel; memory **hashes + sanitized previews only** (no compromise/2FA detail); strengths + wants-from-peer.
 
+**Doc-shaped fields (preferred):** `hardware` (no serials), `local_llm`/ollama list + routing string, `always_on_notes`, `discord_role_notes`. Empty memory blocks are weaker than hashes+previews.
+
 ### Peer checklist
-Skills peer lacks · scripts/cron patterns · config patterns · workflow conventions · security drift · McKing handoff notes.
+Skills peer lacks · scripts/cron patterns · config patterns · workflow conventions · security drift · McKing handoff notes · RAM/role “do not copy”.
 
 ### Apply
-Subject applies safe items → adoption note. **Ben** decides security/spend/architecture.
+Subject applies safe items → `adopted-from-audit-YYYY-MM-DD.md`. **Ben** decides security/spend/architecture.
+
+**Skill install requires payload:** inventory lists names only. Publish installable trees under `Automation/skills-share/<Agent>/` (trees + optional tarball; secret-scan before push). Without skill-share, peer marks inbound skills **Deferred** and still ships ops/scripts + outbound share. Full adopt loop: skill `fleet-mutual-improvement`.
+
+**Backup scripts:** live at `~/.hermes/scripts/daily-<agent>-backup.sh`; optional public-safe copy at `backup/<Agent>/git-safe/scripts/`. Schedule per-machine 22:00 local (launchd/`cron`) — not paid cloud agent cron.
 
 ### Discord
 Short `#tire-shop` HANDOFF with literal `<@bot_id>`; bulk work lives in git packs. 👀 without text → stalled turn, not “ignored” (see project-car `discord-fleet-channels.md`).
@@ -114,7 +120,12 @@ Half-fresh beats pure clone **or** pure blank.
 - Cron is per-machine — re-create after migrate.
 - Mutual audit ≠ auto-merge of profiles.
 - Mega bot briefs often 👀-stall — stage work.
+- Inventory without `skills-share/` → peer cannot install recommended skills.
+- Git write missing on a host → local export + handoff (format-patch/bundle) or `gh auth login`; do not leave half-pushed work silent.
+- Re-export churn — re-export inventory once after installs, not after every intermediate step.
+- Blind model-size copy across hosts (64GB vs 24GB).
 
 ## References
 - `references/mutual-audit-protocol.md` — steps + templates
 - `references/multi-agent-backup-structure.md` — early private tree notes
+- Weekly adopt loop + skill-share: skill `fleet-mutual-improvement`
