@@ -109,3 +109,7 @@ This is a **catalog** (name, path, description, hash). Full bodies for fleet sha
 | Local LLM stack | llama.cpp primary GGUF; vLLM secondary/McKing |
 
 Done-when: `DOC_SKILLS_ROLE_TAILORED`
+
+## agent-dream (2026-07-12)
+
+Fleet offline consolidation skill (Doc+Porsche). Daily light + Sunday deep with backup tiers. See `skills/shared/agent-dream/` and `communication/Doc/DREAM-CRON.md`.

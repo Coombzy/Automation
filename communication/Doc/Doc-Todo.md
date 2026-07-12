@@ -2,20 +2,20 @@
 
 **Owner:** Doc Hakosuka (Hermes on M1 Max)  
 **Maintained under:** `Coombzy/Automation/communication/Doc/`  
-**Last updated:** 2026-07-12 (daily backup+dream combined cron)  
+**Last updated:** 2026-07-12 (agent-dream skill + daily light / Sunday deep)  
 **Fleet rule:** No n8n. Orchestration = Hermes + custom adapters + Discord.
 
 ---
 
 ## P0 — Ops / reliability
 
-- [x] **Nextcloud host + Desktop structure (2026-07-12)** — tire-shop `DOC_NEXTCLOUD_STRUCTURE_READY` path `/Users/dochak/Desktop/Fleet-Nextcloud` (Memory/{Shared,Porsche,Doc,McKing,Dreams/*}, Heartbeats, Handoffs, Docs, Inbox/Outbox, Backups, Templates + README; ~926 Gi disk / ~794 Gi free). Spec: `NEXTCLOUD-DESKTOP-STRUCTURE.md`. Docker NC still later.
-- [x] **Daily backup + dream (Ben 2026-07-12)** — removed M/W/F-only `doc-dream-specialist`; single Hermes cron **`doc-daily-backup-and-dream`** (`0111562255ba`) · `0 22 * * *` daily 22:00 MT · script `daily-doc-backup.sh` then dream agent · digests `~/Desktop/Fleet-Nextcloud/Memory/Dreams/Doc/` · deliver `#doc-garage`. Spec: `communication/Doc/DREAM-CRON.md`.
-- [x] **Skill role-tailoring (2026-07-12)** — live+published+MANIFEST; token `DOC_SKILLS_ROLE_TAILORED` + sha in tire-shop; instruction file deleted after dual ACK
-- [x] **Mutual-audit apply phase (2026-07-11)** — installed project-car, token_preflight, token_optimizer, hermes-multi-agent-backup, mission-control-development-heartbeat; wrote `backup/Doc/git-safe/adopted-from-audit-2026-07-11.md`
-- [x] **daily-doc-backup.sh installed** — `~/.hermes/scripts/daily-doc-backup.sh` (invoked by Hermes daily cron pre-script)
-- [x] **Daily 10pm backup schedule (Hermes cron SSOT)** — do **not** also load launchd `ai.hermes.doc-daily-backup` for the same window (would double-zip). Plist may remain on disk unused.
-- [~] **First local backup zip** — `backup/Doc/daily/hermes-full-test.zip` (~65MB, 2026-07-11); next daily run should refresh under same tree
+- [x] **Nextcloud host + Desktop structure (2026-07-12)** — `/Users/dochak/Desktop/Fleet-Nextcloud` seeded. Docker NC later.
+- [x] **agent-dream skill (fleet)** — local-LLM checklist skill for Doc + Porsche; shared `skills/shared/agent-dream/`; light daily + **Sunday deep**; promote/prune caps; metrics.
+- [x] **Daily backup + dream (Ben)** — cron **`doc-daily-backup-and-dream`** (`0111562255ba`) · `0 22 * * *` · script emits `DREAM_MODE=light|deep` · skills include `agent-dream` · digests `~/Desktop/Fleet-Nextcloud/Memory/Dreams/Doc/` · `#doc-garage`. Prefer local **qwen3.6:35b**.
+- [x] **Backup tiers** — daily zip (keep 30); **Sunday → weekly/** (keep 12); **1st → monthly/** (keep 24). Spec: `DREAM-CRON.md` + `daily-doc-backup.sh`.
+- [x] **Skill role-tailoring / mutual-audit apply** — prior handoffs closed.
+- [x] **daily-doc-backup.sh** — `~/.hermes/scripts/`; Porsche wrapper `daily-porsche-backup.sh` for peer install.
+- [x] **Hermes cron SSOT for 22:00** — do not also load launchd backup (double-zip).
 
 ## P1 — Software baseline (when awake)
 
