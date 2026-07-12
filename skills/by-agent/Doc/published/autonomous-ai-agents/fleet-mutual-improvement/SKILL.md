@@ -272,6 +272,7 @@ When McKing comes online: same skill, charter = coding+storage, first run is exp
 21. **Ignoring SUPERSEDE** — catalog/role-tailor supersedes “mutual-audit closed / no more pack churn”  
 22. **Leaving temp instruction files** — after dual ACK, delete `communication/<Agent>/*ROLE*INSTRUCTIONS*`  
 23. **Destructive publish sync** — prefer `cp -R` overlay into `published/`; avoid delete-sync that stalls on approvals  
+24. **CLI done, Discord silent** — Ben rule: every HANDOFF needs tire-shop done-token / PARTIAL / block; garage/CLI is not fleet SSOT 
 
 ## Verification Checklist
 
