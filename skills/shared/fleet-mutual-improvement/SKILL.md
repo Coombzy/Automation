@@ -260,10 +260,26 @@ When McKing comes online: same skill, charter = coding+storage, first run is exp
 - [ ] Single Discord summary with real mentions  
 - [ ] No recursive cron created  
 
+## Skill catalog (Automation/skills)
+
+Fleet skill visibility without dumping entire trees every week:
+
+```
+skills/
+  shared/                      # fleet-wide full skills
+  by-agent/<Agent>/
+    MANIFEST.json              # all skills: name, path, description, hash
+    README.md
+    published/                 # full SKILL.md trees opted for sharing
+```
+
+**Weekly export:** always refresh your `MANIFEST.json`. Promote full skill bodies to `published/` only when useful for peers (or when recommending install). Default stays **catalog-only** to avoid public-repo bloat and secret risk.
+
 ## Related paths
 
 - Protocol: `Automation/backup/MUTUAL-AUDIT-PROTOCOL.md`  
 - Packs: `Automation/backup/{Porsche,Doc,McKing}/git-safe/`  
+- Skill catalogs: `Automation/skills/by-agent/{Porsche,Doc,McKing}/`  
 - Templates: `references/templates.md`  
 - Role cards: `references/role-identity-cards.md`  
 - Cron prompt: `references/weekly-cron-prompt.md`
