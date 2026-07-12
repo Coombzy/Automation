@@ -41,23 +41,26 @@ Community sometimes memes "4.20" for 4.5. That is not the model ID.
 
 Story: efficiency / $/task (list $2/$6 + fewer tokens) more than pure #1 pass rates. A/B on real workloads.
 
-## vs local Qwen3-Coder (Ben’s Mac)
+## vs local open models (fleet hosts)
 
-| Variant | Fits M1 Max 64GB? | vs Grok 4.5 coding |
+| Host | Local bulk class | vs Grok 4.5 coding |
 |---|---|---|
-| Qwen3-Coder 30B A3B / qwen3.6:35b | Yes (sweet spot) | Clearly weaker agentically; fine as implementer under Grok plans |
-| Qwen3-Coder-Next ~80B-A3B | Maybe if quantized | Stronger open; still not full 4.5 agent class |
-| Qwen3-Coder 480B A35B | No (server/API) | Closer on classic SWE Verified; usually trails 4.5 on hard agent suites |
+| **Doc** M1 Max 64GB | `qwen3.6:35b` / Qwen3-Coder 30B A3B / gemma4:26b | Weaker agentically; fine as implementer under Grok plans |
+| **Porsche** M4 Pro 24GB | 7B–14B drafts only | Not for bulk domain implement |
+| **McKing** i9 + RTX 5080 | CUDA / vLLM large local when home | Same plan→local→review pattern |
+| Qwen3-Coder-Next ~80B-A3B | Maybe if quantized (Doc/McKing) | Stronger open; still not full 4.5 agent class |
+| Qwen3-Coder 480B A35B | Server/API — not laptop | Closer on classic SWE Verified; usually trails 4.5 on hard agent suites |
 
-With Grok plan + review tickets, expect ~70–85% of implementation tokens on local Qwen for normal feature work.
+With Grok plan + review tickets on Doc, expect ~70–85% of implementation tokens on local Qwen for normal feature work.
 
 ## Auth separation
 
 - Hermes x_search / chat OAuth ≠ `grok` CLI (`~/.grok/auth.json` via `grok login`).
 - Grok Build: SuperGrok or X Premium+ OAuth preferred; `XAI_API_KEY` is pay-as-you-go fallback.
 
-## Ben routing preference
+## Fleet routing preference (multi-agent)
 
+- Human = **Ben**; agents = **Doc Hakosuka** (specialist 64GB), **Porsche** (PA 24GB), **Lightning McKing** (CUDA/storage).
 - Architecture / high-level / review → Grok 4.5 (or multi-agent when research debate is the point).
-- Implementation / bulk → local Ollama (`qwen3.6:35b` or Qwen3-Coder 30B).
-- Human = Ben; agent = Doc Hakosuka.
+- Implementation / bulk → host-correct local (Doc 26B–35B; Porsche 7B–14B or hand-to-Doc; McKing CUDA when home).
+- SuperGrok Heavy = tier, not model ID. No invented `grok-4.5-multi-agent`.

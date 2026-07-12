@@ -124,6 +124,7 @@ All future references, docs, heartbeats, and coordination must use these names.
 - [ ] Doc software baseline known when bringing Doc online (`references/doc-software-baseline.md`)
 
 ## Related references
+- `references/doc-implementer-notes.md` — Doc short implementer overlay (not a second constitution)
 - `references/ops-todos.md` — GitHub Ben/Porsche/Purchases todo system
 - `references/doc-software-baseline.md` — Doc M1 Max apps/settings baseline
 - `references/stack-exclusions.md` — hard bans (n8n, etc.) and multi-location scrub checklist

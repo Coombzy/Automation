@@ -1,7 +1,7 @@
 ---
 name: llama-cpp
-description: llama.cpp local GGUF inference + HF Hub model discovery.
-version: 2.1.2
+description: llama.cpp local GGUF inference + HF Hub model discovery. Doc host: primary local GGUF path on Apple Silicon when not using Ollama.
+version: 2.1.3
 author: Orchestra Research
 license: MIT
 dependencies: [llama-cpp-python>=0.2.0]
@@ -12,6 +12,10 @@ metadata:
 ---
 
 # llama.cpp + GGUF
+
+## Doc host profile (M1 Max 64GB)
+
+**Primary local GGUF path on Apple Silicon when not using Ollama.** Prefer Metal; size quants for unified memory (26B–35B class common). Default day-to-day Hermes implement remains Ollama (`qwen3.6:35b` etc.) — use llama.cpp for GGUF experiments, custom server flags, or non-Ollama models. Do not force this stack onto Porsche 24GB as bulk implement. vLLM is secondary / McKing-CUDA (see `serving-llms-vllm`).
 
 Use this skill for local GGUF inference, quant selection, or Hugging Face repo discovery for llama.cpp.
 

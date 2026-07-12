@@ -1,7 +1,7 @@
 ---
 name: evaluating-llms-harness
-description: "lm-eval-harness: benchmark LLMs (MMLU, GSM8K, etc.)."
-version: 1.0.0
+description: "lm-eval-harness: benchmark LLMs (MMLU, GSM8K, etc.). Doc: prefer evaluate local models first; cloud eval is explicit opt-in."
+version: 1.0.1
 author: Orchestra Research
 license: MIT
 dependencies: [lm-eval, transformers, vllm]
@@ -13,6 +13,10 @@ metadata:
 ---
 
 # lm-evaluation-harness - LLM Benchmarking
+
+## Doc host profile (M1 Max 64GB)
+
+**Prefer evaluating local models first** (Ollama / llama.cpp / HF local). Cloud or remote API eval is **explicit opt-in**. Use Metal/CPU-friendly batch sizes; CUDA device flags are McKing-oriented when home.
 
 ## What's inside
 

@@ -1,19 +1,25 @@
 ---
 name: hermes-multi-agent-backup
-description: "Organize, schedule, and retain Hermes profile backups across multiple agents on different hardware; git-safe mutual-audit packs for public repos; daily/weekly/monthly retention."
-version: 2.0.0
-author: Agent
+description: "Organize, schedule, and retain Hermes profile backups across multiple agents on different hardware; git-safe mutual-audit packs for public repos; daily/weekly/monthly retention. Doc: 10pm launchd required ops; mutual process → fleet-mutual-improvement only."
+version: 2.1.0
+author: Agent + Doc host tailoring
 license: MIT
 platforms: [macos, linux]
 metadata:
   hermes:
-    tags: [hermes, backup, retention, multi-agent, cron, profile-export, mutual-audit, git-safe]
-    related_skills: [hermes-agent, project-car]
+    tags: [hermes, backup, retention, multi-agent, cron, profile-export, mutual-audit, git-safe, doc]
+    related_skills: [hermes-agent, project-car, fleet-mutual-improvement]
 ---
 
 # Hermes Multi-Agent Backup
 
 Class-level skill for Hermes profile backups when running multiple independent instances (Porsche, Doc Hakosuka, Lightning McKing) on different machines — plus **git-safe mutual audit** when the fleet repo is public.
+
+## Doc host ops (this machine)
+
+- **Daily 10pm launchd** recipe is **required ops**: script `~/.hermes/scripts/daily-doc-backup.sh` + plist `ai.hermes.doc-daily-backup` (`0 22 * * *`). Bootstrap may need Ben host approvals (see `communication/Doc/Doc-Todo.md`).
+- Git-safe daily inventory allowed under `backup/Doc/git-safe/` — **never** commit profile tarballs, `.env`, or `auth.json`.
+- Mutual-audit **process** points at **`fleet-mutual-improvement` only** (do not run dual weekly with deprecated `fleet-mutual-audit`).
 
 ## When to Use
 - More than one Hermes agent/profile across hardware.
@@ -70,7 +76,11 @@ Porsche-backup/agents/<agent>/{daily,weekly,monthly}/
 ### Cron
 Each **machine** runs its own job (jobs do not hop hosts). Fleet target: **10pm local** (`0 22 * * *`) when online. Prefer `no_agent=true` shell scripts for pure backup ticks. Cloud-cost policy (Project Car): pause cloud-dependent agent crons until local LLM ready — pure backup scripts are fine.
 
+**Doc:** use launchd label `ai.hermes.doc-daily-backup` + `daily-doc-backup.sh` (full/quick into gitignored `daily/` with retention; git-safe inventory only for public repo).
+
 ## Git-safe mutual audit
+
+**Canonical weekly procedure:** skill **`fleet-mutual-improvement`** only. Do **not** also run a separate weekly `fleet-mutual-audit` procedure.
 
 ### Purpose
 Each agent publishes what makes it useful; peers adopt skills/config/workflows **without** secret exfiltration.

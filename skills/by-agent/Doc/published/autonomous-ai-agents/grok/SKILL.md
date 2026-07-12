@@ -1,17 +1,23 @@
 ---
 name: grok
-description: "Delegate coding to xAI Grok Build CLI (features, PRs)."
-version: 0.1.0
+description: "Delegate coding to xAI Grok Build CLI (features, PRs). Doc: fine for coding spikes; prefer headless -p; architecture still Hermes Grok + bulk local implement."
+version: 0.1.1
 author: Matt Maximo (MattMaximo), Hermes Agent
 license: MIT
 platforms: [linux, macos, windows]
 metadata:
   hermes:
     tags: [Coding-Agent, Grok, xAI, Code-Review, Refactoring, Automation]
-    related_skills: [codex, claude-code, hermes-agent]
+    related_skills: [codex, claude-code, hermes-agent, xai-model-selection]
 ---
 
 # Grok Build CLI — Hermes Orchestration Guide
+
+## Doc host use (specialist)
+
+- Fine for Doc **coding spikes** and headless batch work.
+- Prefer headless **`-p`** for automation / non-interactive tickets.
+- Still route **architecture** to Hermes Grok chat + **bulk implement** on local 26B–35B (`xai-model-selection`). Build CLI is not a second PA and does not replace the plan→local→review loop.
 
 Delegate coding tasks to [Grok Build](https://docs.x.ai/build/overview) (xAI's
 autonomous coding agent CLI, the `grok` command) via the Hermes terminal. Grok

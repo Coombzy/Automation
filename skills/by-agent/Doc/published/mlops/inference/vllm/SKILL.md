@@ -1,7 +1,7 @@
 ---
 name: serving-llms-vllm
-description: "vLLM: high-throughput LLM serving, OpenAI API, quantization."
-version: 1.0.0
+description: "vLLM: high-throughput LLM serving, OpenAI API, quantization. Doc: secondary / McKing-CUDA path — not default on M1 Max; prefer Ollama/llama.cpp on Doc."
+version: 1.0.1
 author: Orchestra Research
 license: MIT
 dependencies: [vllm, torch, transformers]
@@ -13,6 +13,10 @@ metadata:
 ---
 
 # vLLM - High-Performance LLM Serving
+
+## Doc host profile (M1 Max 64GB)
+
+**Secondary / McKing-CUDA path — not the default on this host.** On Doc prefer **Ollama** or **llama.cpp** for local inference. Use this skill when documenting vLLM for fleet handoff to McKing (RTX 5080) or rare experimental notes — do not install full CUDA vLLM stacks "for parity" on Apple Silicon as the daily path.
 
 ## When to use
 

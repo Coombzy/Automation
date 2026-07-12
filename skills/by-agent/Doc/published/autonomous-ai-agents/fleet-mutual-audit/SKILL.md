@@ -1,17 +1,27 @@
 ---
 name: fleet-mutual-audit
-description: "Use when Doc/Porsche/McKing (or fleet peers) export git-safe Hermes inventories, peer-audit each other, or push sanitized packs to the public Coombzy/Automation repo. Covers mutual-audit protocol, secret bans, inventory export, peer-audit writeup, commit/push, and Discord close-out."
-version: 1.1.0
+description: "DEPRECATED ALIAS — use fleet-mutual-improvement for weekly fleet mutual-audit. This skill retained only for historical export steps; do not run both weekly."
+version: 1.2.0
 author: Doc Hakosuka
 license: MIT
 platforms: [linux, macos]
 metadata:
   hermes:
-    tags: [fleet, mutual-audit, backup, git-safe, discord, multi-agent, automation, skill-share, adopt]
-    related_skills: [github-auth, github-repo-management, macos-security-hardening, hermes-agent]
+    tags: [fleet, mutual-audit, backup, git-safe, discord, multi-agent, automation, skill-share, adopt, deprecated]
+    related_skills: [fleet-mutual-improvement, github-auth, github-repo-management, macos-security-hardening, hermes-agent]
 ---
 
-# Fleet mutual audit (git-safe packs)
+# DEPRECATED — use `fleet-mutual-improvement`
+
+**Status:** deprecated alias (2026-07-12 role-tailoring).  
+**Canonical weekly runbook:** skill **`fleet-mutual-improvement`** (+ `references/export-checklist.md` under that skill / shared tree).  
+**Do not** run this skill **and** `fleet-mutual-improvement` as two weekly procedures.
+
+Body below is historical/reference for export-shaped steps only. Prefer loading `fleet-mutual-improvement` for all new work.
+
+---
+
+# Fleet mutual audit (git-safe packs) — legacy body
 
 Class-level workflow for **multi-agent Hermes fleets** that share a **public** GitHub repo (`Coombzy/Automation`) for peer learning without leaking secrets.
 

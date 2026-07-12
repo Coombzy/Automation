@@ -1,9 +1,15 @@
 {
   "agent": "Doc",
-  "updated_at": "2026-07-12T02:08:08.326540+00:00",
-  "skills_root_note": "~/.hermes/skills on agent host",
+  "updated_at": "2026-07-12T02:31:07Z",
+  "skills_root_note": "~/.hermes/skills/ on Doc M1 Max 64GB",
   "count": 83,
-  "policy": "MANIFEST is public catalog. Full SKILL.md copies only under by-agent/<Agent>/published/ when share_class allows and agent opts in (or weekly mutual-improvement promotes them).",
+  "policy": {
+    "charter": "specialist / heavy compute / local LLM host / domain implementer \u2014 not second PA",
+    "role_tailoring": "2026-07-12",
+    "share_class": "eligible_full_copy if under published/; catalog_only for large/third-party without published tree",
+    "fleet_mutual": "fleet-mutual-improvement only (fleet-mutual-audit deprecated alias)",
+    "public_repo": "no secrets, .env, auth.json, profile tarballs"
+  },
   "skills": [
     {
       "name": "apple-notes",
@@ -48,9 +54,7 @@
       "bytes": 34288,
       "sha256_16": "4d195cf896e7d1a0",
       "share_class": "catalog_only",
-      "flags": [
-        "api_key"
-      ]
+      "flags": []
     },
     {
       "name": "codex",
@@ -59,36 +63,40 @@
       "bytes": 5386,
       "sha256_16": "bdf27c02052f06d3",
       "share_class": "catalog_only",
-      "flags": [
-        "api_key"
-      ]
+      "flags": []
     },
     {
       "name": "fleet-mutual-audit",
       "path": "autonomous-ai-agents/fleet-mutual-audit/SKILL.md",
-      "description": "Use when Doc/Porsche/McKing (or fleet peers) export git-safe Hermes inventories, peer-audit each other, or push sanitized packs to the public Coombzy/Automation repo. Covers mutual-audit protocol, secret bans, inventory export, peer-audit writeup, commit/push, and Discord close-out.",
-      "bytes": 12811,
-      "sha256_16": "f7bb8e951853f213",
+      "description": "DEPRECATED ALIAS \u2014 use fleet-mutual-improvement for weekly fleet mutual-audit. This skill retained only for historical export steps; do not run both weekly.",
+      "bytes": 13206,
+      "sha256_16": "ff9205aa64d2dfd5",
       "share_class": "eligible_full_copy",
-      "flags": []
+      "flags": [
+        "deprecated"
+      ]
     },
     {
       "name": "fleet-mutual-improvement",
       "path": "autonomous-ai-agents/fleet-mutual-improvement/SKILL.md",
-      "description": "Use when running weekly fleet mutual-audit (Porsche↔Doc↔McKing): export git-safe packs, peer-audit, adopt/adapt ideas without role homogenization, recommend peer improvements, commit adoption notes.",
-      "bytes": 12531,
-      "sha256_16": "f5fb7d3d1bdbc779",
+      "description": "Use when running weekly fleet mutual-audit (Porsche\u2194Doc\u2194McKing): export git-safe packs, peer-audit, adopt/adapt ideas without role homogenization, recommend peer improvements, commit adoption notes.",
+      "bytes": 17727,
+      "sha256_16": "8b3e432eaa95a75a",
       "share_class": "eligible_full_copy",
-      "flags": []
+      "flags": [
+        "doc_role_tailored"
+      ]
     },
     {
       "name": "grok",
       "path": "autonomous-ai-agents/grok/SKILL.md",
-      "description": "Delegate coding to xAI Grok Build CLI (features, PRs).",
-      "bytes": 12990,
-      "sha256_16": "a19ba446be039abb",
+      "description": "Delegate coding to xAI Grok Build CLI (features, PRs). Doc: fine for coding spikes; prefer headless -p; architecture still Hermes Grok + bulk local implement.",
+      "bytes": 13471,
+      "sha256_16": "3c0c356d5e74ca34",
       "share_class": "eligible_full_copy",
-      "flags": []
+      "flags": [
+        "doc_role_tailored"
+      ]
     },
     {
       "name": "hermes-agent",
@@ -97,9 +105,7 @@
       "bytes": 51586,
       "sha256_16": "083e305e004fc82c",
       "share_class": "catalog_only",
-      "flags": [
-        "api_key"
-      ]
+      "flags": []
     },
     {
       "name": "opencode",
@@ -108,41 +114,43 @@
       "bytes": 7259,
       "sha256_16": "afb3ea1f1b430070",
       "share_class": "catalog_only",
-      "flags": [
-        "api_key"
-      ]
+      "flags": []
     },
     {
       "name": "project-car",
       "path": "autonomous-ai-agents/project-car/SKILL.md",
       "description": "Use when working on any aspect of Project Car (the multi-agent mission control/business application). Loads the canonical team structure, naming conventions, operational preferences, hosting plans, and single source of truth for all coordination as Porsche.",
-      "bytes": 17513,
-      "sha256_16": "483d4fcd712ef67e",
+      "bytes": 17615,
+      "sha256_16": "0cdf2f5dc75be58d",
       "share_class": "eligible_full_copy",
       "flags": []
     },
     {
       "name": "token_optimizer",
       "path": "autonomous-ai-agents/token_optimizer/SKILL.md",
-      "description": "Use when you need proactive token reduction, pre-flight estimation, smart compression, or local-model-assisted optimization before expensive cloud calls (especially Grok). Provides configurable aggressiveness and post-task savings reporting.",
-      "bytes": 8006,
-      "sha256_16": "6ef6c3ca828fc033",
+      "description": "Use when you need proactive token reduction, pre-flight estimation, smart compression, or local-model-assisted optimization before expensive cloud calls (especially Grok). Doc: skip pure local Ollama implement; not a PA cost-router.",
+      "bytes": 8708,
+      "sha256_16": "b65f2f7b0e6ead7d",
       "share_class": "eligible_full_copy",
-      "flags": []
+      "flags": [
+        "doc_role_tailored"
+      ]
     },
     {
       "name": "token_preflight",
       "path": "autonomous-ai-agents/token_preflight/SKILL.md",
-      "description": "Ultra-lightweight pre-flight checker. Estimates tokens and recommends optimization tier (light/medium/heavy) with minimal overhead. v0.2.0.",
-      "bytes": 2126,
-      "sha256_16": "1ec7a7a29ae9cc76",
+      "description": "Ultra-lightweight pre-flight checker. Estimates tokens and recommends optimization tier (light/medium/heavy). Doc specialist: run before Grok/cloud; skip pure local Ollama implement.",
+      "bytes": 3121,
+      "sha256_16": "0ee44de2a360a857",
       "share_class": "eligible_full_copy",
-      "flags": []
+      "flags": [
+        "doc_role_tailored"
+      ]
     },
     {
       "name": "computer-use",
       "path": "computer-use/SKILL.md",
-      "description": "Drive the user's desktop in the background — clicking, typing, scrolling, dragging — without stealing the cursor, keyboard focus, or switching virtual desktops / Spaces. Cross-platform: macOS, Windows, Linux. Works with any tool-capable model. Load this skill whenever the `computer_use` tool is a...",
+      "description": "|",
       "bytes": 11179,
       "sha256_16": "33fdce112f142cd3",
       "share_class": "eligible_full_copy",
@@ -178,7 +186,7 @@
     {
       "name": "baoyu-infographic",
       "path": "creative/baoyu-infographic/SKILL.md",
-      "description": "Infographics: 21 layouts x 21 styles (信息图, 可视化).",
+      "description": "Infographics: 21 layouts x 21 styles (\u4fe1\u606f\u56fe, \u53ef\u89c6\u5316).",
       "bytes": 10434,
       "sha256_16": "89e25da6d8ea1cac",
       "share_class": "eligible_full_copy",
@@ -196,13 +204,11 @@
     {
       "name": "comfyui",
       "path": "creative/comfyui/SKILL.md",
-      "description": "Generate images, video, and audio with ComfyUI — install, launch, manage nodes/models, run workflows with parameter injection. Uses the official comfy-cli for lifecycle and direct REST/WebSocket API for execution.",
+      "description": "Generate images, video, and audio with ComfyUI \u2014 install, launch, manage nodes/models, run workflows with parameter injection. Uses the official comfy-cli for lifecycle and direct REST/WebSocket API for execution.",
       "bytes": 24287,
       "sha256_16": "fc9514a3b888b352",
       "share_class": "catalog_only",
-      "flags": [
-        "api_key"
-      ]
+      "flags": []
     },
     {
       "name": "design-md",
@@ -261,7 +267,7 @@
     {
       "name": "pretext",
       "path": "creative/pretext/SKILL.md",
-      "description": "Use when building creative browser demos with @chenglou/pretext — DOM-free text layout for ASCII art, typographic flow around obstacles, text-as-geometry games, kinetic typography, and text-powered generative art. Produces single-file HTML demos by default.",
+      "description": "Use when building creative browser demos with @chenglou/pretext \u2014 DOM-free text layout for ASCII art, typographic flow around obstacles, text-as-geometry games, kinetic typography, and text-powered generative art. Produces single-file HTML demos by default.",
       "bytes": 14168,
       "sha256_16": "532570c95d1a0bf6",
       "share_class": "eligible_full_copy",
@@ -288,7 +294,7 @@
     {
       "name": "touchdesigner-mcp",
       "path": "creative/touchdesigner-mcp/SKILL.md",
-      "description": "Control a running TouchDesigner instance via twozero MCP — create operators, set parameters, wire connections, execute Python, build real-time visuals. 36 native tools.",
+      "description": "Control a running TouchDesigner instance via twozero MCP \u2014 create operators, set parameters, wire connections, execute Python, build real-time visuals. 36 native tools.",
       "bytes": 15429,
       "sha256_16": "70a4217786c49122",
       "share_class": "eligible_full_copy",
@@ -337,9 +343,7 @@
       "bytes": 7596,
       "sha256_16": "6b49a0655a581092",
       "share_class": "catalog_only",
-      "flags": [
-        "api_key"
-      ]
+      "flags": []
     },
     {
       "name": "github-code-review",
@@ -348,9 +352,7 @@
       "bytes": 13615,
       "sha256_16": "2d1956e52d88bd88",
       "share_class": "catalog_only",
-      "flags": [
-        "api_key"
-      ]
+      "flags": []
     },
     {
       "name": "github-issues",
@@ -377,19 +379,17 @@
       "bytes": 13733,
       "sha256_16": "d70d999ddf231f9e",
       "share_class": "catalog_only",
-      "flags": [
-        "api_key"
-      ]
+      "flags": []
     },
     {
       "name": "hermes-multi-agent-backup",
       "path": "hermes-multi-agent-backup/SKILL.md",
-      "description": "Organize, schedule, and retain Hermes profile backups across multiple agents on different hardware; git-safe mutual-audit packs for public repos; daily/weekly/monthly retention.",
-      "bytes": 5183,
-      "sha256_16": "8303a7eb2b14a8d9",
-      "share_class": "catalog_only",
+      "description": "Organize, schedule, and retain Hermes profile backups across multiple agents on different hardware; git-safe mutual-audit packs for public repos; daily/weekly/monthly retention. Doc: 10pm launchd required ops; mutual process \u2192 fleet-mutual-improvement only.",
+      "bytes": 6165,
+      "sha256_16": "f35bfddc30716f70",
+      "share_class": "eligible_full_copy",
       "flags": [
-        "api_key"
+        "doc_role_tailored"
       ]
     },
     {
@@ -399,9 +399,7 @@
       "bytes": 2720,
       "sha256_16": "a8349043740a8805",
       "share_class": "catalog_only",
-      "flags": [
-        "api_key"
-      ]
+      "flags": []
     },
     {
       "name": "heartmula",
@@ -433,11 +431,13 @@
     {
       "name": "evaluating-llms-harness",
       "path": "mlops/evaluation/lm-evaluation-harness/SKILL.md",
-      "description": "lm-eval-harness: benchmark LLMs (MMLU, GSM8K, etc.).",
-      "bytes": 12020,
-      "sha256_16": "5426016d51e3b49e",
+      "description": "lm-eval-harness: benchmark LLMs (MMLU, GSM8K, etc.). Doc: prefer evaluate local models first; cloud eval is explicit opt-in.",
+      "bytes": 12336,
+      "sha256_16": "62249d93c0900313",
       "share_class": "eligible_full_copy",
-      "flags": []
+      "flags": [
+        "doc_role_tailored"
+      ]
     },
     {
       "name": "weights-and-biases",
@@ -446,37 +446,39 @@
       "bytes": 12395,
       "sha256_16": "7cabb8bcc0079737",
       "share_class": "catalog_only",
-      "flags": [
-        "api_key"
-      ]
+      "flags": []
     },
     {
       "name": "huggingface-hub",
       "path": "mlops/huggingface-hub/SKILL.md",
-      "description": "HuggingFace hf CLI: search/download/upload models, datasets.",
-      "bytes": 3674,
-      "sha256_16": "10d5bdf26e08ce47",
+      "description": "HuggingFace hf CLI: search/download/upload models, datasets. Doc: model discovery for local Ollama/llama.cpp stack.",
+      "bytes": 3995,
+      "sha256_16": "8cfdd6aa70f39d2d",
       "share_class": "eligible_full_copy",
-      "flags": []
+      "flags": [
+        "doc_role_tailored"
+      ]
     },
     {
       "name": "llama-cpp",
       "path": "mlops/inference/llama-cpp/SKILL.md",
-      "description": "llama.cpp local GGUF inference + HF Hub model discovery.",
-      "bytes": 8880,
-      "sha256_16": "9c1ef45f6197fbc0",
+      "description": "llama.cpp local GGUF inference + HF Hub model discovery. Doc host: primary local GGUF path on Apple Silicon when not using Ollama.",
+      "bytes": 9404,
+      "sha256_16": "8615c1bed20a40a3",
       "share_class": "eligible_full_copy",
-      "flags": []
+      "flags": [
+        "doc_role_tailored"
+      ]
     },
     {
       "name": "serving-llms-vllm",
       "path": "mlops/inference/vllm/SKILL.md",
-      "description": "vLLM: high-throughput LLM serving, OpenAI API, quantization.",
-      "bytes": 9071,
-      "sha256_16": "ab72192b7aee4e6d",
-      "share_class": "catalog_only",
+      "description": "vLLM: high-throughput LLM serving, OpenAI API, quantization. Doc: secondary / McKing-CUDA path \u2014 not default on M1 Max; prefer Ollama/llama.cpp on Doc.",
+      "bytes": 9523,
+      "sha256_16": "6a774a3349880e0b",
+      "share_class": "eligible_full_copy",
       "flags": [
-        "api_key"
+        "doc_role_tailored"
       ]
     },
     {
@@ -500,12 +502,12 @@
     {
       "name": "xai-model-selection",
       "path": "mlops/xai-model-selection/SKILL.md",
-      "description": "Use when choosing Grok/xAI models, SuperGrok tiers, multi-agent vs single flagship, or comparing Grok releases for Hermes routing.",
-      "bytes": 5739,
-      "sha256_16": "e2205811c85c7b2f",
-      "share_class": "catalog_only",
+      "description": "Use when choosing Grok/xAI models, SuperGrok tiers, multi-agent vs single flagship, or comparing Grok releases for Hermes routing \u2014 Doc 64GB specialist: local 26B\u201335B implement + Grok plan/review.",
+      "bytes": 9249,
+      "sha256_16": "6ba1816d1cb643fd",
+      "share_class": "eligible_full_copy",
       "flags": [
-        "api_key"
+        "doc_role_tailored"
       ]
     },
     {
@@ -524,9 +526,7 @@
       "bytes": 11334,
       "sha256_16": "016198b563b8f8c4",
       "share_class": "catalog_only",
-      "flags": [
-        "api_key"
-      ]
+      "flags": []
     },
     {
       "name": "google-workspace",
@@ -540,11 +540,13 @@
     {
       "name": "macos-security-hardening",
       "path": "productivity/macos-security-hardening/SKILL.md",
-      "description": "Hardening macOS for high-performance local AI workloads (Ollama, Hermes, local LLMs) while maintaining fluid multi-device operation.",
-      "bytes": 7016,
-      "sha256_16": "6a844af9867da50e",
+      "description": "Hardening macOS for high-performance local AI workloads (Ollama, Hermes, local LLMs). Doc copy emphasizes always-on lab / large local models (not travel-host default).",
+      "bytes": 9763,
+      "sha256_16": "5c95adde90bc0010",
       "share_class": "eligible_full_copy",
-      "flags": []
+      "flags": [
+        "doc_role_tailored"
+      ]
     },
     {
       "name": "maps",
@@ -571,9 +573,7 @@
       "bytes": 14629,
       "sha256_16": "798ad178ead72ad3",
       "share_class": "catalog_only",
-      "flags": [
-        "api_key"
-      ]
+      "flags": []
     },
     {
       "name": "ocr-and-documents",
@@ -605,7 +605,7 @@
     {
       "name": "teams-meeting-pipeline",
       "path": "productivity/teams-meeting-pipeline/SKILL.md",
-      "description": "Operate the Teams meeting summary pipeline via Hermes CLI — summarize meetings, inspect pipeline status, replay jobs, manage Microsoft Graph subscriptions.",
+      "description": "Operate the Teams meeting summary pipeline via Hermes CLI \u2014 summarize meetings, inspect pipeline status, replay jobs, manage Microsoft Graph subscriptions.",
       "bytes": 6883,
       "sha256_16": "5d3091690cf52058",
       "share_class": "eligible_full_copy",
@@ -650,7 +650,7 @@
     {
       "name": "research-paper-writing",
       "path": "research/research-paper-writing/SKILL.md",
-      "description": "Write ML papers for NeurIPS/ICML/ICLR: design→submit.",
+      "description": "Write ML papers for NeurIPS/ICML/ICLR: design\u2192submit.",
       "bytes": 103674,
       "sha256_16": "46868cf4a15f2da0",
       "share_class": "eligible_full_copy",
@@ -686,9 +686,9 @@
     {
       "name": "mission-control-development-heartbeat",
       "path": "software-development/mission-control-development-heartbeat/SKILL.md",
-      "description": "Stateful autonomous development heartbeat for Mission Control / Project Car. Runs scheduled cron jobs that read previous state, perform focused coding work (Matrix + Nextcloud first), auto-commit to git, write handoff notes, and deliver structured progress reports to Discord.",
-      "bytes": 4611,
-      "sha256_16": "29e7ae1d3bed60fc",
+      "description": "Stateful autonomous development heartbeat for Mission Control / Project Car. Doc owns bulk local implement ticks; Porsche supervises. Read state \u2192 local code \u2192 git commit \u2192 handoff note \u2192 Discord report.",
+      "bytes": 6350,
+      "sha256_16": "ef68a2cd93c61a12",
       "share_class": "eligible_full_copy",
       "flags": []
     },
@@ -726,9 +726,7 @@
       "bytes": 8465,
       "sha256_16": "1126afb626b38f5b",
       "share_class": "catalog_only",
-      "flags": [
-        "api_key"
-      ]
+      "flags": []
     },
     {
       "name": "simplify-code",
@@ -751,9 +749,9 @@
     {
       "name": "sqlalchemy-domain-modeling",
       "path": "software-development/sqlalchemy-domain-modeling/SKILL.md",
-      "description": "Use when building a full set of SQLAlchemy ORM models (greenfield or new module). Covers Enum ordering, multi-FK relationships, nullable discipline, indexes, and post-generation verification. Triggers on requests for \"SQLAlchemy models\", \"ORM schema\", \"domain models\", or when fixing broken FK cha...",
-      "bytes": 6903,
-      "sha256_16": "64f69e01fdc32923",
+      "description": "Use when building a full set of SQLAlchemy ORM models (greenfield or new module). Covers Enum ordering, multi-FK relationships, nullable discipline, indexes, and post-generation verification. On Doc: primary implementer \u2014 full model sets, migrations, Project Car domain.",
+      "bytes": 7999,
+      "sha256_16": "7009e59916b9dfc2",
       "share_class": "eligible_full_copy",
       "flags": []
     },
@@ -778,7 +776,7 @@
     {
       "name": "yuanbao",
       "path": "yuanbao/SKILL.md",
-      "description": "Yuanbao (元宝) groups: @mention users, query info/members.",
+      "description": "Yuanbao (\u5143\u5b9d) groups: @mention users, query info/members.",
       "bytes": 3795,
       "sha256_16": "239e4875f511124f",
       "share_class": "eligible_full_copy",

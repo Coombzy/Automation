@@ -1,12 +1,25 @@
 ---
 name: sqlalchemy-domain-modeling
-description: Use when building a full set of SQLAlchemy ORM models (greenfield or new module). Covers Enum ordering, multi-FK relationships, nullable discipline, indexes, and post-generation verification. Triggers on requests for "SQLAlchemy models", "ORM schema", "domain models", or when fixing broken FK chains / circular enum imports.
+description: Use when building a full set of SQLAlchemy ORM models (greenfield or new module). Covers Enum ordering, multi-FK relationships, nullable discipline, indexes, and post-generation verification. On Doc: primary implementer — full model sets, migrations, Project Car domain.
 trigger: When creating a new set of ORM models; when asked about SQLAlchemy 2.0 migrations; when fixing broken multi-FK relationships or circular enum imports.
+version: 1.2.0
 ---
 
 # SQLAlchemy 2.0 Domain Modeling Skill
 
 Produce production-grade SQLAlchemy 2.0 model sets using declarative\_base, Mapped/mapped\_column — not the legacy functional `declarative_base()`. Designed for greenfield domain models: IoT access-control → tools/hoist → token economy → incident detection → billing pipelines.
+
+## Fleet role gate (read first)
+
+| Agent | How to use this skill |
+|-------|------------------------|
+| **Doc** (specialist, 64GB) | **Primary implementer.** Full model sets, migrations, Project Car domain packs. Prefer local 26B–35B for bulk under Grok tickets; escalate to Grok after 2 local fails or for architecture. |
+| **Porsche** (PA / coordinator, 24GB) | **Review + ticket + HANDOFF only.** Audit models, write acceptance checks, catch multi-FK mistakes in review. Do **not** own multi-hour ORM module builds. |
+| **McKing** | Only if coding-lab task is explicitly assigned; not default domain owner. |
+
+**Doc default action for “build the full domain models”:** plan FK risks → implement on this host → `python models.py` sanity → migrations → HANDOFF summary for Porsche review when multi-module.
+
+Project Car entities: `references/project-car-domain-notes.md`. Multi-FK patterns: `references/multi-fk-patterns.md`.
 
 ## Pre-flight checklist
 
@@ -112,6 +125,7 @@ At the bottom, list all classes in `ALL_MODELS` for Alembic autogenerate. Includ
 2. **Circular Enum imports** — define all enums before any model that uses them, or use `native_enum=False` with string enum values.
 3. **Bulk-importing unused ORM classes** — importing `Session`, `column_property` "just in case" pollutes your namespace and masks missing imports during refactoring. Import exactly what you use.
 4. **Leaving nullable columns without defaults or null checks** — every nullable column is a query bug waiting to happen. Use `default` + `nullable=False` unless the value is genuinely optional per business logic.
+5. **Doc deferring full modules to Porsche** — Porsche reviews; Doc implements.
 
 ## Post-generation checklist (ALWAYS run)
 
@@ -123,3 +137,4 @@ At the bottom, list all classes in `ALL_MODELS` for Alembic autogenerate. Includ
 - [ ] Unique indexes on natural keys (email, SKU, etc.)
 - [ ] ALL\_MODELS list is complete and in declaration order
 - [ ] Run: `python models.py` — must print all tables without ImportError
+- [ ] Project Car domain notes consulted when modeling members/access/tokens/bookings/billing/incidents/tools

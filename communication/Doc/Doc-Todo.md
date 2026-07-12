@@ -9,7 +9,7 @@
 
 ## P0 — Ops / reliability
 
-- [ ] **Skill role-tailoring (2026-07-12)** — follow temporary `communication/Doc/ROLE-SKILL-TAILORING-INSTRUCTIONS.md` → done token `DOC_SKILLS_ROLE_TAILORED` + sha; then file is deleted
+- [x] **Skill role-tailoring (2026-07-12)** — live+published+MANIFEST; token `DOC_SKILLS_ROLE_TAILORED` + sha in tire-shop; instruction file deleted after dual ACK
 - [x] **Mutual-audit apply phase (2026-07-11)** — installed project-car, token_preflight, token_optimizer, hermes-multi-agent-backup, mission-control-development-heartbeat; wrote `backup/Doc/git-safe/adopted-from-audit-2026-07-11.md`
 - [x] **daily-doc-backup.sh installed** — `~/.hermes/scripts/daily-doc-backup.sh`
 - [ ] **Daily 10pm backup launchd** — script ready; bootstrap still needs host approval (see `adopted-from-audit-2026-07-11.md` plist)

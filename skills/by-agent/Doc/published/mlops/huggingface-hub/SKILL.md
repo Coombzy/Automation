@@ -1,7 +1,7 @@
 ---
 name: huggingface-hub
-description: "HuggingFace hf CLI: search/download/upload models, datasets."
-version: 1.0.0
+description: "HuggingFace hf CLI: search/download/upload models, datasets. Doc: model discovery for local Ollama/llama.cpp stack."
+version: 1.0.1
 author: Hugging Face
 license: MIT
 tags: [huggingface, hf, models, datasets, hub, mlops]
@@ -9,6 +9,10 @@ platforms: [linux, macos, windows]
 ---
 
 # Hugging Face CLI (`hf`) Reference Guide
+
+## Doc host profile (M1 Max 64GB)
+
+Use Hub discovery to feed **Doc local stack**: Ollama tags, GGUF quants for llama.cpp, and eval targets. Prefer downloads sized for 64GB unified memory; leave 480B-class to server/API. Never commit HF tokens to public Automation.
 
 The `hf` command is the modern command-line interface for interacting with the Hugging Face Hub, providing tools to manage repositories, models, datasets, and Spaces.
 

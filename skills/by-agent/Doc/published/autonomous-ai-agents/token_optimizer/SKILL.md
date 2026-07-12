@@ -1,13 +1,13 @@
 ---
 name: token_optimizer
-description: Use when you need proactive token reduction, pre-flight estimation, smart compression, or local-model-assisted optimization before expensive cloud calls (especially Grok). Provides configurable aggressiveness and post-task savings reporting.
-version: 1.0.0
-author: Porsche (for Ben)
+description: Use when you need proactive token reduction, pre-flight estimation, smart compression, or local-model-assisted optimization before expensive cloud calls (especially Grok). Doc: skip pure local Ollama implement; not a PA cost-router.
+version: 1.2.0
+author: Porsche (for Ben) + Doc host tailoring
 license: MIT
 metadata:
   hermes:
-    tags: [tokens, optimization, compression, context, delegation, grok, cost-saving, preflight]
-    related_skills: [hermes-agent, token_preflight]
+    tags: [tokens, optimization, compression, context, delegation, grok, cost-saving, preflight, doc]
+    related_skills: [hermes-agent, token_preflight, xai-model-selection]
 ---
 
 # token_optimizer
@@ -22,7 +22,16 @@ Proactive, provider-aware token optimization skill for Hermes. Performs pre-flig
 - After a task completes, to analyze what was optimized and how much was saved.
 - When using Grok via the Responses API and you want to maximize prompt cache effectiveness.
 
-**Do not use** for trivial single-turn queries or when the user has explicitly disabled optimization.
+**Do not use** for trivial single-turn queries, when the user has explicitly disabled optimization, or for **pure local-Ollama implement jobs** with no cloud model about to run (see `token_preflight` `local_only` / `skip_optimizer_local_only`).
+
+## Doc specialist aggressiveness
+
+| Context | Default aggressiveness | Notes |
+|---------|------------------------|-------|
+| About to call **Grok** for plan/review/architecture | **balanced** | Protect tickets + acceptance checks; prune tool spam |
+| Pure local Ollama implement (26B–35B) | **skip** | No token ceremony |
+| Long multi-tool cloud day | balanced → aggressive | Prefer HEARTBEAT/TASKS.md over re-ingesting chat |
+| Ben day ops / PA cost routing | **out of scope** | Porsche owns PA cost-router role |
 
 ## Procedure
 
