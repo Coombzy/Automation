@@ -2,7 +2,7 @@
 
 **Owner:** Porsche (Hermes agent / default profile)  
 **Maintained under:** `Coombzy/Automation/communication/Porsche/`  
-**Last updated:** 2026-07-12 (role-tailor dual ACK closed)
+**Last updated:** 2026-07-12 (Doc SSOT tokens received in #tire-shop)
 
 Work Porsche should execute autonomously (or with Ben only when blocked).
 
@@ -13,8 +13,8 @@ Work Porsche should execute autonomously (or with Ben only when blocked).
 ## P0 — Active ops
 
 - [x] **Porsche orchestrator dream cron** — `porsche-dream-orchestrator` Mon/Wed/Fri 22:00; prompt in `communication/Porsche/DREAM-CRON.md`; local digests `~/Documents/Fleet-Memory/Dreams/Porsche/`
-- [x] **Doc dream cron (thin)** — Ben confirmed CLI install 2026-07-12 (no Discord token); still want schedule/job name for SSOT
-- [x] **Doc Nextcloud Desktop structure** — Ben confirmed created 2026-07-12; Docker NC install still later
+- [x] **Doc dream cron (thin)** — tire-shop `DOC_DREAM_CRON_INSTALLED` (`doc-dream-specialist` / `ca0a9c07ac28` / Mon/Wed/Fri 23:30 MT → `#doc-garage`; digests under Fleet-Nextcloud Memory/Dreams/Doc)
+- [x] **Doc Nextcloud Desktop structure** — tire-shop `DOC_NEXTCLOUD_STRUCTURE_READY` `/Users/dochak/Desktop/Fleet-Nextcloud`; Docker NC install still later
 - [ ] **Doc Nextcloud server (Docker/runtime)** — after Desktop tree; Tailscale-first; WebDAV for agents later
 - [ ] **Maintain these three GitHub lists** (`Ben-Todo.md`, `Porsche-Todo.md`, `Purchases.md`) as the source of truth for todos
 - [ ] **Keep Project Car docs in sync** (Desktop `Project-Car-Docs` ↔ skill refs ↔ GitHub `Docs/` when changed)

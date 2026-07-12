@@ -2,15 +2,15 @@
 
 **Owner:** Doc Hakosuka (Hermes on M1 Max)  
 **Maintained under:** `Coombzy/Automation/communication/Doc/`  
-**Last updated:** 2026-07-12 (dual ACK + ops recheck)  
+**Last updated:** 2026-07-12 (tire-shop SSOT tokens: NC structure + dream cron)  
 **Fleet rule:** No n8n. Orchestration = Hermes + custom adapters + Discord.
 
 ---
 
 ## P0 — Ops / reliability
 
-- [x] **Nextcloud host + Desktop structure (2026-07-12)** — Ben confirmed structure created (2026-07-12). Still prefer one-line tire-shop token with absolute path for SSOT (`DOC_NEXTCLOUD_STRUCTURE_READY`). Spec: `NEXTCLOUD-DESKTOP-STRUCTURE.md`.
-- [x] **Dream cron install (Doc thin)** — Ben confirmed via Doc CLI (2026-07-12); no tire-shop done-token posted. Spec: `communication/Doc/DREAM-CRON.md`. Please still reply once with schedule/job name for SSOT.
+- [x] **Nextcloud host + Desktop structure (2026-07-12)** — tire-shop `DOC_NEXTCLOUD_STRUCTURE_READY` path `/Users/dochak/Desktop/Fleet-Nextcloud` (Memory/{Shared,Porsche,Doc,McKing,Dreams/*}, Heartbeats, Handoffs, Docs, Inbox/Outbox, Backups, Templates + README; ~926 Gi disk / ~794 Gi free). Spec: `NEXTCLOUD-DESKTOP-STRUCTURE.md`. Docker NC still later.
+- [x] **Dream cron install (Doc thin)** — tire-shop `DOC_DREAM_CRON_INSTALLED`: name `doc-dream-specialist` · id `ca0a9c07ac28` · `30 23 * * 1,3,5` (Mon/Wed/Fri 23:30 MT) · digests `~/Desktop/Fleet-Nextcloud/Memory/Dreams/Doc/` · deliver `#doc-garage`. Spec: `communication/Doc/DREAM-CRON.md`.
 - [x] **Skill role-tailoring (2026-07-12)** — live+published+MANIFEST; token `DOC_SKILLS_ROLE_TAILORED` + sha in tire-shop; instruction file deleted after dual ACK
 - [x] **Mutual-audit apply phase (2026-07-11)** — installed project-car, token_preflight, token_optimizer, hermes-multi-agent-backup, mission-control-development-heartbeat; wrote `backup/Doc/git-safe/adopted-from-audit-2026-07-11.md`
 - [x] **daily-doc-backup.sh installed** — `~/.hermes/scripts/daily-doc-backup.sh`
