@@ -4,21 +4,22 @@ Export **sanitized** inventory here for mutual audit with Porsche (and later McK
 
 See `../../MUTUAL-AUDIT-PROTOCOL.md`.
 
-## Doc: first export (when online)
+## Current pack (2026-07-11)
 
-On Doc machine:
+- `inventory-latest.json`
+- `inventory-2026-07-11.json`
+- `AUDIT-PACK.md`
 
-```bash
-cd ~/Documents/Automation   # or your clone path
-git pull
+Peer audits of Doc land as:
 
-# Then either:
-# 1) Ask Doc Hermes: "Generate git-safe mutual-audit pack into backup/Doc/git-safe per MUTUAL-AUDIT-PROTOCOL"
-# 2) Or run a local inventory script mirroring Porsche's export
+- `peer-audit-of-Doc-YYYY-MM-DD.md` (written by Porsche / McKing)
 
-git add backup/Doc/git-safe backup/MUTUAL-AUDIT-PROTOCOL.md
-git commit -m "Doc git-safe mutual-audit inventory"
-git push
-```
+Doc’s audits of peers land under the **subject’s** `git-safe/` folder (protocol default).
 
-**Never** commit `.env`, `auth.json`, or full profile tarballs.
+## Never commit
+
+- `.env`, `auth.json`, OAuth/API/bot tokens
+- Full `hermes profile export` tarballs
+- Session DBs / private chat dumps
+- Raw security / 2FA / recovery notes
+- SSH / mesh private keys

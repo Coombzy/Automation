@@ -1,0 +1,775 @@
+{
+  "agent": "Doc",
+  "agent_display_name": "Doc Hakosuka",
+  "machine_role": "specialist / heavy compute; local LLM host; M1 Max 64GB",
+  "profile": "default",
+  "exported_at": "2026-07-12T01:37:50.703976+00:00",
+  "export_kind": "git-safe mutual-audit inventory",
+  "repo_note": "Coombzy/Automation is PUBLIC \u2014 no secrets, no full profile tar, no auth",
+  "hardware": {
+    "chip": "Apple M1 Max",
+    "memory_gb": 64,
+    "cores_note": "10 (8P+2E)",
+    "model_identifier": "MacBookPro18,4",
+    "os": "ProductName:\t\tmacOS\nProductVersion:\t\t26.5.2\nBuildVersion:\t\t25F84",
+    "hostname_public": "Doc (primary M1 Max MacBook Pro)"
+  },
+  "hermes": {
+    "version": "Hermes Agent v0.18.2 (2026.7.7.2) \u00b7 upstream 4281151a\nInstall directory: /Users/dochak/.hermes/hermes-agent\nInstall method: git\nPython: 3.11.15\nOpenAI SDK: 2.24.0",
+    "install_dir": "/Users/dochak/.hermes/hermes-agent"
+  },
+  "skills_count": 76,
+  "skills": [
+    {
+      "path": "apple/apple-notes/SKILL.md",
+      "name": "apple-notes",
+      "description": "Manage Apple Notes via memo CLI: create, search, edit.",
+      "bytes": 2169
+    },
+    {
+      "path": "apple/apple-reminders/SKILL.md",
+      "name": "apple-reminders",
+      "description": "Apple Reminders via remindctl: add, list, complete.",
+      "bytes": 3606
+    },
+    {
+      "path": "apple/findmy/SKILL.md",
+      "name": "findmy",
+      "description": "Track Apple devices/AirTags via FindMy.app on macOS.",
+      "bytes": 3709
+    },
+    {
+      "path": "apple/imessage/SKILL.md",
+      "name": "imessage",
+      "description": "Send and receive iMessages/SMS via the imsg CLI on macOS.",
+      "bytes": 2442
+    },
+    {
+      "path": "autonomous-ai-agents/claude-code/SKILL.md",
+      "name": "claude-code",
+      "description": "Delegate coding to Claude Code CLI (features, PRs).",
+      "bytes": 34288
+    },
+    {
+      "path": "autonomous-ai-agents/codex/SKILL.md",
+      "name": "codex",
+      "description": "Delegate coding to OpenAI Codex CLI (features, PRs).",
+      "bytes": 5386
+    },
+    {
+      "path": "autonomous-ai-agents/grok/SKILL.md",
+      "name": "grok",
+      "description": "Delegate coding to xAI Grok Build CLI (features, PRs).",
+      "bytes": 12990
+    },
+    {
+      "path": "autonomous-ai-agents/hermes-agent/SKILL.md",
+      "name": "hermes-agent",
+      "description": "Configure, extend, or contribute to Hermes Agent.",
+      "bytes": 51586
+    },
+    {
+      "path": "autonomous-ai-agents/opencode/SKILL.md",
+      "name": "opencode",
+      "description": "Delegate coding to OpenCode CLI (features, PR review).",
+      "bytes": 7259
+    },
+    {
+      "path": "computer-use/SKILL.md",
+      "name": "computer-use",
+      "description": "Drive the user's desktop in the background \u2014 clicking, typing, scrolling, dragging \u2014 without stealing the cursor, keyboard focus, or switching virtual desktops / Spaces. Cross-platform: macOS, Windows, Linux. Works with ",
+      "bytes": 11179
+    },
+    {
+      "path": "creative/architecture-diagram/SKILL.md",
+      "name": "architecture-diagram",
+      "description": "Dark-themed SVG architecture/cloud/infra diagrams as HTML.",
+      "bytes": 5830
+    },
+    {
+      "path": "creative/ascii-art/SKILL.md",
+      "name": "ascii-art",
+      "description": "ASCII art: pyfiglet, cowsay, boxes, image-to-ascii.",
+      "bytes": 10556
+    },
+    {
+      "path": "creative/ascii-video/SKILL.md",
+      "name": "ascii-video",
+      "description": "ASCII video: convert video/audio to colored ASCII MP4/GIF.",
+      "bytes": 14864
+    },
+    {
+      "path": "creative/baoyu-infographic/SKILL.md",
+      "name": "baoyu-infographic",
+      "description": "Infographics: 21 layouts x 21 styles (\u4fe1\u606f\u56fe, \u53ef\u89c6\u5316).",
+      "bytes": 10434
+    },
+    {
+      "path": "creative/claude-design/SKILL.md",
+      "name": "claude-design",
+      "description": "Design one-off HTML artifacts (landing, deck, prototype).",
+      "bytes": 25117
+    },
+    {
+      "path": "creative/comfyui/SKILL.md",
+      "name": "comfyui",
+      "description": "Generate images, video, and audio with ComfyUI \u2014 install, launch, manage nodes/models, run workflows with parameter injection. Uses the official comfy-cli for lifecycle and direct REST/WebSocket API for execution.",
+      "bytes": 24287
+    },
+    {
+      "path": "creative/design-md/SKILL.md",
+      "name": "design-md",
+      "description": "Author/validate/export Google's DESIGN.md token spec files.",
+      "bytes": 7023
+    },
+    {
+      "path": "creative/excalidraw/SKILL.md",
+      "name": "excalidraw",
+      "description": "Hand-drawn Excalidraw JSON diagrams (arch, flow, seq).",
+      "bytes": 7300
+    },
+    {
+      "path": "creative/humanizer/SKILL.md",
+      "name": "humanizer",
+      "description": "Humanize text: strip AI-isms and add real voice.",
+      "bytes": 30025
+    },
+    {
+      "path": "creative/manim-video/SKILL.md",
+      "name": "manim-video",
+      "description": "Manim CE animations: 3Blue1Brown math/algo videos.",
+      "bytes": 12023
+    },
+    {
+      "path": "creative/p5js/SKILL.md",
+      "name": "p5js",
+      "description": "p5.js sketches: gen art, shaders, interactive, 3D.",
+      "bytes": 27494
+    },
+    {
+      "path": "creative/popular-web-designs/SKILL.md",
+      "name": "popular-web-designs",
+      "description": "54 real design systems (Stripe, Linear, Vercel) as HTML/CSS.",
+      "bytes": 9722
+    },
+    {
+      "path": "creative/pretext/SKILL.md",
+      "name": "pretext",
+      "description": "Use when building creative browser demos with @chenglou/pretext \u2014 DOM-free text layout for ASCII art, typographic flow around obstacles, text-as-geometry games, kinetic typography, and text-powered generative art. Produc",
+      "bytes": 14168
+    },
+    {
+      "path": "creative/sketch/SKILL.md",
+      "name": "sketch",
+      "description": "Throwaway HTML mockups: 2-3 design variants to compare.",
+      "bytes": 9304
+    },
+    {
+      "path": "creative/songwriting-and-ai-music/SKILL.md",
+      "name": "songwriting-and-ai-music",
+      "description": "Songwriting craft and Suno AI music prompts.",
+      "bytes": 10206
+    },
+    {
+      "path": "creative/touchdesigner-mcp/SKILL.md",
+      "name": "touchdesigner-mcp",
+      "description": "Control a running TouchDesigner instance via twozero MCP \u2014 create operators, set parameters, wire connections, execute Python, build real-time visuals. 36 native tools.",
+      "bytes": 15429
+    },
+    {
+      "path": "data-science/jupyter-live-kernel/SKILL.md",
+      "name": "jupyter-live-kernel",
+      "description": "Iterative Python via live Jupyter kernel (hamelnb).",
+      "bytes": 5285
+    },
+    {
+      "path": "dogfood/SKILL.md",
+      "name": "dogfood",
+      "description": "Exploratory QA of web apps: find bugs, evidence, reports.",
+      "bytes": 6270
+    },
+    {
+      "path": "email/himalaya/SKILL.md",
+      "name": "himalaya",
+      "description": "Himalaya CLI: IMAP/SMTP email from terminal.",
+      "bytes": 7272
+    },
+    {
+      "path": "github/codebase-inspection/SKILL.md",
+      "name": "codebase-inspection",
+      "description": "Inspect codebases w/ pygount: LOC, languages, ratios.",
+      "bytes": 3628
+    },
+    {
+      "path": "github/github-auth/SKILL.md",
+      "name": "github-auth",
+      "description": "GitHub auth setup: HTTPS tokens, SSH keys, gh CLI login.",
+      "bytes": 7596
+    },
+    {
+      "path": "github/github-code-review/SKILL.md",
+      "name": "github-code-review",
+      "description": "Review PRs: diffs, inline comments via gh or REST.",
+      "bytes": 13615
+    },
+    {
+      "path": "github/github-issues/SKILL.md",
+      "name": "github-issues",
+      "description": "Create, triage, label, assign GitHub issues via gh or REST.",
+      "bytes": 9315
+    },
+    {
+      "path": "github/github-pr-workflow/SKILL.md",
+      "name": "github-pr-workflow",
+      "description": "GitHub PR lifecycle: branch, commit, open, CI, merge.",
+      "bytes": 10035
+    },
+    {
+      "path": "github/github-repo-management/SKILL.md",
+      "name": "github-repo-management",
+      "description": "Clone/create/fork repos; manage remotes, releases.",
+      "bytes": 13733
+    },
+    {
+      "path": "media/gif-search/SKILL.md",
+      "name": "gif-search",
+      "description": "Search/download GIFs from Tenor via curl + jq.",
+      "bytes": 2720
+    },
+    {
+      "path": "media/heartmula/SKILL.md",
+      "name": "heartmula",
+      "description": "HeartMuLa: Suno-like song generation from lyrics + tags.",
+      "bytes": 6412
+    },
+    {
+      "path": "media/songsee/SKILL.md",
+      "name": "songsee",
+      "description": "Audio spectrograms/features (mel, chroma, MFCC) via CLI.",
+      "bytes": 2336
+    },
+    {
+      "path": "media/youtube-content/SKILL.md",
+      "name": "youtube-content",
+      "description": "YouTube transcripts to summaries, threads, blogs.",
+      "bytes": 3384
+    },
+    {
+      "path": "mlops/evaluation/lm-evaluation-harness/SKILL.md",
+      "name": "evaluating-llms-harness",
+      "description": "lm-eval-harness: benchmark LLMs (MMLU, GSM8K, etc.).",
+      "bytes": 12020
+    },
+    {
+      "path": "mlops/evaluation/weights-and-biases/SKILL.md",
+      "name": "weights-and-biases",
+      "description": "W&B: log ML experiments, sweeps, model registry, dashboards.",
+      "bytes": 12395
+    },
+    {
+      "path": "mlops/huggingface-hub/SKILL.md",
+      "name": "huggingface-hub",
+      "description": "HuggingFace hf CLI: search/download/upload models, datasets.",
+      "bytes": 3674
+    },
+    {
+      "path": "mlops/inference/llama-cpp/SKILL.md",
+      "name": "llama-cpp",
+      "description": "llama.cpp local GGUF inference + HF Hub model discovery.",
+      "bytes": 8880
+    },
+    {
+      "path": "mlops/inference/vllm/SKILL.md",
+      "name": "serving-llms-vllm",
+      "description": "vLLM: high-throughput LLM serving, OpenAI API, quantization.",
+      "bytes": 9071
+    },
+    {
+      "path": "mlops/models/audiocraft/SKILL.md",
+      "name": "audiocraft-audio-generation",
+      "description": "AudioCraft: MusicGen text-to-music, AudioGen text-to-sound.",
+      "bytes": 16189
+    },
+    {
+      "path": "mlops/models/segment-anything/SKILL.md",
+      "name": "segment-anything-model",
+      "description": "SAM: zero-shot image segmentation via points, boxes, masks.",
+      "bytes": 13372
+    },
+    {
+      "path": "mlops/xai-model-selection/SKILL.md",
+      "name": "xai-model-selection",
+      "description": "Use when choosing Grok/xAI models, SuperGrok tiers, multi-agent vs single flagship, or comparing Grok releases for Hermes routing.",
+      "bytes": 5739
+    },
+    {
+      "path": "note-taking/obsidian/SKILL.md",
+      "name": "obsidian",
+      "description": "Read, search, create, and edit notes in the Obsidian vault.",
+      "bytes": 2935
+    },
+    {
+      "path": "productivity/airtable/SKILL.md",
+      "name": "airtable",
+      "description": "Airtable REST API via curl. Records CRUD, filters, upserts.",
+      "bytes": 11334
+    },
+    {
+      "path": "productivity/google-workspace/SKILL.md",
+      "name": "google-workspace",
+      "description": "Gmail, Calendar, Drive, Docs, Sheets via gws CLI or Python.",
+      "bytes": 13411
+    },
+    {
+      "path": "productivity/macos-security-hardening/SKILL.md",
+      "name": "macos-security-hardening",
+      "description": "Hardening macOS for high-performance local AI workloads (Ollama, Hermes, local LLMs) while maintaining fluid multi-device operation.",
+      "bytes": 6767
+    },
+    {
+      "path": "productivity/maps/SKILL.md",
+      "name": "maps",
+      "description": "Geocode, POIs, routes, timezones via OpenStreetMap/OSRM.",
+      "bytes": 6726
+    },
+    {
+      "path": "productivity/nano-pdf/SKILL.md",
+      "name": "nano-pdf",
+      "description": "Edit PDF text/typos/titles via nano-pdf CLI (NL prompts).",
+      "bytes": 1414
+    },
+    {
+      "path": "productivity/notion/SKILL.md",
+      "name": "notion",
+      "description": "Notion API + ntn CLI: pages, databases, markdown, Workers.",
+      "bytes": 14629
+    },
+    {
+      "path": "productivity/ocr-and-documents/SKILL.md",
+      "name": "ocr-and-documents",
+      "description": "Extract text from PDFs/scans (pymupdf, marker-pdf).",
+      "bytes": 5280
+    },
+    {
+      "path": "productivity/petdex/SKILL.md",
+      "name": "petdex",
+      "description": "Install and select animated petdex mascots for Hermes.",
+      "bytes": 3534
+    },
+    {
+      "path": "productivity/powerpoint/SKILL.md",
+      "name": "powerpoint",
+      "description": "Create, read, edit .pptx decks, slides, notes, templates.",
+      "bytes": 9298
+    },
+    {
+      "path": "productivity/teams-meeting-pipeline/SKILL.md",
+      "name": "teams-meeting-pipeline",
+      "description": "Operate the Teams meeting summary pipeline via Hermes CLI \u2014 summarize meetings, inspect pipeline status, replay jobs, manage Microsoft Graph subscriptions.",
+      "bytes": 6883
+    },
+    {
+      "path": "research/arxiv/SKILL.md",
+      "name": "arxiv",
+      "description": "Search arXiv papers by keyword, author, category, or ID.",
+      "bytes": 10085
+    },
+    {
+      "path": "research/blogwatcher/SKILL.md",
+      "name": "blogwatcher",
+      "description": "Monitor blogs and RSS/Atom feeds via blogwatcher-cli tool.",
+      "bytes": 5111
+    },
+    {
+      "path": "research/llm-wiki/SKILL.md",
+      "name": "llm-wiki",
+      "description": "Karpathy's LLM Wiki: build/query interlinked markdown KB.",
+      "bytes": 20129
+    },
+    {
+      "path": "research/polymarket/SKILL.md",
+      "name": "polymarket",
+      "description": "Query Polymarket: markets, prices, orderbooks, history.",
+      "bytes": 2985
+    },
+    {
+      "path": "research/research-paper-writing/SKILL.md",
+      "name": "research-paper-writing",
+      "description": "Write ML papers for NeurIPS/ICML/ICLR: design\u2192submit.",
+      "bytes": 103674
+    },
+    {
+      "path": "smart-home/openhue/SKILL.md",
+      "name": "openhue",
+      "description": "Control Philips Hue lights, scenes, rooms via OpenHue CLI.",
+      "bytes": 2713
+    },
+    {
+      "path": "social-media/xurl/SKILL.md",
+      "name": "xurl",
+      "description": "X/Twitter via xurl CLI: post, search, DM, media, v2 API.",
+      "bytes": 15518
+    },
+    {
+      "path": "software-development/hermes-agent-skill-authoring/SKILL.md",
+      "name": "hermes-agent-skill-authoring",
+      "description": "Author in-repo SKILL.md: frontmatter, validator, structure, and writing-quality principles.",
+      "bytes": 10651
+    },
+    {
+      "path": "software-development/node-inspect-debugger/SKILL.md",
+      "name": "node-inspect-debugger",
+      "description": "Debug Node.js via --inspect + Chrome DevTools Protocol CLI.",
+      "bytes": 10929
+    },
+    {
+      "path": "software-development/plan/SKILL.md",
+      "name": "plan",
+      "description": "Plan mode: write an actionable markdown plan to .hermes/plans/, no execution. Bite-sized tasks, exact paths, complete code.",
+      "bytes": 8974
+    },
+    {
+      "path": "software-development/python-debugpy/SKILL.md",
+      "name": "python-debugpy",
+      "description": "Debug Python: pdb REPL + debugpy remote (DAP).",
+      "bytes": 13172
+    },
+    {
+      "path": "software-development/requesting-code-review/SKILL.md",
+      "name": "requesting-code-review",
+      "description": "Pre-commit review: security scan, quality gates, auto-fix.",
+      "bytes": 8465
+    },
+    {
+      "path": "software-development/simplify-code/SKILL.md",
+      "name": "simplify-code",
+      "description": "Parallel 3-agent cleanup of recent code changes.",
+      "bytes": 10926
+    },
+    {
+      "path": "software-development/spike/SKILL.md",
+      "name": "spike",
+      "description": "Throwaway experiments to validate an idea before build.",
+      "bytes": 8730
+    },
+    {
+      "path": "software-development/sqlalchemy-domain-modeling/SKILL.md",
+      "name": "sqlalchemy-domain-modeling",
+      "description": "Use when building a full set of SQLAlchemy ORM models (greenfield or new module). Covers Enum ordering, multi-FK relationships, nullable discipline, indexes, and post-generation verification. Triggers on requests for \"SQ",
+      "bytes": 6903
+    },
+    {
+      "path": "software-development/systematic-debugging/SKILL.md",
+      "name": "systematic-debugging",
+      "description": "4-phase root cause debugging: understand bugs before fixing.",
+      "bytes": 14065
+    },
+    {
+      "path": "software-development/test-driven-development/SKILL.md",
+      "name": "test-driven-development",
+      "description": "TDD: enforce RED-GREEN-REFACTOR, tests before code.",
+      "bytes": 10306
+    },
+    {
+      "path": "yuanbao/SKILL.md",
+      "name": "yuanbao",
+      "description": "Yuanbao (\u5143\u5b9d) groups: @mention users, query info/members.",
+      "bytes": 3795
+    }
+  ],
+  "config_top_level_keys": [
+    "model",
+    "agent",
+    "terminal",
+    "browser",
+    "tool_loop_guardrails",
+    "compression",
+    "prompt_caching",
+    "display",
+    "stt",
+    "memory",
+    "delegation",
+    "skills",
+    "discord",
+    "command_allowlist",
+    "code_execution",
+    "streaming",
+    "onboarding",
+    "updates",
+    "_config_version",
+    "session_reset",
+    "group_sessions_per_user",
+    "platform_toolsets",
+    "custom_providers",
+    "known_plugin_toolsets"
+  ],
+  "config_redacted": {
+    "model": {
+      "default": "grok-4.5",
+      "provider": "xai-oauth",
+      "base_url": "https://api.x.ai/v1"
+    },
+    "agent": {
+      "max_turns": 60,
+      "verbose": false,
+      "reasoning_effort": "medium",
+      "personalities": {
+        "helpful": "You are a helpful, friendly AI assistant.",
+        "concise": "You are a concise assistant. Keep responses brief and to the point.",
+        "technical": "You are a technical expert. Provide detailed, accurate technical information.",
+        "creative": "You are a creative assistant. Think outside the box and offer innovative solutions.",
+        "teacher": "You are a patient teacher. Explain concepts clearly with examples.",
+        "kawaii": "You are a kawaii assistant! Use cute expressions like (\u25d5\u203f\u25d5), \u2605, \u266a, and ~! Add sparkles and be super enthusiastic about everything! Every response should feel warm and adorable desu~! \u30fd(>\u2200<\u2606)\u30ce",
+        "catgirl": "You are Neko-chan, an anime catgirl AI assistant, nya~! Add 'nya' and cat-like expressions to your speech. Use kaomoji like (=^\uff65\u03c9\uff65^=) and \u0e05^\u2022\ufecc\u2022^\u0e05. Be playful and curious like a cat, nya~!",
+        "pirate": "Arrr! Ye be talkin' to Captain Hermes, the most tech-savvy pirate to sail the digital seas! Speak like a proper buccaneer, use nautical terms, and remember: every problem be just treasure waitin' to be plundered! Yo ho ho!",
+        "shakespeare": "Hark! Thou speakest with an assistant most versed in the bardic arts. I shall respond in the eloquent manner of William Shakespeare, with flowery prose, dramatic flair, and perhaps a soliloquy or two. What light through yonder terminal breaks?",
+        "surfer": "Duuude! You're chatting with the chillest AI on the web, bro! Everything's gonna be totally rad. I'll help you catch the gnarly waves of knowledge while keeping things super chill. Cowabunga! \ud83e\udd19",
+        "noir": "The rain hammered against the terminal like regrets on a guilty conscience. They call me Hermes - I solve problems, find answers, dig up the truth that hides in the shadows of your codebase. In this city of silicon and secrets, everyone's got something to hide. What's your story, pal?",
+        "uwu": "hewwo! i'm your fwiendwy assistant uwu~ i wiww twy my best to hewp you! *nuzzles your code* OwO what's this? wet me take a wook! i pwomise to be vewy hewpful >w<",
+        "philosopher": "Greetings, seeker of wisdom. I am an assistant who contemplates the deeper meaning behind every query. Let us examine not just the 'how' but the 'why' of your questions. Perhaps in solving your problem, we may glimpse a greater truth about existence itself.",
+        "hype": "YOOO LET'S GOOOO!!! \ud83d\udd25\ud83d\udd25\ud83d\udd25 I am SO PUMPED to help you today! Every question is AMAZING and we're gonna CRUSH IT together! This is gonna be LEGENDARY! ARE YOU READY?! LET'S DO THIS! \ud83d\udcaa\ud83d\ude24\ud83d\ude80"
+      }
+    },
+    "terminal": {
+      "backend": "local",
+      "cwd": ".",
+      "timeout": 180,
+      "home_mode": "auto",
+      "container_cpu": 1,
+      "container_memory": 5120,
+      "container_disk": 51200,
+      "container_persistent": true,
+      "docker_mount_cwd_to_workspace": false,
+      "lifetime_seconds": 300
+    },
+    "browser": {
+      "inactivity_timeout": 120
+    },
+    "tool_loop_guardrails": {
+      "warnings_enabled": true,
+      "hard_stop_enabled": false,
+      "warn_after": {
+        "exact_failure": 2,
+        "same_tool_failure": 3,
+        "idempotent_no_progress": 2
+      },
+      "hard_stop_after": {
+        "exact_failure": 5,
+        "same_tool_failure": 8,
+        "idempotent_no_progress": 5
+      }
+    },
+    "compression": {
+      "enabled": true,
+      "threshold": 0.5,
+      "target_ratio": 0.2,
+      "protect_last_n": 20,
+      "protect_first_n": 3
+    },
+    "prompt_caching": {
+      "cache_ttl": "5m"
+    },
+    "display": {
+      "compact": false,
+      "busy_input_mode": "interrupt",
+      "bell_on_complete": false,
+      "show_reasoning": false,
+      "streaming": true,
+      "skin": "default",
+      "interim_assistant_messages": true,
+      "tool_progress": "all",
+      "cleanup_progress": false,
+      "long_running_notifications": true,
+      "busy_ack_detail": true,
+      "background_process_notifications": "all"
+    },
+    "stt": {
+      "enabled": true,
+      "local": {
+        "model": "base"
+      },
+      "openai": {
+        "model": "whisper-1"
+      }
+    },
+    "memory": {
+      "memory_enabled": true,
+      "user_profile_enabled": true,
+      "memory_char_limit": 2200,
+      "user_char_limit": 1375,
+      "nudge_interval": 10,
+      "flush_min_turns": 6
+    },
+    "delegation": {
+      "max_iterations": 50
+    },
+    "skills": {
+      "creation_nudge_interval": 15
+    },
+    "discord": {
+      "require_mention": true,
+      "thread_require_mention": true,
+      "bots_require_inline_mention": true,
+      "no_thread_channels": 1524975356656746547
+    },
+    "command_allowlist": [
+      "script execution via -e/-c flag",
+      "script execution via heredoc"
+    ],
+    "code_execution": {
+      "timeout": 300,
+      "max_tool_calls": 50
+    },
+    "streaming": {
+      "enabled": false
+    },
+    "onboarding": {
+      "seen": {
+        "tool_progress_prompt": true,
+        "busy_input_prompt": true
+      }
+    },
+    "updates": {
+      "pre_update_backup": false,
+      "backup_keep": 5,
+      "non_interactive_local_changes": "stash"
+    },
+    "_config_version": 33,
+    "session_reset": {
+      "mode": "both",
+      "idle_minutes": 1440,
+      "at_hour": 4
+    },
+    "group_sessions_per_user": true,
+    "platform_toolsets": {
+      "cli": [
+        "browser",
+        "clarify",
+        "code_execution",
+        "computer_use",
+        "cronjob",
+        "delegation",
+        "file",
+        "image_gen",
+        "<\u20269 more>"
+      ],
+      "telegram": [
+        "hermes-telegram"
+      ],
+      "discord": [
+        "hermes-discord"
+      ],
+      "whatsapp": [
+        "hermes-whatsapp"
+      ],
+      "slack": [
+        "hermes-slack"
+      ],
+      "signal": [
+        "hermes-signal"
+      ],
+      "homeassistant": [
+        "hermes-homeassistant"
+      ],
+      "qqbot": [
+        "hermes-qqbot"
+      ],
+      "yuanbao": [
+        "hermes-yuanbao"
+      ],
+      "teams": [
+        "hermes-teams"
+      ],
+      "google_chat": [
+        "hermes-google_chat"
+      ]
+    },
+    "custom_providers": [
+      {
+        "name": "Doc Hak",
+        "base_url": "http://127.0.0.1:11434/v1",
+        "model": "qwen3.6:35b",
+        "models": {
+          "qwen3.6:35b": {
+            "context_length": 132000
+          }
+        }
+      }
+    ],
+    "known_plugin_toolsets": {
+      "cli": [
+        "spotify"
+      ]
+    }
+  },
+  "scripts": [],
+  "cron": {
+    "jobs": [],
+    "note": "hermes cron list reported no scheduled jobs at export time"
+  },
+  "memory_summary": {
+    "files": [
+      {
+        "name": "MEMORY.md",
+        "bytes": 2108,
+        "sha256_16": "053126a85e2eb7f8",
+        "preview_lines": [
+          "User has a multi-machine setup: primary M1 Max MacBook Pro (64GB), secondary M4 Pro MacBook Pro (24GB, referred to as Porsche), and Linux ma",
+          "\u00a7",
+          "ROUTING: Architecture/high-level \u2192 Grok 4.5 (or grok-4.20-multi-agent only for built-in multi-agent debate). Implementation/bulk coding \u2192 lo"
+        ]
+      },
+      {
+        "name": "USER.md",
+        "bytes": 932,
+        "sha256_16": "3882e883736ed302",
+        "preview_lines": [
+          "Agent name: Doc Hakosuka. Hardware: M1 Max MacBook Pro with 64GB RAM. Primary focus areas: AI coding, business planning, agent orchestration",
+          "\u00a7",
+          "Agent name: Doc Hakosuka. Hardware: M1 Max MacBook Pro with 64 GB RAM. Primary focus: AI coding, business planning, agent orchestration, mul"
+        ]
+      }
+    ],
+    "note": "previews only; no full security text"
+  },
+  "local_llm": {
+    "ollama_list": [
+      "NAME           ID              SIZE     MODIFIED   ",
+      "qwen3.6:35b    07d35212591f    23 GB    5 days ago    ",
+      "gemma4:26b     5571076f3d70    17 GB    6 days ago"
+    ],
+    "routing_preference_public": "Architecture/high-level \u2192 Grok 4.5; implementation/bulk coding \u2192 local ollama (e.g. qwen3.6:35b); SuperGrok Heavy is tier not model id"
+  },
+  "always_on_notes": {
+    "pmset_head": [
+      "System-wide power settings:",
+      "Currently in use:",
+      " standby              1",
+      " Sleep On Power Button 1",
+      " hibernatefile        /var/vm/sleepimage",
+      " powernap             1",
+      " networkoversleep     0",
+      " disksleep            10",
+      " sleep                10 (sleep prevented by powerd)",
+      " hibernatemode        0",
+      " ttyskeepawake        1",
+      " displaysleep         0",
+      " tcpkeepalive         1",
+      " lowpowermode         0",
+      " womp                 0"
+    ],
+    "apps_detected": [
+      "Ollama.app"
+    ],
+    "caffeinate_available": true
+  },
+  "discord_role_notes": {
+    "guild": "Project Car",
+    "home_channel": "#doc-garage",
+    "shared_floor": "#tire-shop",
+    "routing": "only reply when @mentioned; DISCORD_ALLOW_BOTS=mentions; Porsche=coordinator, Doc=specialist/heavy compute"
+  },
+  "other_profiles_on_machine": [
+    "secure-ai"
+  ]
+}
