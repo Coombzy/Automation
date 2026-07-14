@@ -1,1 +1,1 @@
-Headscale confirmed for Phase 0 networking per Ben. Advantages documented. Porsche to lead setup after Nextcloud baseline.
+UPDATED TOPOLOGY (2026-07-14): Initial services (Nextcloud + Headscale) on Doc (M1 Max, 1TB) for stability/storage. Porsche = travel laptop/client only until factory reset complete. Migration path to Porsche as edge host later. Doc usage will decrease post-setup.

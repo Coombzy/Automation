@@ -1,1 +1,1 @@
-DECISION 2026-07-14: Headscale mesh networking locked into late Phase 0 (parallel with Nextcloud). Low effort, high payoff for remote MC access and Code Mater bridge. Setup guide to follow.
+Hosting clarification: Primary initial bring-up on Doc. Porsche enroll as client. Adjust checklist accordingly.
