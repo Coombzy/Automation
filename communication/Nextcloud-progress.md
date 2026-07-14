@@ -2,9 +2,9 @@
 
 **Audience:** Ben + Grok (and fleet agents)  
 **Author:** Doc Hakosuka  
-**Last updated:** 2026-07-14  
+**Last updated:** 2026-07-14 (Section A polish applied)  
 **Repo path:** `communication/Nextcloud-progress.md`  
-**Status summary:** Temporary Docker hub **installed and configured on Doc**; **offline right now** until Docker Desktop is running. Core apps **installed**. Fleet seed folder **not yet nested** under Desktop Project Car. Permanent host (**McKing**) not started.
+**Status summary:** Temporary Docker hub on **Doc is installed, apps enabled, and verified UP**. Config/Tailscale trusted domains, auto-start, and local volume backups are in place. Fleet seed folder **not yet nested** under Desktop Project Car. Permanent host (**McKing**) not started.
 
 ---
 
@@ -39,110 +39,110 @@ Self-hosted **Nextcloud** as Project Car fleet memory + collab hub (Files, Talk,
 | Secrets | `.env` (mode 600, gitignored) — **never** commit to public repos |
 | Local credentials pointer | `~/Desktop/Nextcloud-Doc-Credentials.txt` (mode 600, local only) |
 | Admin user | `ben` |
-| Version when last healthy | Nextcloud **30.0.17** (`installed: true`) |
+| Version (verified 2026-07-14) | Nextcloud **30.0.17** (`installed: true`, healthy) |
 | Arch notes | Apple Silicon–friendly; Frigate/NVIDIA blocks **commented** for McKing only |
-| Desktop compose copy (no secrets) | `~/Desktop/project-car-nextcloud-docker-compose.yml` (for review / Grok analysis) |
+| Desktop compose copy (no secrets) | `~/Desktop/project-car-nextcloud-docker-compose.yml` |
 
-Skill / ops docs: Hermes skill **`nextcloud-fleet-hub`** (`references/doc-stack-ops.md`, `references/mcking-migration.md`).
+Skill / ops docs: Hermes skill **`nextcloud-fleet-hub`**.
 
-### 3.2 Apps (confirmed installed 2026-07-13 session)
+### 3.2 Apps (enabled)
 
 | App | App id | Notes |
 |-----|--------|--------|
-| Talk | `spreed` | ~20.1.x |
-| Calendar | `calendar` | ~5.5.x |
-| Deck | `deck` | ~1.14.x |
-| Forms | `forms` | ~5.2.x |
-| Photos | `photos` | Often pre-enabled on NC 30 |
-| Passwords (vault) | `passwords` | ~2026.7.x — **not** `password_policy` |
+| Talk | `spreed` | 20.1.11 |
+| Calendar | `calendar` | 5.5.21 |
+| Deck | `deck` | 1.14.10 |
+| Forms | `forms` | 5.2.9 |
+| Photos | `photos` | 3.0.2 |
+| Passwords (vault) | `passwords` | 2026.7.10 — **not** `password_policy` |
 
-First install attempt failed with “Could not download app …” (container → apps.nextcloud.com). Retry after store reachable succeeded via `occ app:install` / `app:enable`.
+### 3.3 Section A polish (2026-07-14)
 
-### 3.3 Desktop fleet seed (filesystem, parallel to Docker)
+| Item | Status |
+|------|--------|
+| `overwrite.cli.url` | `http://localhost:8080` |
+| `trusted_domains` | `localhost`, `127.0.0.1`, `docs-macbook-pro`, `100.97.10.72`, `nextcloud` (deduped) |
+| Tailscale HTTP check | **200** on `http://docs-macbook-pro:8080` and `http://100.97.10.72:8080` |
+| Auto-start LaunchAgent | `ai.project-car.nextcloud-hub` → `start-hub.sh` (RunAtLoad + hourly) |
+| Docker Login Item | Docker.app added to macOS login items |
+| Backup script | `nextcloud-hub/backup-hub.sh` (mariadb-dump + config/custom_apps; full data Sundays / `--full`) |
+| Backup destination | `~/Desktop/Project Car/backups/nextcloud/` (**local only**, gitignored) |
+| Daily backup hook | `~/.hermes/scripts/daily-doc-backup.sh` calls NC backup after Hermes zip |
+| First backup test | OK (~83MB light bundle 2026-07-14) |
+
+### 3.4 Desktop fleet seed (filesystem, parallel to Docker)
 
 | Item | Value |
 |------|--------|
 | Path today | `~/Desktop/Fleet-Nextcloud/` |
-| Role | Local layout for Dreams / Handoffs / Heartbeats / Memory before (and beside) full NC Files integration |
-| Bound into NC volumes? | **No** — not External Storage / not auto-synced into `data/ben` yet |
-| Related | Dream + pair-checkin tooling still expect this Desktop path unless updated |
+| Role | Local layout for Dreams / Handoffs / Heartbeats / Memory |
+| Bound into NC volumes? | **No** |
+| Move under Project Car? | **Deferred** (Section B — not “move Docker data”) |
 
-### 3.4 Related Project Car Desktop workspace
+### 3.5 Related Project Car Desktop workspace
 
-Canonical local product tree: `~/Desktop/Project Car/` (docs, ProjectCar-App, Agents, etc.).  
-Docker hub **stays outside** that tree on purpose (`hermes-tools/nextcloud-hub`) so large volumes / secrets are not mixed with app docs.
+`~/Desktop/Project Car/` — product tree. Docker hub stays at `hermes-tools/nextcloud-hub` (by design).
 
 ---
 
-## 4. Current runtime state (as of 2026-07-14 check on Doc)
+## 4. Current runtime state (2026-07-14 after Section A)
 
 | Check | Result |
 |-------|--------|
-| Docker Desktop / `docker.sock` | **Not running** |
-| `http://localhost:8080` | **Down** (connection refused) |
-| On-disk volumes + install | **Intact** (`data/`, `db/`, `redis/`, user `ben` present) |
-| Start procedure | `open -a Docker` → wait healthy → `cd …/nextcloud-hub && docker compose --env-file .env up -d` |
+| Docker Desktop | Running |
+| Containers | db / nextcloud / redis **healthy** |
+| `http://localhost:8080/status.php` | **UP** (30.0.17) |
+| Tailscale MagicDNS / IP :8080 | **UP** |
+| Users | `ben` only |
 
-So: **setup complete, service stopped** — not a failed install.
+**Access:**
+- Local: http://localhost:8080  
+- Tailscale: http://docs-macbook-pro:8080 or http://100.97.10.72:8080  
+- Login: `ben` (password only in local credentials file)
 
 ---
 
-## 5. Not done / deferred
+## 5. Not done / deferred (Sections B–D)
 
-1. **Bring stack up** when Ben needs UI/API (start Docker Desktop + compose).
-2. **Nest seed under Project Car** (Ben request — “not right now” at the time):  
-   `~/Desktop/Fleet-Nextcloud` → `~/Desktop/Project Car/Fleet-Nextcloud`  
-   Then patch paths in:
-   - `agent-dream` skill / dream cron digests  
-   - `fleet-pair-checkin` / pair reports under `Heartbeats/Fleet/`  
-   - any `daily-doc-backup` / Automation notes that hardcode the old path  
-3. **Mount or copy** Fleet seed into Nextcloud user files (optional External Storage or one-time upload) so Talk/Files and agents share one hub.
-4. **Remote access:** Tailscale (or similar) hostname in `NEXTCLOUD_TRUSTED_DOMAINS`; **do not** expose bare `:8080` to open internet without TLS + auth.
-5. **Passwords app** hygiene / vault use by fleet — installed only; operational policy TBD with Ben.
-6. **Hermes ↔ NC integration** deeper than folder paths (Talk bots, WebDAV automation, Calendar/Deck webhooks) — not built yet.
-7. **McKing migration** when that host is home/online:
-   - `docker compose down` on Doc  
-   - rsync `data/`, `db/`, `redis/`, `.env`  
-   - run `linux/amd64` (or multi-arch), raise MariaDB buffer if needed  
-   - reverse proxy + HTTPS  
-   - optional Frigate profile + NVIDIA toolkit (**Linux only**; never on Apple Silicon)  
-   - re-point agents/DNS; decommission Doc as primary hub  
+1. Nest seed: `~/Desktop/Fleet-Nextcloud` → `~/Desktop/Project Car/Fleet-Nextcloud` + path patches (dream/pair-checkin). **Not** Docker volume migration.
+2. Import seed into Nextcloud Files / External Storage.
+3. Project Car Deck boards / Calendar / Talk rooms / Forms content.
+4. Fleet users (`porsche`, `doc`, `mcking`) + app passwords / WebDAV for agents.
+5. 2FA for human admin; HTTPS reverse proxy (more natural on McKing).
+6. McKing migration when `lil-cachy` is online (rsync volumes, amd64, optional Frigate).
+7. Deeper Hermes ↔ NC automation (write digests into NC Files, etc.).
 
 ---
 
 ## 6. Security / hygiene (standing rules)
 
-- **Public repos** (`Coombzy/Project-Car`, `Coombzy/Automation`): no `.env`, no admin passwords, no full `data/` dumps.
-- Credentials file stays **local Desktop only** (or later a private vault) — not this markdown.
-- Prefer **Tailscale** over port-forwarding for multi-machine access.
-- Ollama/local LLMs remain localhost services — unrelated to NC bind.
+- **Public repos**: no `.env`, no admin passwords, no full `data/` or backup tarballs.
+- Credentials file stays **local Desktop only**.
+- Prefer **Tailscale** over public port-forward; HTTP on TS is convenience-only until TLS proxy exists.
+- Ollama stays localhost — unrelated bind.
 
 ---
 
 ## 7. Quick commands (Doc)
 
 ```bash
-# Start Docker Desktop first, then:
 cd /Users/dochak/hermes-tools/nextcloud-hub
-docker compose --env-file .env up -d
+./start-hub.sh
 docker compose ps
 curl -sS http://127.0.0.1:8080/status.php
 
-# App verify (when up)
-docker compose exec -T -u www-data nextcloud php occ status
-docker compose exec -T -u www-data nextcloud php occ app:list | grep -iE 'spreed|calendar|deck|forms|photos|passwords'
+./backup-hub.sh          # daily-style
+./backup-hub.sh --full   # force full data archive
 
-# Stop
+docker compose exec -T -u www-data nextcloud php occ app:list | grep -iE 'spreed|calendar|deck|forms|photos|passwords'
 docker compose --env-file .env down
 ```
-
-UI: `http://localhost:8080` — login **`ben`** (password in local credentials file only).
 
 ---
 
 ## 8. One-liner for Grok
 
-> Project Car Nextcloud **temporary hub on Doc is installed** (NC 30 + MariaDB + Redis on `:8080`, apps Talk/Calendar/Deck/Forms/Photos/Passwords enabled). **Stack is currently stopped** (Docker Desktop off); data volumes intact. Desktop **Fleet-Nextcloud** seed exists separately and is **not yet** under `Project Car/` or bound into NC files. **Permanent hub = McKing later**; Porsche is client-only. Next steps: start Docker when needed, optional seed move + path patches, Tailscale trusted domain, then McKing migration.
+> Project Car Nextcloud **temporary hub on Doc is live**: NC 30.0.17 + MariaDB + Redis on `:8080`, apps Talk/Calendar/Deck/Forms/Photos/Passwords enabled. **Section A done** (CLI URL + Tailscale trusted domains, LaunchAgent auto-start, local volume backups hooked into Doc daily backup). Fleet-Nextcloud **Desktop seed still separate** (not under Project Car yet; not Docker volumes). **Permanent hub = McKing later**; Porsche is client-only via Tailscale.
 
 ---
 
@@ -150,13 +150,15 @@ UI: `http://localhost:8080` — login **`ben`** (password in local credentials f
 
 | Path | Role |
 |------|------|
-| `/Users/dochak/hermes-tools/nextcloud-hub/` | Live Docker stack + volumes |
-| `~/Desktop/Nextcloud-Doc-Credentials.txt` | Local admin URL/user/pass pointer |
+| `/Users/dochak/hermes-tools/nextcloud-hub/` | Live Docker stack + volumes + start/backup scripts |
+| `~/Library/LaunchAgents/ai.project-car.nextcloud-hub.plist` | Auto-start agent |
+| `~/Desktop/Nextcloud-Doc-Credentials.txt` | Local admin pointer |
 | `~/Desktop/project-car-nextcloud-docker-compose.yml` | Secret-free compose for analysis |
-| `~/Desktop/Fleet-Nextcloud/` | Agent seed tree (Dreams/Handoffs/Heartbeats) |
-| `~/Desktop/Project Car/` | Product/workspace layout (app + docs) |
+| `~/Desktop/Fleet-Nextcloud/` | Agent seed tree |
+| `~/Desktop/Project Car/backups/nextcloud/` | Local NC dumps (sensitive) |
+| `~/Desktop/Project Car/` | Product/workspace layout |
 | Hermes skill `nextcloud-fleet-hub` | Ops + migration SSOT for agents |
 
 ---
 
-*End of progress note. Update this file when Docker is re-verified up, seed is moved, remote access is live, or McKing migration starts.*
+*End of progress note. Next major slices: Section B (seed move + NC Files seed), multi-user/app passwords, McKing migration when online.*
