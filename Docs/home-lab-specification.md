@@ -1,1 +1,1 @@
-ADVANTAGES OF HEADSCALE (added per Ben): 1. Full sovereignty. 2. Official Tailscale clients (zero friction). 3. Unlimited scale. 4. Local control. 5. Privacy. Decision: Proceed with Headscale for Phase 0 networking.
+Headscale confirmed for Phase 0 networking per Ben. Advantages documented. Porsche to lead setup after Nextcloud baseline.
