@@ -1,11 +1,12 @@
-# CCJ Audit Process — Official Checklist & Prompt
+# CCJ Audit Process — Hermes Agent Process
 
-**Version:** 1.1 (2026-07-21)  
+**Version:** 1.2 (2026-07-21)  
 **Location:** `Project-Car/finance/`  
-**Target log:** `CCJ_Daily_Metrics_Audit_Log.md`
+**Target log:** `CCJ_Daily_Metrics_Audit_Log.md`  
+**Target health:** `CCJ_Process_Health.md`
 
 ## Goal
-Provide a consistent, scored review of each daily analysis entry so quality trends can be tracked and the Analysis Automater can improve over time.
+Perform a rigorous, scored review of the most recent CCJ analysis entry and **automatically write the audit results** back into the living log. Designed for a Hermes agent with GitHub write access.
 
 ## Fixed Audit Checklist (must complete every run)
 
@@ -17,7 +18,7 @@ Provide a consistent, scored review of each daily analysis entry so quality tren
 - [ ] No obvious data contradictions between metrics and narrative
 - [ ] Anomaly flags (if any) are acknowledged and discussed
 
-## Scoring Guide (Audit Score 1–10)
+## Scoring Guide – Audit Score (1–10)
 
 | Score | Meaning |
 |-------|---------|
@@ -27,35 +28,44 @@ Provide a consistent, scored review of each daily analysis entry so quality tren
 | 3–4   | Needs improvement – significant gaps or contradictions |
 | 1–2   | Poor – major data or process failures |
 
-## Required Steps
+## Required Steps (execute in order)
 
-1. Read the newest entry in `CCJ_Daily_Metrics_Audit_Log.md`.
-2. Read the previous 2–3 entries to detect recurring issues.
-3. Walk through the fixed checklist and mark each item.
-4. Assign the numeric Audit Score.
-5. Note any recurring issues and whether prior recommendations were addressed.
-6. Write clear, actionable process flags / suggestions.
-7. Fill the entire Audit / Reviewer Notes section in the living log.
-8. Optionally add a one-line summary (date, Audit Score, top issue) to `CCJ_Process_Health.md`.
+1. **Read the living log**  
+   Use `github___get_file_contents` on `finance/CCJ_Daily_Metrics_Audit_Log.md` (owner: Coombzy, repo: Project-Car). Examine the newest entry and the previous 2–3 entries for recurring issues.
 
-## Prompt Skeleton (for agent use)
+2. **Complete the Fixed Checklist**  
+   Mark every item. Note any failures.
 
-```
-You are the CCJ Audit Process. Follow the official checklist and process in finance/CCJ_Audit_Checklist_and_Prompt.md exactly.
+3. **Assign Audit Score (1–10)** using the scoring guide.
 
-1. Open finance/CCJ_Daily_Metrics_Audit_Log.md and examine the newest entry.
-2. Also review the previous 2–3 entries for recurring issues.
-3. Complete the fixed Audit Checklist.
-4. Assign an Audit Score (1–10) using the scoring guide.
-5. Write the full Audit / Reviewer Notes section, including recurring issues and concrete suggestions.
-6. Optionally update finance/CCJ_Process_Health.md with a one-line summary.
+4. **Evaluate prediction accuracy (if targets exist)**  
+   Compare any 1-week / 1-month / 3-month targets in the analysis against subsequent actual performance (use Polygon for prices). Note hit rate, directional accuracy, and root causes of misses.
 
-Be rigorous but constructive. The goal is continuous improvement of the Analysis Automater.
-```
+5. **Write the full Audit section**  
+   Produce clear, constructive notes including:
+   - Checklist results
+   - Audit Score
+   - Recurring issues and whether prior recommendations were addressed
+   - Specific improvement suggestions for the Analysis process
+   - Overall assessment
+
+6. **Commit the updated log (mandatory)**  
+   - Get the current SHA of `CCJ_Daily_Metrics_Audit_Log.md`.  
+   - Insert / replace the Audit / Reviewer Notes section for the newest entry.  
+   - Use `github___create_or_update_file` (or `github___push_files`) with a clear commit message:  
+     `CCJ Audit – YYYY-MM-DD – Score X/10`
+
+7. **Update Process Health**  
+   Add or update a line in `finance/CCJ_Process_Health.md`:  
+   `Date | Analysis Confidence | Audit Score | Top Issue`
+
+8. **Confirm success**  
+   Report the commit confirmation.
 
 ## Success Criteria
-- Checklist fully marked
-- Numeric Audit Score assigned
-- Recurring issues (if any) explicitly noted
-- Actionable suggestions written
-- Audit section completed in the living log
+- [ ] Checklist fully marked
+- [ ] Numeric Audit Score (1–10) assigned
+- [ ] Recurring issues noted
+- [ ] Actionable improvement suggestions written
+- [ ] Audit section successfully written and committed to the living log
+- [ ] Process Health updated
