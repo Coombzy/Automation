@@ -5,6 +5,7 @@ One short line per day. Does **not** replace the main living analysis log.
 
 | Date       | Analysis Confidence | Audit Score | Top Issue / Note                          | Data Sources OK? |
 |------------|---------------------|-------------|-------------------------------------------|------------------|
+| 2026-07-24 | 82                  | 8           | Missing explicit PTs (prompt still needs Forward Scenarios section); excellent data/sector fidelity | Yes |
 | 2026-07-23 | N/A (recovery)      | 7           | Restored living log after overwrite bug; recovered July 21–22 entries + added WRITE RULE | Yes |
 | 2026-07-21 | 86                  | (pending)   | Afternoon update $88.38 +4.16%; Polygon primary + Yahoo live; RSI 35.7 | Yes (Polygon+Yahoo+TE) |
 | 2026-07-21 | 72                  | 8           | Baseline entry; first structured run      | Yes (public)     |
